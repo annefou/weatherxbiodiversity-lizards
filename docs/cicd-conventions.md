@@ -14,7 +14,7 @@ Pattern:
 - uses: mamba-org/setup-micromamba@v3
   with:
     environment-file: environment.yml
-    environment-name: {{REPO_NAME}}
+    environment-name: weatherxbiodiversity-lizards
     init-shell: bash
     cache-environment: true
 

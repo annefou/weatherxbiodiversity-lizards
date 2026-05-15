@@ -2,13 +2,13 @@
 
 > This is a working scratchpad for the paper-analysis phase. The output of this file feeds the Quote / AIDA / Claim drafts. It is not itself a nanopub.
 
-**Reference paper:** {{PAPER_TITLE}}
+**Reference paper:** Erosion of Lizard Diversity by Climate Change and Altered Thermal Niches
 
-**DOI:** {{PAPER_DOI}}
+**DOI:** 10.1126/science.1184695
 
 **Authors:** _add._
 
-**Year:** {{PAPER_YEAR}}
+**Year:** 2010
 
 ## Headline claim
 

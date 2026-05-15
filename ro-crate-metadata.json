@@ -14,12 +14,12 @@
     {
       "@id": "./",
       "@type": ["Dataset", "ResearchObject"],
-      "name": "{{REPO_NAME}}",
-      "description": "{{REPO_DESCRIPTION}}",
-      "datePublished": "{{RELEASE_DATE}}",
+      "name": "weatherxbiodiversity-lizards",
+      "description": "Cross-taxon replication of Sinervo et al. 2010'''s thermal-niche-exceedance extinction mechanism on Mediterranean lizards under SSP3-7.0 via Destination Earth Climate Digital Twin.",
+      "datePublished": "2026-05-15",
       "license": { "@id": "https://spdx.org/licenses/MIT" },
-      "publisher": { "@id": "{{AUTHOR_ORCID}}" },
-      "author": [{ "@id": "{{AUTHOR_ORCID}}" }],
+      "publisher": { "@id": "https://orcid.org/0000-0002-1784-2920" },
+      "author": [{ "@id": "https://orcid.org/0000-0002-1784-2920" }],
       "mainEntity": { "@id": "Snakefile" },
       "hasPart": [
         { "@id": "Snakefile" },
@@ -36,14 +36,14 @@
         { "@id": "nanopubs/PUBLISHED.md" }
       ],
       "citation": [
-        { "@id": "https://doi.org/{{PAPER_DOI}}" }
+        { "@id": "https://doi.org/10.1126/science.1184695" }
       ]
     },
     {
-      "@id": "{{AUTHOR_ORCID}}",
+      "@id": "https://orcid.org/0000-0002-1784-2920",
       "@type": "Person",
-      "name": "{{AUTHOR_NAME}}",
-      "affiliation": "{{AUTHOR_AFFILIATION}}"
+      "name": "Anne Fouilloux",
+      "affiliation": "LifeWatch ERIC"
     },
     {
       "@id": "Snakefile",
@@ -123,10 +123,10 @@
       "description": "URIs of the published Quote / AIDA / FORRT Claim / Replication Study / Replication Outcome / CiTO Citation steps."
     },
     {
-      "@id": "https://doi.org/{{PAPER_DOI}}",
+      "@id": "https://doi.org/10.1126/science.1184695",
       "@type": "ScholarlyArticle",
-      "name": "{{PAPER_TITLE}}",
-      "datePublished": "{{PAPER_YEAR}}"
+      "name": "Erosion of Lizard Diversity by Climate Change and Altered Thermal Niches",
+      "datePublished": "2010"
     }
   ]
 }
