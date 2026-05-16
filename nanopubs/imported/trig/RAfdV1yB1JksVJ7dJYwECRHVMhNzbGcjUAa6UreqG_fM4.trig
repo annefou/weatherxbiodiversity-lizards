@@ -1,0 +1,50 @@
+@prefix this: <https://w3id.org/sciencelive/np/RAfdV1yB1JksVJ7dJYwECRHVMhNzbGcjUAa6UreqG_fM4> .
+@prefix sub: <https://w3id.org/sciencelive/np/RAfdV1yB1JksVJ7dJYwECRHVMhNzbGcjUAa6UreqG_fM4/> .
+@prefix np: <http://www.nanopub.org/nschema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix npx: <http://purl.org/nanopub/x/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+sub:Head {
+  this: a np:Nanopublication;
+    np:hasAssertion sub:assertion;
+    np:hasProvenance sub:provenance;
+    np:hasPublicationInfo sub:pubinfo .
+}
+
+sub:assertion {
+  <https://doi.org/10.5281/zenodo.20113786> a <http://purl.org/dc/dcmitype/Software>;
+    dc:license <https://spdx.org/licenses/MIT.html>;
+    dc:title "weatherxbiodiversity-substrate-sensitivity — Cross-substrate diagnostic toolkit for TEI-based extirpation projection";
+    <http://purl.org/spar/cito/supports> <https://doi.org/10.1126/science.aax8591>, <https://w3id.org/sciencelive/np/RALbHA-r6wIFOFPFlfIpwYqJEpzCFqeJ082iChgdfvhNM>,
+      <https://w3id.org/sciencelive/np/RAhw9m0BEj0-9hXrTtJ2NHG5rMr-ZBf_mdBQTQRk6u3n4>, <https://w3id.org/sciencelive/np/RAumfa30WMPlQksc1f6XdslPtXS2z4-_3DCZC3ln57PKc>;
+    <http://www.w3.org/2004/02/skos/core#related> <https://doi.org/10.5281/zenodo.20113777>,
+      <https://doi.org/10.5281/zenodo.20113780>;
+    <https://schema.org/maintainer> <https://github.com/annefou/weatherxbiodiversity-substrate-sensitivity>;
+    <https://schema.org/result> <https://w3id.org/sciencelive/np/RAwGAtWnn1ghSvSzTUtTfrKN4PZP7W6OBmdYsfVRjWAx8> .
+}
+
+sub:provenance {
+  sub:assertion prov:wasAttributedTo <https://orcid.org/0000-0002-1784-2920> .
+}
+
+sub:pubinfo {
+  <https://orcid.org/0000-0002-1784-2920> <http://xmlns.com/foaf/0.1/name> "Anne Fouilloux" .
+  
+  this: dc:created "2026-05-11T20:34:35.345Z"^^xsd:dateTime;
+    dc:creator <https://orcid.org/0000-0002-1784-2920>;
+    dc:license <https://creativecommons.org/licenses/by/4.0/>;
+    npx:hasNanopubType <http://purl.org/dc/dcmitype/Software>;
+    npx:wasCreatedAt <https://platform.sciencelive4all.org>;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Software: weatherxbiodiversity-substrate-sensitivity — Cross-substrate diagnostic toolkit for TEI-based extirpation projection";
+    <https://w3id.org/np/o/ntemplate/wasCreatedFromTemplate> <https://w3id.org/np/RABBzVTxosLGT4YBCfdfNd6LyuOOTe2EVOTtWJMyOoZHk> .
+  
+  sub:sig npx:hasAlgorithm "RSA";
+    npx:hasPublicKey "MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAoDcOiD+jen8awiJ6DB2ewDw66PeG64hODmgNFwy7GrwQui4HKnHdvxd++1UhTgiOfycxyxBb7sXPSikLw/1TsSyPsEl0P3/+600szxpTGgLNzW+bZ2DVP3d8ERMV1aWpH0ci3B/5vmK+vXQZ4uCoq57NE0MiFg5c13Gy0gd6n7wZYEhYM4AjWSLL0QS/HY+TFZMYL9bCFeATennGrlB2UEjRlw21UB2Ah16ZZ6hxQlfctFJZE7TGnBJPB3ttTjfcOfamhjZVwQ0yV9mv7x6PGiSmkzpJTVLjn8hagoKT05YUwVQArFb+w7f6sXqvvljMigjd/Rbqgbye/lLUAZLfJSnFM58TubfpEJvXV4zNMDEoT3VQ7dokgoLgMrmjZCKATtQ7gomocoTJ1NhN2esRNtGzWaS2obL/mueUQlMlavssZnqL8WICkdAuDlwDVNbsbwEWKQ50kiPdAdduSigifxA4CM7TgvnxqZVoAResEGP6UhTTem3T4CsbEas1Caj9wa7M1jPjACu5LF5BwcVns3ZQHWLipjRjD+9/ur3G8QtuxbNhmXlDYQ6tXxB1lK+Oz7O519b3bA15ilzFl0SdvMBGTe46xaQ9DsJT18THKnPbUhNMy0dH0VtzpB+EEaXZ25Fp9VHMEUqo1lLS9e89eO3efiqkESKQ7wmB+/DlIRcCAwEAAQ==";
+    npx:hasSignature "LAUGG1Yt+s7Ig4AyVXt6DdPlItAS8SlIMxVomNZGo6zF2GjhGPDM+3KiC3+3W+zPx8bVV0AMpiaGzuV7AFIjEluOub1rWHxf27uMkdyYbYwF3mRdTxdQfjHysM8HLx3+sVIkzZx8w98Ec1/NDXYE/B7wGzYeQ2nWZHiQ9WIou150i/VdpJUqMGNfHyxkP5nT9Iw7+ocsVv1rLyAfOtwYkP2joyYdGEKqiP2YOWexwBFyA6DIaHuuavEifJpyHIyJHqh/RIKI6AVMhY92o/SD7SNtM+2k58HCrkVmq20r5WXUSErdXT2fS/oPznyVV/WzLfznM4xv97M73ivzYrmK6/W8bZrqAucqkoWZVkMIEh91caJaelMYv+au5DZv4671Vt/zbmpkChZbF+P3HMvz7QADdM2JX9+6Va3MQkvZzE0rUdrLwMmCwtv2DZ13V9WpO/7lPoksbkHQS9PAZXHsR9wQpL+QCHdCTUwVTS93Y2ZX56+xr7MsFX9rIiFCTAYf6QDs4BxB+nMtVLxUeTWl2ysnsUiMBHIoARBvxBz5IvXW5xRBDdC+DX0OiXHOhct9jWNpdGf6GUiyG1grX8KaL9pK6VfSbDcmGkbKJyBtRKcxuxQEFXybG6bTij3tCPyEG+nEJ8RvojxeBtcDy1YL/TB+hO3SIqa7vwvFRePw6bE=";
+    npx:hasSignatureTarget this:;
+    npx:signedBy <https://orcid.org/0000-0002-1784-2920> .
+}
+

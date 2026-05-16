@@ -1,0 +1,49 @@
+@prefix this: <https://w3id.org/sciencelive/np/RA-GY814xxcpEsUWozEJKHGG39bDV8gkbor7OhX8QpVPE> .
+@prefix sub: <https://w3id.org/sciencelive/np/RA-GY814xxcpEsUWozEJKHGG39bDV8gkbor7OhX8QpVPE/> .
+@prefix np: <http://www.nanopub.org/nschema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix npx: <http://purl.org/nanopub/x/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+sub:Head {
+  this: a np:Nanopublication;
+    np:hasAssertion sub:assertion;
+    np:hasProvenance sub:provenance;
+    np:hasPublicationInfo sub:pubinfo .
+}
+
+sub:assertion {
+  <https://doi.org/10.5281/zenodo.20113780> a <http://purl.org/dc/dcmitype/Software>;
+    dc:license <https://spdx.org/licenses/MIT.html>;
+    dc:title "weatherxbiodiversity-projection-nside128 — Iberian Bombus extirpation projection at HEALPix nside=128 (full GLMM refit on the DestinE Climate DT native substrate)";
+    <http://purl.org/spar/cito/supports> <https://doi.org/10.1126/science.aax8591>;
+    <http://www.w3.org/2004/02/skos/core#related> <https://doi.org/10.15468/dl.3frmsq>,
+      <https://doi.org/10.6084/m9.figshare.10058340>;
+    <https://schema.org/maintainer> <https://github.com/annefou/weatherxbiodiversity-projection-nside128>;
+    <https://schema.org/result> <https://w3id.org/sciencelive/np/RAErLL_QSe3e0pKBxHkUHH5v49F66fFVuS2OmYMJz02OY> .
+}
+
+sub:provenance {
+  sub:assertion prov:wasAttributedTo <https://orcid.org/0000-0002-1784-2920> .
+}
+
+sub:pubinfo {
+  <https://orcid.org/0000-0002-1784-2920> <http://xmlns.com/foaf/0.1/name> "Anne Fouilloux" .
+  
+  this: dc:created "2026-05-11T19:56:23.273Z"^^xsd:dateTime;
+    dc:creator <https://orcid.org/0000-0002-1784-2920>;
+    dc:license <https://creativecommons.org/licenses/by/4.0/>;
+    npx:hasNanopubType <http://purl.org/dc/dcmitype/Software>;
+    npx:wasCreatedAt <https://platform.sciencelive4all.org>;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Software: weatherxbiodiversity-projection-nside128 — Iberian Bombus extirpation projection at HEALPix nside=128 (full GLMM refit on the DestinE Climate DT native substrate)";
+    <https://w3id.org/np/o/ntemplate/wasCreatedFromTemplate> <https://w3id.org/np/RABBzVTxosLGT4YBCfdfNd6LyuOOTe2EVOTtWJMyOoZHk> .
+  
+  sub:sig npx:hasAlgorithm "RSA";
+    npx:hasPublicKey "MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAoDcOiD+jen8awiJ6DB2ewDw66PeG64hODmgNFwy7GrwQui4HKnHdvxd++1UhTgiOfycxyxBb7sXPSikLw/1TsSyPsEl0P3/+600szxpTGgLNzW+bZ2DVP3d8ERMV1aWpH0ci3B/5vmK+vXQZ4uCoq57NE0MiFg5c13Gy0gd6n7wZYEhYM4AjWSLL0QS/HY+TFZMYL9bCFeATennGrlB2UEjRlw21UB2Ah16ZZ6hxQlfctFJZE7TGnBJPB3ttTjfcOfamhjZVwQ0yV9mv7x6PGiSmkzpJTVLjn8hagoKT05YUwVQArFb+w7f6sXqvvljMigjd/Rbqgbye/lLUAZLfJSnFM58TubfpEJvXV4zNMDEoT3VQ7dokgoLgMrmjZCKATtQ7gomocoTJ1NhN2esRNtGzWaS2obL/mueUQlMlavssZnqL8WICkdAuDlwDVNbsbwEWKQ50kiPdAdduSigifxA4CM7TgvnxqZVoAResEGP6UhTTem3T4CsbEas1Caj9wa7M1jPjACu5LF5BwcVns3ZQHWLipjRjD+9/ur3G8QtuxbNhmXlDYQ6tXxB1lK+Oz7O519b3bA15ilzFl0SdvMBGTe46xaQ9DsJT18THKnPbUhNMy0dH0VtzpB+EEaXZ25Fp9VHMEUqo1lLS9e89eO3efiqkESKQ7wmB+/DlIRcCAwEAAQ==";
+    npx:hasSignature "fORmHNcBf+i1SnU5HfHcp8MFh9LV/CVcquac1xoOAyAG6ul9Z0+w1fmeamw4dxanATT+7yJz6mO6mebBHIProsVUMByKOclEz5v+l8EXiCJ90gfe6CJaQuaREqBzkKCm5YXtWrS0L6IksfwJA7qwCr+i70u/5xkfd8BUC+ToecK4E3SYLP2+qyb1lNBqiRKByQQ+keVr8SXphOv3wJ1Zk13Op0M4LPrWALHzG+ycqiNxTlERfayf+i4kjXIURgsusI9gWJaEzimFhsxitzF533EWZCMCOQLpMAo8IZw+vewBb7cFgcSWEfVCgeSqijwtaf8dRf8azkRUUcDwkVcEGh7HFBb50rcM6qxFHsKcqM/QLTU6Zp5IFYSNtP7DQapeB6RhKs35aTHBuhwhPG0xpD+Ke1L0du01HNnOA/eB0zc/1ny6nNU8wHHZq5uuU9O4braovhnxmDh4ybv9EexvMsJ0V5y3SkUu3Q9dZHVVp5sVv/ME6VE6OoFK+q7SB4WE+z5fYECa+y0H52DPsxclurwWSiVn0FIejG9mlP8UhBgPfbdSE4WRosvSm6Xwa2OEpzw2f6fOj8C7B31K4ylYOWd1vQbqX5v12i+cmi438qXs80wPLCcdyAbRq6a/PwvgTNu42gOwob0FEuv4WscYrHJBFOBNEsclTAuIF/9ojq4=";
+    npx:hasSignatureTarget this:;
+    npx:signedBy <https://orcid.org/0000-0002-1784-2920> .
+}
+

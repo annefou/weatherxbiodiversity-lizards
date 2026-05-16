@@ -1,0 +1,371 @@
+{
+  "entry": "https://w3id.org/sciencelive/np/RA1q6c0fG2bMbiozF8Az2UpIfzAzqp8hoVEl6QIzfUpH8",
+  "node_count": 14,
+  "edge_count": 28,
+  "sparql_endpoint": "https://query.knowledgepixels.com/repo/full",
+  "nodes": [
+    {
+      "uri": "https://w3id.org/sciencelive/np/RA1q6c0fG2bMbiozF8Az2UpIfzAzqp8hoVEl6QIzfUpH8",
+      "step_type": "Declare citations with CiTO",
+      "template_uri": "https://w3id.org/np/RA43F9EoOuzF0xoNUnCMNyFsfIqlsuWDdPHCnN0wCdCAw",
+      "authors_orcid": [
+        "https://orcid.org/0000-0002-1784-2920"
+      ],
+      "plain_text_excerpts": [
+        "MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAoDcOiD+jen8awiJ6DB2ewDw66PeG64hODmgNFwy7GrwQui4HKnHdvxd++1UhTgiOfycxyxBb7sXPSikLw/1TsSyPsEl0P3/+600szxpTGgLNzW+bZ2DVP3d8ERMV1aWpH0ci3B/5vmK+vXQZ4uCoq57NE0MiFg5c13Gy0gd6n7wZYEhYM4AjWSLL0QS/HY+TFZMYL9bCFeATennGrlB2UEjRlw21UB2Ah16ZZ6hxQlfctFJZE7TGnBJPB3ttTjfcOfamhjZVwQ0yV9mv7x6PGiSmkzpJTVLjn8hagoKT05YUwVQArFb+w7f6sXqvvljMigjd/Rbqgbye/lLUAZLfJSnFM58TubfpEJvXV4zNMDEoT3VQ7dokgoLgMrmjZCKATtQ7gomocoTJ1NhN2esRNtGzWaS2obL/mueUQlMlavssZnqL8WICkdAuDlwDVNbsbwEWKQ50kiPdAdduSigifxA4CM7TgvnxqZVoAResEGP6UhTTem3T4CsbEas1Caj9wa7M1jPjACu5LF5BwcVns3ZQHWLipjRjD+9/ur3G8QtuxbNhmXlDYQ6tXxB1lK+Oz7O519b3bA15ilzFl0SdvMBGTe46xaQ9DsJT18THKnPbUhNMy0dH0VtzpB+EEaXZ25Fp9VHMEUqo1lLS9e89eO3efiqkESKQ7wmB+/DlIRcCAwEAAQ==",
+        "XsmHtBqyM2sGh2lprip5jQjdoIZhMtBjiZ+MA3LaT1dJ3mECFsAOCNJDtGTtnQPiXGT2OudUUzSrOqasnQPKJlWGW4TkfwS02FT3AJAU2nJfdLKc9mLtXfm50V1KrCg0eH8hy6E6Daf94Kdxs9JIm05vf3SuY1EwAWMiY24BzNpuhF031c3cNvFO02ig51+jNmw9TfRsH+6I9491UfRCDoBENLrF0EgYcc8GUM8MWIAAAeXf4t0Q/V27VQnKU1/7KsGagO825KBAsYdZyJgU6J9sYv9XHDB7SkodShRw4pyG6vG6lZ+KM3cs920bpnEzvWPQhzg4bgvQSVmU/SEx/Dz2JCzZMSNkQKWt2A5a+JwUUjZ9+MNUFKQaPH2/BDq43Y3k+J3uRqPfaDxzj/n0itDGEudcvzgK3aBA8qf/2bZ2a2RTeH1CUCnUNycIYQM42gVa0ttqK5kjVEMKk8XJ4Q9ZagV+6lcVazaIb4aujaxk3tx/70qW1WSq5vs7FbIYXD7mmu8w3a1VudvJg0v6ZNLMaDSP9c2ZZxpsbT4XG5CrdO0CCYsvG9w3H0GYewQgxS0UddsbKEV/a6nxR4pfO5LvqZdIh2z01b8IkmvnYERAaEfEJsxKsM/9kqzoOWpaojspaeincyoi6tFEE6XTwXQWsQhZVFTl7egMZbYiZIc=",
+        "Citations for: RA5TJVZ0_5Knzxd4OtOoZgO6ZspWHwVCSLWNNd7V9H6QQ",
+        "2026-05-12T07:32:00.204000+00:00"
+      ],
+      "raw_trig_path": "nanopubs/imported/trig/RA1q6c0fG2bMbiozF8Az2UpIfzAzqp8hoVEl6QIzfUpH8.trig"
+    },
+    {
+      "uri": "https://w3id.org/sciencelive/np/RA5TJVZ0_5Knzxd4OtOoZgO6ZspWHwVCSLWNNd7V9H6QQ",
+      "step_type": "Science Live Research Synthesis",
+      "template_uri": "https://w3id.org/np/RApmrqOEr4f5bJC2vayrTnzhwnuEfAU_I4Pdg8K5JxeBw",
+      "authors_orcid": [
+        "https://orcid.org/0000-0002-1784-2920"
+      ],
+      "plain_text_excerpts": [
+        "Synthesising the three sibling FORRT chains on Iberian Bombus (canonical CEA + HEALPix nside=64 replication, HEALPix nside=128 substrate extension, and this cross-substrate diagnostic), Soroye et al.'s (2020) TEI-based extirpation mechanism resolves into two empirically distinct claims:\n\n(A) At fit time the mechanism IS substrate-robust on Iberian Bombus. The GLMM coefficient on standardised TEI_delta is positive and credibly above zero at three independent pixelisations (CEA +0.479; HEALPix nside=64 +0.454; HEALPix nside=128 +0.347), with all three estimates within \u00b130 percent. Soroye's central biological claim REPLICATES.\n\n(B) At projection time the per-species ranking is NOT substrate-robust below ~10 occupied + active cells per substrate. Per-species community-mean \u03b7 differs by 1 to 9 logits between nside=64 and nside=128 under DestinE Climate DT SSP3-7.0 for the 18 of 31 species below the cell-count threshold, including narrowly-distributed Pyrenean specialists (B. pyrenaeus, B. mucidus, B. mendax). The substrate-coupling is mechanistically diagnosable: the GLMM interaction term sc_TEI_delta:sc_PEI_delta compounds substrate-specific predictor standardisation quadratically when future predictors extrapolate 2\u20134\u03c3 outside the training distribution.\n\nThese two claims are not in tension \u2014 they describe different parts of the modelling pipeline. The original mechanism is sound; the projection-time application is qualified. Three principled fixes are empirically validated: (i) per-species cell-count filter at n_cells \u2265 10; (ii) drop the GLMM interaction terms at projection time only; (iii) cross-check against substrate-invariant physical metrics (mean future TEI, fraction TEI_future > 0.5). At n \u2265 10 with main-effects-only \u03b7, cross-substrate Spearman \u03c1 = +0.97 (mid-term horizon) \u2014 substrate-stable.",
+        "1. Three substrates only (CEA, HEALPix nside=64, HEALPix nside=128). Whether the same fit-time substrate-robustness AND projection-time grid-coupling pattern hold at coarser substrates (nside=32 or 16) or against non-HEALPix grids was not directly tested.\n\n2. One region (Iberian peninsula). High-latitude or alpine Bombus systems may behave differently \u2014 niche margins, sampling effort, and per-species cell counts all differ.\n\n3. One climate dataset for FIT (CRU TS 3.24.01) and one for PROJECTION (DestinE Climate DT SSP3-7.0, IFS-NEMO standard). Multi-model ensemble robustness and reanalysis-substitution robustness are not addressed.\n\n4. The recommended n_cells \u2265 10 threshold is empirically calibrated on this specific analysis. Whether 10 generalises is open. Below the threshold the per-species ranking is grid-coupled; above it, the recommended protocol yields \u03c1_Spearman = +0.97 across substrates \u2014 but the empirical threshold may be different for taxa with different occupancy distributions.\n\n5. Variant (c) \"shared CEA reference standardisation\" was tested as an approximation of refit-with-shared-standardisation, not as a true refit. The most rigorous test of \"is standardisation reference choice alone sufficient\" is to refit the GLMM with shared (\u03bc, \u03c3) and re-project \u2014 a deferred follow-up.\n\n6. Time horizon. SSP3-7.0 mid-term (2030\u20132039) is the strongest test horizon currently available. End-of-century horizons (2046\u20132055, 2076\u20132085) are deferred until the DestinE Climate DT archive extends past 2050.\n\n7. The synthesis treats the mechanism's projection-time grid-coupling as a methodological caveat, not a refutation of Soroye et al.'s biological claim. This framing assumes the user accepts the mechanism's epistemic separation between FIT (substrate-robust) and PROJECTION (qualified).",
+        "1. When replicating Soroye-style TEI extirpation models, expect substrate-robust headline coefficients within \u00b130% across factor-of-2 HEALPix resolution changes \u2014 substrate sensitivity at FIT time is small. Cite multiple substrates jointly when claiming substrate-robustness; a single substrate is not sufficient evidence.\n\n2. When projecting to future climate, ALWAYS filter per-species reporting to species with at least 10 occupied + active cells per substrate. Below this, per-species ranking is grid-coupled and not interpretable.\n\n3. At projection time, drop the GLMM interaction terms from the linear predictor used for extrapolation. Keep them in the FIT (they are part of Soroye's specification) but use main-effects-only \u03b7 to project. This single change lifts cross-substrate Spearman \u03c1 from +0.59 (full GLMM) to +0.97 at n \u2265 10.\n\n4. Cross-check ANY GLMM-based ranking against the substrate-invariant physical metric \"mean future TEI per species\" or \"fraction of cells with TEI_future > 0.5\". If the GLMM main-effects ranking and the physical ranking disagree for a given species, the GLMM is unreliable for that species at that substrate.\n\n5. CiTO encoding: cito:confirms for the fit-time substrate-robustness; cito:qualifies for projection-time use without the recommended protocol; cito:extends to this diagnostic when reporting projection results at a new substrate pair.\n\n6. The recommended protocol is empirically calibrated against HEALPix nside=64 vs nside=128 for Iberian Bombus on DestinE Climate DT SSP3-7.0. Different taxon/region/forcing combinations may require different thresholds; the protocol is a recommendation, not a hard constraint.",
+        "- Region: Iberian peninsula (the three synthesised chains all use Iberian Bombus only).\n- Species set: Bombus species observed in GBIF on the Iberian peninsula in 1901\u20132014 (31 species in the joint analysis).\n- Climate forcing for fit: CRU TS 3.24.01 monthly temperature and precipitation, identical to Soroye et al. 2020 (Figshare deposit).\n- Climate forcing for projection: DestinE Climate DT SSP3-7.0, IFS-NEMO standard, native HEALPix nside=128. Horizons 2020\u20132029 and 2030\u20132039 only (DestinE archive populated through 2039 at time of analysis).\n- Spatial substrates analysed: CEA (~100 km), HEALPix-NESTED nside=64 (~92 km), HEALPix-NESTED nside=128 (~46 km) on the WGS84 ellipsoid.\n- GLMM specification: Soroye et al. 2020's full formula with main effects + four predictor interaction terms + per-species random intercept.\n- Inference: full-posterior NUTS via bambi/PyMC; HDIs reported.\n- This synthesis covers BOTH the fit-time substrate-robustness AND the projection-time grid-coupling \u2014 these are the two complementary aspects of the same three-chain constellation."
+      ],
+      "raw_trig_path": "nanopubs/imported/trig/RA5TJVZ0_5Knzxd4OtOoZgO6ZspWHwVCSLWNNd7V9H6QQ.trig"
+    },
+    {
+      "uri": "https://w3id.org/sciencelive/np/RAa4QR41Hot9zxujcrCyTo82Ij7oaw_6z8zk8NxDqoJFM",
+      "step_type": "Declaring a replication study outcome according to FORRT",
+      "template_uri": "https://w3id.org/np/RA2zljn0Nw9SadppOyxZoh-_Rxosslrq-vYG-p9SttnJE",
+      "authors_orcid": [
+        "https://orcid.org/0000-0002-1784-2920"
+      ],
+      "plain_text_excerpts": [
+        "1. Substrate-coupling at projection time. Per-species ranking under SSP3-7.0 is grid-coupled at the projection step for species observed in fewer than ~10 historical Iberian cells at this substrate (~46 km, nside=128). This affects narrowly-distributed Pyrenean specialists (B. pyrenaeus, B. mucidus, B. mendax, B. wurflenii, B. monticola, B. mesomelas) \u2014 precisely the species the public most worries about. The full mechanism, validated and refuted hypotheses, and recommended reporting protocol are documented in the methodological sibling repo weatherxbiodiversity-substrate-sensitivity. The rankings reported in this Outcome are filtered per that diagnostic (n_cells \u2265 10, main-effects-only \u03b7 at projection time).\n\n2. Reporting on \u03b7, not p_extirp. As in the nside=64 sibling, Tier-2 reports the GLMM linear predictor \u03b7 rather than its logistic transform. Future predictors lie 2\u20134\u03c3 outside the Tier-1 training distribution at this substrate \u2014 wider than at nside=64 because per-cell future-period climate deltas have higher within-cell variance at the finer grid. Absolute extirpation probabilities derived from this projection are NOT interpretable as-is.\n\n3. Negative-\u03b7 species reflect random intercepts, not climate-driven benefit. The GLMM's species random effect dominates the projected \u03b7 for B. terrestris and B. pascuorum, encoding lower-than-average historical extirpation susceptibility from the 1901\u20132014 GBIF training data. All climate-driven term contributions are positive for both species at both substrates. The correct reading is \"historically robust species, with SSP3-7.0 adding moderate climate forcing on top\" \u2014 NOT \"projected to benefit from SSP3-7.0\".\n\n4. Sampling effort held at recent-period mean for the projection \u2014 same caveat as the nside=64 sibling.\n\n5. DestinE Climate DT archive coverage. SSP3-7.0 IFS-NEMO archive populated through 2039 only at time of analysis; mid- and end-of-century horizons deferred.\n\n6. Daily Tmax/Tmin from 4-times-daily 2t snapshots \u2014 same caveat as the nside=64 sibling. Defensible at decadal mean; biased high on Tmax extremes by an unknown but small amount.\n\n7. tp 1-time-per-day approximation \u2014 same caveat as the nside=64 sibling.\n\n8. Why nside=128 and not coarser-aggregated nside=64 at projection time. The canonical nside=64 sibling aggregates DestinE nside=128 data via parent-cell averaging before projection. This Outcome refits the GLMM at native nside=128 to eliminate any cross-substrate aggregation step between fit and projection. Both approaches yield substrate-robust headline coefficients within \u00b130%, but per-species rankings at the species-cell level differ (see substrate-sensitivity sibling for the exhaustive cross-substrate comparison).\n\n9. Geographic scope. Iberian peninsula only. The same caveat as the nside=64 sibling applies.\n\n10. n_cells distribution at nside=128. Because the cell area is 4\u00d7 smaller than nside=64, the same physical species range generally translates to ~4\u00d7 more occupied cells per species. This makes more species cross the n_cells \u2265 10 reliability threshold at nside=128 than at nside=64 (a positive side-effect of the resolution doubling), but the ranking concordance with the canonical nside=64 sibling is what bounds the trustworthy interpretation, not the per-substrate n_cells distribution alone.",
+        "TIER 1 \u2014 historical fit at HEALPix nside=128 (1901\u20132014 CRU TS 3.24.01 from Soroye Figshare; GBIF Iberian Bombus occurrences via own download DOI; full GLMM refit at native nside=128).\n\nGLMM headline coefficient sc_TEI_delta:\n  - HEALPix nside=128 (~46 km, this run): +0.347   (95% HDI [+0.139, +0.533])\n  - HEALPix nside=64 (~92 km, sibling):   +0.454   (95% HDI [+0.130, +0.751])\n  - CEA (~100 km, canonical):             +0.479\n  All three within \u00b130 percent. Sign, magnitude, and HDI mutually consistent.\n\nVerdict: substrate-robust across the three pixelisations.\n\nCross-fit sanity check at nside=128: variational-Bayes via statsmodels BinomialBayesMixedGLM reports +0.347 \u00b1 0.079 (VB SD), consistent with the bambi/PyMC NUTS posterior to within VB-underestimation noise. See results/headline_statistic_healpix.json.\n\nTIER 2 \u2014 SSP3-7.0 projection at substrate-matched nside=128 (DestinE Climate DT, IFS-NEMO standard, native HEALPix nside=128, 2020\u20132029 + 2030\u20132039 horizons; no parent-aggregation deviation between fit and projection grids).\n\nMean future TEI per species, 2030\u20132039 horizon (substrate-invariant physical metric, \u03c1_Spearman vs nside=64 sibling = +0.66 at n\u22651, +0.90 at n\u226510):\n  - Most-shifted species (top of ranking): B. humilis, B. muscorum, B. ruderarius\n  - Least-shifted (bottom of ranking): B. terrestris, B. pascuorum, B. pratorum\n  - Same top-3 / bottom-3 as the nside=64 sibling's substrate-stable ranking.\n\nPer-species community-mean \u03b7 under SSP3-7.0 (filtered to n_cells\u226510 at both substrates, main-effects-only \u03b7 \u2014 \u03c1_Spearman vs nside=64 = +0.97 mid-term, +0.96 near-term).\n\nFraction of currently-occupied cells where future TEI exceeds 1.0 at 2030\u20132039: 0.00 for every studied species at nside=128 \u2014 same as the nside=64 sibling. The TEI > 1 threshold is not crossed under SSP3-7.0 over the next 15 years on Iberia.\n\nFiles: results/headline_statistic_healpix.json (Tier 1), results/projection_headline.json (Tier 2 per-species rank), results/posterior_bambi_healpix.nc (full nside=128 posterior); figures figures/main_result_healpix.png + figures/projection_summary.png.\n\nCross-substrate diagnostic: see weatherxbiodiversity-substrate-sensitivity (DOI to be minted) for the full five-variant Spearman concordance table, per-species \u03b7 decomposition, and recommended reporting protocol.\n\nGitHub repository: https://github.com/annefou/weatherxbiodiversity-projection-nside128",
+        "This repository extends the canonical Iberian Bombus replication (weatherxbiodiversity-projection at HEALPix nside=64) by refitting Soroye et al.'s (2020) GLMM at HEALPix nside=128 \u2014 the native pixelisation of DestinE Climate DT IFS-NEMO standard, with cells ~46 km across (4\u00d7 finer than the canonical sibling).\n\nThe headline GLMM coefficient on standardised TEI_delta at nside=128 is +0.347 (95% HDI [+0.139, +0.533]) \u2014 positive, large, credibly above zero. Compared with the canonical CEA fit (+0.479) and the nside=64 sibling (+0.454), all three estimates are within \u00b130 percent, sign-aligned, and order-of-magnitude consistent. Soroye's central biological claim \u2014 that thermal-niche exceedance increases extirpation probability \u2014 replicates at three independent spatial substrates spanning ~46\u2013100 km cell resolution.\n\nThe Tier-2 SSP3-7.0 projection (DestinE Climate DT, 2020\u20132029 + 2030\u20132039 horizons) at substrate-matched nside=128 shows the same drift-toward-niche-edge pattern as the nside=64 sibling: mean future TEI rises systematically across most species, but no species crosses TEI > 1 (Soroye's actual extirpation threshold) at any currently-occupied cell over the next 15 years. The 2030\u20132039 horizon is the early-warning period under SSP3-7.0, not the extirpation period itself.\n\nPer-species ranking at this substrate is reported via the protocol established in the methodological sibling repo weatherxbiodiversity-substrate-sensitivity: filter to species with at least 10 occupied cells AND use main-effects-only \u03b7 at projection time. At this filter, the cross-substrate Spearman correlation with the nside=64 sibling is +0.97 (mid-term horizon) \u2014 the per-species ranking IS substrate-stable for species above the cell-count threshold. The substrate-stable highest-risk Iberian species at nside=128 are B. humilis, B. muscorum, B. ruderarius (matching the nside=64 sibling's top 3); the lowest-risk are B. terrestris, B. pascuorum, B. pratorum.",
+        "MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAoDcOiD+jen8awiJ6DB2ewDw66PeG64hODmgNFwy7GrwQui4HKnHdvxd++1UhTgiOfycxyxBb7sXPSikLw/1TsSyPsEl0P3/+600szxpTGgLNzW+bZ2DVP3d8ERMV1aWpH0ci3B/5vmK+vXQZ4uCoq57NE0MiFg5c13Gy0gd6n7wZYEhYM4AjWSLL0QS/HY+TFZMYL9bCFeATennGrlB2UEjRlw21UB2Ah16ZZ6hxQlfctFJZE7TGnBJPB3ttTjfcOfamhjZVwQ0yV9mv7x6PGiSmkzpJTVLjn8hagoKT05YUwVQArFb+w7f6sXqvvljMigjd/Rbqgbye/lLUAZLfJSnFM58TubfpEJvXV4zNMDEoT3VQ7dokgoLgMrmjZCKATtQ7gomocoTJ1NhN2esRNtGzWaS2obL/mueUQlMlavssZnqL8WICkdAuDlwDVNbsbwEWKQ50kiPdAdduSigifxA4CM7TgvnxqZVoAResEGP6UhTTem3T4CsbEas1Caj9wa7M1jPjACu5LF5BwcVns3ZQHWLipjRjD+9/ur3G8QtuxbNhmXlDYQ6tXxB1lK+Oz7O519b3bA15ilzFl0SdvMBGTe46xaQ9DsJT18THKnPbUhNMy0dH0VtzpB+EEaXZ25Fp9VHMEUqo1lLS9e89eO3efiqkESKQ7wmB+/DlIRcCAwEAAQ=="
+      ],
+      "raw_trig_path": "nanopubs/imported/trig/RAa4QR41Hot9zxujcrCyTo82Ij7oaw_6z8zk8NxDqoJFM.trig"
+    },
+    {
+      "uri": "https://w3id.org/sciencelive/np/RAPZMgcYbScSAXnrnSySQwZzgSA_rn-xodlMxNlwwQYY8",
+      "step_type": "Declaring a replication study outcome according to FORRT",
+      "template_uri": "https://w3id.org/np/RA2zljn0Nw9SadppOyxZoh-_Rxosslrq-vYG-p9SttnJE",
+      "authors_orcid": [
+        "https://orcid.org/0000-0002-1784-2920"
+      ],
+      "plain_text_excerpts": [
+        "1. Substrate-coupling at projection time. Per-species ranking under SSP3-7.0 is grid-coupled at the projection step (NOT at fit time) for species observed in fewer than ~10 historical Iberian cells. This affects 18 of the 31 species in the study, including narrowly-distributed Pyrenean specialists (B. pyrenaeus, B. mucidus, B. mendax, B. wurflenii, B. monticola). The full mechanism (interaction-term amplification of substrate-specific predictor standardisation at extrapolation), validated and refuted hypotheses, and recommended reporting protocol are documented in the methodological sibling repo weatherxbiodiversity-substrate-sensitivity. The figures and rankings reported in this Outcome are filtered per that diagnostic (n_cells \u2265 10, main-effects-only \u03b7).\n\n2. Reporting on \u03b7, not p_extirp. The Tier-2 projection reports the GLMM linear predictor \u03b7 (log-odds of extirpation) rather than its logistic transform p = expit(\u03b7). Future TEI/PEI z-scores under SSP3-7.0 lie 2\u20134\u03c3 outside the Tier-1 training distribution; expit(\u03b7) saturates uninformatively at ~1.0 in many cells where the actual signal is the GLMM's authentic relative ordering. Absolute extirpation probabilities derived from this projection are NOT interpretable as-is; relative ranking by \u03b7 and substrate-invariant physical metrics (mean future TEI, fraction TEI_future>0.5) are the substrate-stable summaries.\n\n3. Negative-\u03b7 species reflect random intercepts, not climate-driven benefit. The GLMM's species random effect dominates the projected \u03b7 for B. terrestris (RE ~ -2.6) and B. pascuorum (RE ~ -1.0), encoding lower-than-average historical extirpation susceptibility from the 1901\u20132014 GBIF training data. All climate-driven term contributions are POSITIVE for both species. The correct reading is \"historically robust species, with SSP3-7.0 adding moderate climate forcing on top\" \u2014 NOT \"projected to benefit from SSP3-7.0\".\n\n4. Sampling effort held at recent-period mean for the projection \u2014 assumes monitoring intensity in 2020\u20132039 mirrors the 2000\u20132014 baseline. Biases the projection if survey effort actually changes.\n\n5. DestinE Climate DT archive coverage. SSP3-7.0 IFS-NEMO archive populated through 2039 only at time of analysis; mid- and end-of-century horizons (2046\u20132055, 2076\u20132085) deferred to a follow-up Outcome when the archive extends past 2050.\n\n6. Daily Tmax/Tmin from 4-times-daily 2t snapshots. Notebook 06_destine_clean approximates daily extremes from the 00/06/12/18 UTC samples rather than from true daily max/min (which DestinE Climate DT does not archive \u2014 see notebooks/05_destine_download.py \u00a7 Why no native max/min). Defensible at decadal mean; biased high on Tmax extremes by an unknown but small amount.\n\n7. tp 1-time-per-day approximation in the DestinE retrieve \u2014 flagged in 06_destine_clean as TP_HOURLY_TO_DAILY_FACTOR; defensible at decadal mean, invalid for any sub-monthly statistic.\n\n8. VB underestimation of posterior variance. statsmodels variational-Bayes posterior SD is ~1.4\u00d7 smaller than the bambi/PyMC NUTS posterior SD on the same data; this Outcome's HDIs are NUTS-based.\n\n9. Geographic scope. Iberian peninsula only. Extension to other latitudes (especially boreal/alpine systems where Bombus diversity peaks) is not addressed by this replication.",
+        "TIER 1 \u2014 historical fit (1901\u20132014 CRU TS 3.24.01 from Soroye Figshare; GBIF Iberian Bombus occurrences via own download DOI).\n\nGLMM headline coefficient sc_TEI_delta (standardised TEI change between baseline 1901\u20131974 and recent 2000\u20132014):\n  - CEA (~100 km cells):       +0.479    (this run, replicates published v0.2.1)\n  - HEALPix nside=64 (~92 km): +0.454    (95% HDI [+0.130, +0.751])\n  - HEALPix nside=128 (~46 km): +0.347   (95% HDI [+0.139, +0.533]; sibling repo)\n  All three within \u00b130 percent. Sign, magnitude, and HDI agree with Soroye 2020.\n\nCross-fit sanity check: variational-Bayes via statsmodels BinomialBayesMixedGLM agrees with full-posterior NUTS via bambi/PyMC on \u03b2_sc_TEI_delta to within VB-underestimation noise (VB posterior SD ~1.4\u00d7 smaller than NUTS posterior SD on the same data; report MCMC HDIs as authoritative). See results/headline_statistic_healpix.json.\n\nTIER 2 \u2014 SSP3-7.0 projection (DestinE Climate DT, IFS-NEMO standard, native HEALPix nside=128, 2020\u20132029 + 2030\u20132039 horizons).\n\nMean future TEI per species, 2030\u20132039 horizon (substrate-invariant physical metric, Spearman \u03c1 between substrates = +0.66 at n\u22651, +0.90 at n\u226510):\n  - Most-shifted species: B. humilis (mean fut TEI ~0.50), B. muscorum (~0.49), B. ruderarius (~0.48)\n  - Least-shifted: B. terrestris (~0.45), B. pascuorum (~0.45), B. pratorum (~0.45)\n\nPer-species community-mean \u03b7 under SSP3-7.0 (filtered to species with n_cells\u226510 at both substrates, main-effects-only \u03b7 to avoid extrapolation amplification \u2014 \u03c1_Spearman between substrates = +0.97 mid-term, +0.96 near-term):\n  - Highest projected \u03b7 (most at-risk): B. humilis (\u03b7 = +1.58), B. muscorum (+1.50), B. ruderarius (+1.54)\n  - Lowest projected \u03b7 (most robust): B. terrestris (-2.26), B. pascuorum (-0.69), B. pratorum (-0.56)\n\nFraction of currently-occupied cells where future TEI exceeds 1.0 (Soroye's actual extirpation threshold) at 2030\u20132039: 0.00 for every studied species \u2014 the extirpation threshold is not yet crossed under SSP3-7.0 over the next 15 years.\n\nFiles: results/headline_statistic.json (CEA), results/headline_statistic_healpix.json (HEALPix nside=64), results/projection_headline.json (Tier-2 per-species rank), results/posterior_bambi.nc + posterior_bambi_healpix.nc (full posteriors); figures figures/main_result_healpix.png + figures/projection_summary.png.",
+        "Soroye et al.'s (2020) headline claim \u2014 that thermal-niche exceedance (TEI) increases extirpation probability for bumble bees \u2014 REPLICATES on Iberian Bombus.\n\nThe GLMM coefficient on standardised TEI_delta is positive, large, and credible at both spatial substrates tested in this replication: +0.479 at the original CEA grid (~100 km cells) and +0.454 at HEALPix nside=64 (~92 km cells, 95% HDI [+0.130, +0.751]). Both estimates are within \u00b130 percent of each other, same sign, same order of magnitude as Soroye 2020's continental-scale fit. A higher-resolution sibling study at HEALPix nside=128 (weatherxbiodiversity-projection-nside128) finds +0.347, HDI [+0.139, +0.533] \u2014 confirming substrate-robustness across three independent pixelisations.\n\nThe Tier-2 SSP3-7.0 projection (DestinE Climate DT, 2030\u20132039 horizon) shows a systematic shift in mean future TEI from ~0.43 historically to ~0.45\u20130.50, indicating that Iberian Bombus species are drifting toward their upper thermal niche edge. None of the studied species hit TEI > 1 (Soroye's actual extirpation threshold) at any currently-occupied cell over the next 15 years \u2014 the extirpation event Soroye projects is a longer-timescale phenomenon, with 2030\u20132039 being the early-warning period rather than the extirpation period itself.\n\nWhen the per-species ranking is filtered to species with at least 10 occupied cells per substrate AND uses the GLMM main-effects-only \u03b7 at projection time (per the substrate-sensitivity diagnostic in the sibling repo weatherxbiodiversity-substrate-sensitivity, \u03c1_Spearman = +0.97 between substrates at this filter), the highest-risk Iberian species are B. humilis, B. muscorum, and B. ruderarius \u2014 short-tongued grassland specialists already documented in decline elsewhere in Europe. The lowest-risk species are B. terrestris, B. pascuorum, and B. pratorum \u2014 the dominant Western Palearctic generalists. The substrate-stable Iberian projection independently identifies the same European high-risk species the long-term monitoring data flag.",
+        "MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAoDcOiD+jen8awiJ6DB2ewDw66PeG64hODmgNFwy7GrwQui4HKnHdvxd++1UhTgiOfycxyxBb7sXPSikLw/1TsSyPsEl0P3/+600szxpTGgLNzW+bZ2DVP3d8ERMV1aWpH0ci3B/5vmK+vXQZ4uCoq57NE0MiFg5c13Gy0gd6n7wZYEhYM4AjWSLL0QS/HY+TFZMYL9bCFeATennGrlB2UEjRlw21UB2Ah16ZZ6hxQlfctFJZE7TGnBJPB3ttTjfcOfamhjZVwQ0yV9mv7x6PGiSmkzpJTVLjn8hagoKT05YUwVQArFb+w7f6sXqvvljMigjd/Rbqgbye/lLUAZLfJSnFM58TubfpEJvXV4zNMDEoT3VQ7dokgoLgMrmjZCKATtQ7gomocoTJ1NhN2esRNtGzWaS2obL/mueUQlMlavssZnqL8WICkdAuDlwDVNbsbwEWKQ50kiPdAdduSigifxA4CM7TgvnxqZVoAResEGP6UhTTem3T4CsbEas1Caj9wa7M1jPjACu5LF5BwcVns3ZQHWLipjRjD+9/ur3G8QtuxbNhmXlDYQ6tXxB1lK+Oz7O519b3bA15ilzFl0SdvMBGTe46xaQ9DsJT18THKnPbUhNMy0dH0VtzpB+EEaXZ25Fp9VHMEUqo1lLS9e89eO3efiqkESKQ7wmB+/DlIRcCAwEAAQ=="
+      ],
+      "raw_trig_path": "nanopubs/imported/trig/RAPZMgcYbScSAXnrnSySQwZzgSA_rn-xodlMxNlwwQYY8.trig"
+    },
+    {
+      "uri": "https://w3id.org/sciencelive/np/RAD19jydIHgfVpRQiA8mqvVUefOd7FFwA4tLIfkXmOJmc",
+      "step_type": "Declaring a replication study outcome according to FORRT",
+      "template_uri": "https://w3id.org/np/RA2zljn0Nw9SadppOyxZoh-_Rxosslrq-vYG-p9SttnJE",
+      "authors_orcid": [
+        "https://orcid.org/0000-0002-1784-2920"
+      ],
+      "plain_text_excerpts": [
+        "This methodological diagnostic compares two single-substrate replications of Soroye et al. (2020) for Iberian Bombus under DestinE Climate DT SSP3-7.0 \u2014 at HEALPix nside=64 (~92 km, weatherxbiodiversity-projection) and nside=128 (~46 km, weatherxbiodiversity-projection-nside128). Both upstream Outcomes confirm Soroye's TEI mechanism is substrate-robust at fit time (sc_TEI_delta within \u00b130% across three substrates including the original CEA grid).\n\nHeadline finding: per-species ranking under SSP3-7.0 IS grid-coupled at the projection step. The same physical climate signal at the same Iberian location produces per-species \u03b7 swings of 1\u20139 logits between nside=64 and nside=128 for species observed in fewer than ~10 historical cells.\n\nThe substrate-coupling is not caused by per-species random-effect refit (substrate-stable, \u0394RE \u2264 0.6 logits across all species), nor by per-species niche-limit refit (modest, \u0394T_range = 0\u20133\u00b0C; species with identical T_range still show 8.8-logit projection swings). It is caused by two mechanisms acting together:\n\n(i) Per-species sample size at projection time. Below ~10 occupied + active cells per substrate, per-cell extrapolation noise dominates the species-mean \u03b7 regardless of which projection variant is used.\n\n(ii) The GLMM interaction term sc_TEI_delta:sc_PEI_delta \u2014 the largest single contributor to projection \u03b7 at SSP3-7.0 \u2014 compounds substrate-specific predictor standardisation quadratically when future predictors extrapolate 2\u20134\u03c3 outside the training distribution. The same physical climate signal z-scores to opposite tails of the standardised distribution under each substrate's local (\u03bc, \u03c3); the interaction term scales as the product, amplifying the divergence.\n\nThese two mechanisms are diagnosable, mechanistic, and fixable. Three principled fixes are validated empirically:\n\n(a) Per-species cell-count filter. Restricting reporting to species with at least 10 occupied + active cells per substrate brings cross-substrate Spearman \u03c1 from +0.27 (full GLMM, all species) to +0.59 at the same variant, +0.97 at variant (b) below.\n\n(b) Drop the GLMM interaction terms at projection time only. Keep them in the fit (they are part of Soroye's specification) but do NOT use them to extrapolate. At n\u226510 + main-effects-only \u03b7, cross-substrate Spearman \u03c1 = +0.97 (mid-term horizon) \u2014 near-perfect agreement.\n\n(c) Cross-check against substrate-invariant physical metrics. Mean future TEI per species and fraction of cells where future TEI exceeds 0.5 are physically grounded and substrate-invariant in physical units; \u03c1 \u2265 +0.66 at all sample sizes (better than any GLMM-based variant for low-N species).\n\nRefuted hypothesis: re-standardising future predictors against a shared CEA reference (without refitting \u03b2) does NOT decouple the substrate. The GLMM \u03b2 coefficients are fit against substrate-local \u03c3; just rescaling the predictors at projection time is mathematically equivalent to a constant scale shift and does not change the ranking. Properly testing this fix requires refitting the GLMM with shared standardisation (out of scope here).\n\nThe mechanism IS substrate-robust at fit time. Its per-species PROJECTION at the species-cell level is qualified \u2014 reliable above the n_cells filter, not below it. Both upstream Outcomes report rankings filtered per the recommended protocol from this chain.",
+        "Five projection variants tested at both horizons (2020\u20132029 + 2030\u20132039) and four per-species n_cells filters (\u22651, \u22655, \u226510, \u226520) on 31 Iberian Bombus species shared between the two upstream substrate replications.\n\nVariants:\n  (a) Full GLMM \u03b7, within-substrate predictor standardisation.\n  (b) Main-effects-only \u03b7, within-substrate standardisation (drop the four interaction terms at projection only; keep them in the fit).\n  (c) Full GLMM \u03b7, shared CEA reference standardisation (substrate-fit \u03b2 + shared (\u03bc, \u03c3); refuted as a standalone fix).\n  (d) Mean future TEI per species (substrate-invariant physical metric, no GLMM).\n  (d2) Fraction of cells with future TEI > 0.5 per species (substrate-invariant threshold metric).\n\nCross-substrate Spearman \u03c1 between nside=64 and nside=128 rankings, mid-term horizon 2030\u20132039:\n\n                                  n\u22651  n\u22655  n\u226510  n\u226520\n                                  (31) (27) (13)  (10)\n  (a) Full GLMM \u03b7                 +0.27 +0.51 +0.59 +0.77\n  (b) Main-effects only \u03b7         +0.40 +0.52 +0.97 +0.98\n  (c) Shared CEA reference \u03b7      +0.27 +0.49 +0.52 +0.55\n  (d) Mean future TEI             +0.66 +0.69 +0.90 +0.82\n  (d2) Frac TEI_future>0.5        +0.66 +0.71 +0.88 +0.83\n\nHeadline: variant (b) at n\u226510 lifts \u03c1 from +0.59 (variant a same filter) to +0.97 \u2014 substrate-stable. Same qualitative pattern at the near-term horizon.\n\nMechanistic decomposition. Per-species \u03b7 at the SSP3-7.0 mid-term horizon was decomposed into its 10 GLMM-term contributions plus the species random intercept, at both substrates. For the four most-divergent species (norvegicus, mendax, jonellus, sylvestris):\n\n  - sc_TEI_delta:sc_PEI_delta term contributions differ by 1.0\u20136.3 logits between substrates (largest single driver in every case).\n  - sc_TEI_delta term contributions differ by 0.5\u20132.5 logits (next largest).\n  - All other terms (Intercept, sc_sampling, main TEI/PEI, all other interactions, species RE) differ by \u2264 0.6 logits each (substrate-stable).\n\nRefuted hypotheses verified empirically:\n  - Random-intercept refit. \u0394RE across all 12 species in the diagnostic set \u2264 0.6 logits \u2014 substrate-stable.\n  - Niche-limit refit. \u0394T_range across the 12 species = 0.0\u20132.9\u00b0C; norvegicus has \u0394T_range = +0.01\u00b0C yet shows 8.8-logit \u0394\u03b7 \u2014 refuted as the dominant cause.\n  - Shared-reference standardisation alone. Variant (c) Spearman \u03c1 stays \u2248 variant (a) at every cell-count filter.\n\nFiles: results/SUBSTRATE_SENSITIVITY_FINDINGS.md, results/variant_comparison_2030_2039.{csv,json}, results/variant_comparison_2020_2029.{csv,json}, results/substrate_comparison_decomposition_2030_2039.txt, figures/variant_concordance_{2020_2029,2030_2039}.png, figures/variant_pairs_{2020_2029,2030_2039}.png.\n\nRepository: https://github.com/annefou/weatherxbiodiversity-substrate-sensitivity",
+        "1. Two substrates only. The diagnostic compares nside=64 and nside=128 (both HEALPix-NESTED on the WGS84 ellipsoid). Whether the same recommended protocol holds at coarser substrates (nside=32, nside=16) or against non-HEALPix grids (CEA, EASE-Grid 2.0, S2) is not directly tested. The within-HEALPix factor-of-2 resolution change is the strongest case where one might expect substrate stability; finding instability here is a strong negative result, but the empirical n_cells \u2265 10 threshold may be substrate-pair-dependent.\n\n2. Variant (c) tested as approximation of refit-with-shared-standardisation. The most rigorous test of \"shared reference standardisation alone fixes substrate coupling\" is to refit the GLMM with shared (\u03bc, \u03c3) and re-project. This Outcome instead uses substrate-local \u03b2 with shared-\u03c3 predictors at projection time, which is mathematically equivalent to a constant scaling \u2014 refuting it as a standalone fix BUT not the same as testing a full refit. A full refit could be a follow-up.\n\n3. Iberian Bombus only. The diagnostic uses the species set, climate inputs (CRU TS 3.24.01), and projection (DestinE Climate DT SSP3-7.0) from the upstream replications. Whether the substrate-coupling mechanism generalises to other taxa, regions, or future climate forcings is plausible from the mechanism (it depends only on having an interaction-term GLMM with future predictors extrapolating outside the training distribution) but is not directly tested.\n\n4. Recommended protocol bound to this analysis. The \"n_cells \u2265 10 + main-effects-only \u03b7\" recommendation is calibrated against the empirical Spearman \u03c1 at the two horizons tested. Other choices may be defensible (e.g. n \u2265 5 + variant b also gives \u03c1 = +0.52; n \u2265 20 + variant a gives \u03c1 = +0.77). The protocol is a recommendation, not a hard threshold.\n\n5. Validation status PartiallySupported, not Contradicted. Soroye's TEI mechanism IS supported at fit time (the upstream chains' Outcomes are Validated). The qualification is downstream \u2014 about how to USE the fitted GLMM at projection time. CiTO step 06 should encode this as cito:qualifies (extends with a methodological caveat) rather than cito:disputes (refutes).",
+        "MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAoDcOiD+jen8awiJ6DB2ewDw66PeG64hODmgNFwy7GrwQui4HKnHdvxd++1UhTgiOfycxyxBb7sXPSikLw/1TsSyPsEl0P3/+600szxpTGgLNzW+bZ2DVP3d8ERMV1aWpH0ci3B/5vmK+vXQZ4uCoq57NE0MiFg5c13Gy0gd6n7wZYEhYM4AjWSLL0QS/HY+TFZMYL9bCFeATennGrlB2UEjRlw21UB2Ah16ZZ6hxQlfctFJZE7TGnBJPB3ttTjfcOfamhjZVwQ0yV9mv7x6PGiSmkzpJTVLjn8hagoKT05YUwVQArFb+w7f6sXqvvljMigjd/Rbqgbye/lLUAZLfJSnFM58TubfpEJvXV4zNMDEoT3VQ7dokgoLgMrmjZCKATtQ7gomocoTJ1NhN2esRNtGzWaS2obL/mueUQlMlavssZnqL8WICkdAuDlwDVNbsbwEWKQ50kiPdAdduSigifxA4CM7TgvnxqZVoAResEGP6UhTTem3T4CsbEas1Caj9wa7M1jPjACu5LF5BwcVns3ZQHWLipjRjD+9/ur3G8QtuxbNhmXlDYQ6tXxB1lK+Oz7O519b3bA15ilzFl0SdvMBGTe46xaQ9DsJT18THKnPbUhNMy0dH0VtzpB+EEaXZ25Fp9VHMEUqo1lLS9e89eO3efiqkESKQ7wmB+/DlIRcCAwEAAQ=="
+      ],
+      "raw_trig_path": "nanopubs/imported/trig/RAD19jydIHgfVpRQiA8mqvVUefOd7FFwA4tLIfkXmOJmc.trig"
+    },
+    {
+      "uri": "https://w3id.org/sciencelive/np/RAhw9m0BEj0-9hXrTtJ2NHG5rMr-ZBf_mdBQTQRk6u3n4",
+      "step_type": "Declare citations with CiTO",
+      "template_uri": "https://w3id.org/np/RA43F9EoOuzF0xoNUnCMNyFsfIqlsuWDdPHCnN0wCdCAw",
+      "authors_orcid": [
+        "https://orcid.org/0000-0002-1784-2920"
+      ],
+      "plain_text_excerpts": [
+        "MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAoDcOiD+jen8awiJ6DB2ewDw66PeG64hODmgNFwy7GrwQui4HKnHdvxd++1UhTgiOfycxyxBb7sXPSikLw/1TsSyPsEl0P3/+600szxpTGgLNzW+bZ2DVP3d8ERMV1aWpH0ci3B/5vmK+vXQZ4uCoq57NE0MiFg5c13Gy0gd6n7wZYEhYM4AjWSLL0QS/HY+TFZMYL9bCFeATennGrlB2UEjRlw21UB2Ah16ZZ6hxQlfctFJZE7TGnBJPB3ttTjfcOfamhjZVwQ0yV9mv7x6PGiSmkzpJTVLjn8hagoKT05YUwVQArFb+w7f6sXqvvljMigjd/Rbqgbye/lLUAZLfJSnFM58TubfpEJvXV4zNMDEoT3VQ7dokgoLgMrmjZCKATtQ7gomocoTJ1NhN2esRNtGzWaS2obL/mueUQlMlavssZnqL8WICkdAuDlwDVNbsbwEWKQ50kiPdAdduSigifxA4CM7TgvnxqZVoAResEGP6UhTTem3T4CsbEas1Caj9wa7M1jPjACu5LF5BwcVns3ZQHWLipjRjD+9/ur3G8QtuxbNhmXlDYQ6tXxB1lK+Oz7O519b3bA15ilzFl0SdvMBGTe46xaQ9DsJT18THKnPbUhNMy0dH0VtzpB+EEaXZ25Fp9VHMEUqo1lLS9e89eO3efiqkESKQ7wmB+/DlIRcCAwEAAQ==",
+        "ijIhtMx0ix1raijWAMeDqwL0urunmVeIIOOsfeO5Vk0/d2VxxuriWWqsQmoJ08RyyhWEIlRBktSdIujkxSEmibZFb/fv3CYf3EDTuq0m3saL+qjAUugstg0QEWjVJ6CQACwN579CtFkOlRK3sSiKITma3I4caC20IqrFqZTBDvftxRLaObY3iwyPpx4UEounb+87pb5LtLvRmZSnHDp6DWB+PPl1+sW2Eu2qjf7EH5S6sF6qFQhqCqS8KOmfQbjXh7iR+V+jsXY3sMyfvko9ZThv1tS8HZwhzv7MyUsoLZ8ETdO9Wx48jga3m3dlJdsCj0Lt7SeGM/C8nP+BU2ek9yNayfv5sWUIm4QpQhU9s0WJyMbfiv1Io2xycypJ7Jds0PCYWJnShYIbCe+n6pBjDKzX5LHfGtnC2t8MfZsYsmVaTgYYhYznmqzIqfwsKIDBvTMx0Uk/r1GcnieFR8vBgqKT5/u8nBtupmFyUjTdSb6PRB01jVvwfDwByAlDVfKwN3krvADP+Fe6j5kt2NhqzQ6lNsspTv8zVzFe46nPBKYLu17eW4K/b0NzYyDCL5iUPVh7MhQxQsEU92QhttChkRSgNGJmUj5/mKuhRHU4BNO8nzlXK9m5if+x/gpJuoSaHSSumEgsaftE5OilWdPPjqGdduB6gC+5Hek6OLU+UX0=",
+        "Citations for: RAa4QR41Hot9zxujcrCyTo82Ij7oaw_6z8zk8NxDqoJFM",
+        "2026-05-11T19:41:53.540000+00:00"
+      ],
+      "raw_trig_path": "nanopubs/imported/trig/RAhw9m0BEj0-9hXrTtJ2NHG5rMr-ZBf_mdBQTQRk6u3n4.trig"
+    },
+    {
+      "uri": "https://w3id.org/sciencelive/np/RALbHA-r6wIFOFPFlfIpwYqJEpzCFqeJ082iChgdfvhNM",
+      "step_type": "Declare citations with CiTO",
+      "template_uri": "https://w3id.org/np/RA43F9EoOuzF0xoNUnCMNyFsfIqlsuWDdPHCnN0wCdCAw",
+      "authors_orcid": [
+        "https://orcid.org/0000-0002-1784-2920"
+      ],
+      "plain_text_excerpts": [
+        "MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAoDcOiD+jen8awiJ6DB2ewDw66PeG64hODmgNFwy7GrwQui4HKnHdvxd++1UhTgiOfycxyxBb7sXPSikLw/1TsSyPsEl0P3/+600szxpTGgLNzW+bZ2DVP3d8ERMV1aWpH0ci3B/5vmK+vXQZ4uCoq57NE0MiFg5c13Gy0gd6n7wZYEhYM4AjWSLL0QS/HY+TFZMYL9bCFeATennGrlB2UEjRlw21UB2Ah16ZZ6hxQlfctFJZE7TGnBJPB3ttTjfcOfamhjZVwQ0yV9mv7x6PGiSmkzpJTVLjn8hagoKT05YUwVQArFb+w7f6sXqvvljMigjd/Rbqgbye/lLUAZLfJSnFM58TubfpEJvXV4zNMDEoT3VQ7dokgoLgMrmjZCKATtQ7gomocoTJ1NhN2esRNtGzWaS2obL/mueUQlMlavssZnqL8WICkdAuDlwDVNbsbwEWKQ50kiPdAdduSigifxA4CM7TgvnxqZVoAResEGP6UhTTem3T4CsbEas1Caj9wa7M1jPjACu5LF5BwcVns3ZQHWLipjRjD+9/ur3G8QtuxbNhmXlDYQ6tXxB1lK+Oz7O519b3bA15ilzFl0SdvMBGTe46xaQ9DsJT18THKnPbUhNMy0dH0VtzpB+EEaXZ25Fp9VHMEUqo1lLS9e89eO3efiqkESKQ7wmB+/DlIRcCAwEAAQ==",
+        "UXwaM1pcFOvd/QXCcJ5eka7JL5YyXfLO2g/x0NEh4RkyHQr55I6kSD87IMRlYSdd6QZS4h+kOQuSlOv3r78hMEQ2MZIB5SPWfA6Iqt1ZJzywKN3lmtL7Ebo1Jun7htU8sYUzzvCS2Ix/4tRcpZiHeiPU3mCrOEUCoYW+mFnetDCV0BVGxHsTn1NL8B9l8BHLkVX4PUzDr1iK2kl3ff7VPVSXhvJXvy6D9ti5U1SHQV4zheqwgEGH2f4YcaMMMEanmQvxaGOJeFN342qK8Wabjyf/Q6dxO+tptGN88yIg0ByamFQ1tws15Z4cwk967kCzUWhnk+Cpnr0jDbmxlUUADHO1TNat6OaOmyRTZYlf6zjzHEaeZe31DezJFGGVbf1nDq6sF5P6c9fITGEsISAyz0JKWI+LipMha+sesWAk/tTbZfBtCuWOdEUyjgnT8IABi3zJ+ZX2ooFFVQiY0IGJFmI1PgF+0oXv+fRo4VTSp1SPE7jNFTYbXJ+DHBnAFjSat1enU2imp1MNBNyn3QKZgWKilcjohEqqq7Ugv47P6DGoUFR+fIR2PMuVz7Tz0UXZzoOa8ujxysFXTvaOHu8gGXTJKhY2gabz0RpSn5352FWzJMyCizuMuz59g4ONlhlFgf8713J13Ge5ikRMqNbs0vAFz25x4aIw8jtWtM2DzpE=",
+        "Citations for: RAPZMgcYbScSAXnrnSySQwZzgSA_rn-xodlMxNlwwQYY8",
+        "2026-05-11T18:39:50.392000+00:00"
+      ],
+      "raw_trig_path": "nanopubs/imported/trig/RALbHA-r6wIFOFPFlfIpwYqJEpzCFqeJ082iChgdfvhNM.trig"
+    },
+    {
+      "uri": "https://w3id.org/sciencelive/np/RAKH9XeZn3CUr9WaFKMC3O2pT_HJJ96c3jTa6v6dWEE3c",
+      "step_type": "Describing research software at summary level - simple",
+      "template_uri": "https://w3id.org/np/RABBzVTxosLGT4YBCfdfNd6LyuOOTe2EVOTtWJMyOoZHk",
+      "authors_orcid": [
+        "https://orcid.org/0000-0002-1784-2920"
+      ],
+      "plain_text_excerpts": [
+        "MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAoDcOiD+jen8awiJ6DB2ewDw66PeG64hODmgNFwy7GrwQui4HKnHdvxd++1UhTgiOfycxyxBb7sXPSikLw/1TsSyPsEl0P3/+600szxpTGgLNzW+bZ2DVP3d8ERMV1aWpH0ci3B/5vmK+vXQZ4uCoq57NE0MiFg5c13Gy0gd6n7wZYEhYM4AjWSLL0QS/HY+TFZMYL9bCFeATennGrlB2UEjRlw21UB2Ah16ZZ6hxQlfctFJZE7TGnBJPB3ttTjfcOfamhjZVwQ0yV9mv7x6PGiSmkzpJTVLjn8hagoKT05YUwVQArFb+w7f6sXqvvljMigjd/Rbqgbye/lLUAZLfJSnFM58TubfpEJvXV4zNMDEoT3VQ7dokgoLgMrmjZCKATtQ7gomocoTJ1NhN2esRNtGzWaS2obL/mueUQlMlavssZnqL8WICkdAuDlwDVNbsbwEWKQ50kiPdAdduSigifxA4CM7TgvnxqZVoAResEGP6UhTTem3T4CsbEas1Caj9wa7M1jPjACu5LF5BwcVns3ZQHWLipjRjD+9/ur3G8QtuxbNhmXlDYQ6tXxB1lK+Oz7O519b3bA15ilzFl0SdvMBGTe46xaQ9DsJT18THKnPbUhNMy0dH0VtzpB+EEaXZ25Fp9VHMEUqo1lLS9e89eO3efiqkESKQ7wmB+/DlIRcCAwEAAQ==",
+        "SaKf9WAY6Ahd5JLsGHBJow9xrgIvel4xjDX0azNafGP4vtqXqq3EiNjQ67qx3t5o1QF+RVky7qXhygYlNEHSYQSm47s+kPgpKRqZNbkukPH2mPPjsBs40CtfCugfjTnrXdHQ+QwNX6FIhtsJuJ+72ARTvKTIMDAfQyNSC6J0n97jan2P7oOriBURTBNYlrKpJYgS7mjpH6XySffDzqSnkcFp/V/Wtoku9HYFa5IwEtMGdeyuek31vAJiSkcfV8Lc6u0LF8OxPzurHpgru3C22jHhSQhSPeP98h2Cv9CqJqpfO4WBrs1L/YEhQT+KXqyy/rwUx0r92gc15PfUBMX1OYIC/2adLKV6Gj1u7L9AnRNglLNJXiEA6SRG2aXuxDyDjk01kHOZwfBu9n0+85/TGszt3reyoyGm99DK2hJxjjXW0jbpCPAsxPtBr3OsHQnay47oe7jEZCdQLODMiS0oJoPeGls55KV99SxgqDNonlXrZbzdJj5WZjTlsPWGWSv9Y5atkXSipNXW3Om054uhntVp26GI7c7BtVR2tYGGB7RD1mIx0bnYHDESeFa85fav9fPep+qpjZdzVDr2OeZor/Rcn6sdSOfYuoHzH+ryQ6awp9X53DhAqsRlOooUKXNWXqp5zGeloK0UydXTAaUCMXhGFXA2oYP4UZ91jfC/JrM=",
+        "Software: weatherxbiodiversity-projection \u2014 Iberian Bombus extirpation under DestinE Climate DT SSP3-7.0",
+        "weatherxbiodiversity-projection \u2014 Iberian Bombus extirpation under DestinE Climate DT SSP3-7.0"
+      ],
+      "raw_trig_path": "nanopubs/imported/trig/RAKH9XeZn3CUr9WaFKMC3O2pT_HJJ96c3jTa6v6dWEE3c.trig"
+    },
+    {
+      "uri": "https://w3id.org/sciencelive/np/RAumfa30WMPlQksc1f6XdslPtXS2z4-_3DCZC3ln57PKc",
+      "step_type": "Declare citations with CiTO",
+      "template_uri": "https://w3id.org/np/RA43F9EoOuzF0xoNUnCMNyFsfIqlsuWDdPHCnN0wCdCAw",
+      "authors_orcid": [
+        "https://orcid.org/0000-0002-1784-2920"
+      ],
+      "plain_text_excerpts": [
+        "MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAoDcOiD+jen8awiJ6DB2ewDw66PeG64hODmgNFwy7GrwQui4HKnHdvxd++1UhTgiOfycxyxBb7sXPSikLw/1TsSyPsEl0P3/+600szxpTGgLNzW+bZ2DVP3d8ERMV1aWpH0ci3B/5vmK+vXQZ4uCoq57NE0MiFg5c13Gy0gd6n7wZYEhYM4AjWSLL0QS/HY+TFZMYL9bCFeATennGrlB2UEjRlw21UB2Ah16ZZ6hxQlfctFJZE7TGnBJPB3ttTjfcOfamhjZVwQ0yV9mv7x6PGiSmkzpJTVLjn8hagoKT05YUwVQArFb+w7f6sXqvvljMigjd/Rbqgbye/lLUAZLfJSnFM58TubfpEJvXV4zNMDEoT3VQ7dokgoLgMrmjZCKATtQ7gomocoTJ1NhN2esRNtGzWaS2obL/mueUQlMlavssZnqL8WICkdAuDlwDVNbsbwEWKQ50kiPdAdduSigifxA4CM7TgvnxqZVoAResEGP6UhTTem3T4CsbEas1Caj9wa7M1jPjACu5LF5BwcVns3ZQHWLipjRjD+9/ur3G8QtuxbNhmXlDYQ6tXxB1lK+Oz7O519b3bA15ilzFl0SdvMBGTe46xaQ9DsJT18THKnPbUhNMy0dH0VtzpB+EEaXZ25Fp9VHMEUqo1lLS9e89eO3efiqkESKQ7wmB+/DlIRcCAwEAAQ==",
+        "DA1QvXDYCUo0ugDwmAYTCx2gXvYrhj0LydSV4vInPYwjBTItQaC1vMJQCvlvuzUpN8SZ1/QZTdwxGAnNcga0cnYEtpS7XsHkFQbH3ev9PGKAe+PW2fPsw9JrM4vlJ5yWR0/vlFbnWRxjgA0DRDmvV0m5/5Be6ZeNvJ2jiCsZD0zWFpSJeeIKmLeNf+wrS+rfW+c3nQh7s+qYZ3eprqhiXu2invFUcZrgXFfjRC+3bFdEYeqlCbM6+L+LTO7GbPI6SkNK4YLAXod+L5xCIEIOBM9FSxrUnEmcgfi27S2voC9XLKG2u9bpR/kxaNb9UYv9POavfv3y6gvmjcJ6OR0c36C5cPDuFcVVOB4IAnyxXNVzy0ctjp4N49jz2EiTyiBQgf1Cjz8MibmTDHk45pM6trxG4BX0xa6sGV6aB5IMk0DY3+IjC84OvPRPg6FWnsx4uOz2/vUkBlCpQT10gieThM0GM1RrtyMIMr+52XxGsty8FPj2UnUs186OLsHIM7KrRj0pLKHlVS/YmwAoEIbV20hcHdcOgC+aEUEn3oMxO9KFUrm8vfN6KXhy5S+hBDkTNKnrw+H9TY0Dn8qtmBbG6OXq13AruOLatnzaBfpcCyE0+LsFStMaeN/bcHfSGw6lEgIb6TqLD9dTvVLHAauLXZzrVKtexqHQN9wSzDbUVCQ=",
+        "Citations for: RAD19jydIHgfVpRQiA8mqvVUefOd7FFwA4tLIfkXmOJmc",
+        "2026-05-11T20:29:03.002000+00:00"
+      ],
+      "raw_trig_path": "nanopubs/imported/trig/RAumfa30WMPlQksc1f6XdslPtXS2z4-_3DCZC3ln57PKc.trig"
+    },
+    {
+      "uri": "https://w3id.org/sciencelive/np/RAfdV1yB1JksVJ7dJYwECRHVMhNzbGcjUAa6UreqG_fM4",
+      "step_type": "Describing research software at summary level - simple",
+      "template_uri": "https://w3id.org/np/RABBzVTxosLGT4YBCfdfNd6LyuOOTe2EVOTtWJMyOoZHk",
+      "authors_orcid": [
+        "https://orcid.org/0000-0002-1784-2920"
+      ],
+      "plain_text_excerpts": [
+        "MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAoDcOiD+jen8awiJ6DB2ewDw66PeG64hODmgNFwy7GrwQui4HKnHdvxd++1UhTgiOfycxyxBb7sXPSikLw/1TsSyPsEl0P3/+600szxpTGgLNzW+bZ2DVP3d8ERMV1aWpH0ci3B/5vmK+vXQZ4uCoq57NE0MiFg5c13Gy0gd6n7wZYEhYM4AjWSLL0QS/HY+TFZMYL9bCFeATennGrlB2UEjRlw21UB2Ah16ZZ6hxQlfctFJZE7TGnBJPB3ttTjfcOfamhjZVwQ0yV9mv7x6PGiSmkzpJTVLjn8hagoKT05YUwVQArFb+w7f6sXqvvljMigjd/Rbqgbye/lLUAZLfJSnFM58TubfpEJvXV4zNMDEoT3VQ7dokgoLgMrmjZCKATtQ7gomocoTJ1NhN2esRNtGzWaS2obL/mueUQlMlavssZnqL8WICkdAuDlwDVNbsbwEWKQ50kiPdAdduSigifxA4CM7TgvnxqZVoAResEGP6UhTTem3T4CsbEas1Caj9wa7M1jPjACu5LF5BwcVns3ZQHWLipjRjD+9/ur3G8QtuxbNhmXlDYQ6tXxB1lK+Oz7O519b3bA15ilzFl0SdvMBGTe46xaQ9DsJT18THKnPbUhNMy0dH0VtzpB+EEaXZ25Fp9VHMEUqo1lLS9e89eO3efiqkESKQ7wmB+/DlIRcCAwEAAQ==",
+        "LAUGG1Yt+s7Ig4AyVXt6DdPlItAS8SlIMxVomNZGo6zF2GjhGPDM+3KiC3+3W+zPx8bVV0AMpiaGzuV7AFIjEluOub1rWHxf27uMkdyYbYwF3mRdTxdQfjHysM8HLx3+sVIkzZx8w98Ec1/NDXYE/B7wGzYeQ2nWZHiQ9WIou150i/VdpJUqMGNfHyxkP5nT9Iw7+ocsVv1rLyAfOtwYkP2joyYdGEKqiP2YOWexwBFyA6DIaHuuavEifJpyHIyJHqh/RIKI6AVMhY92o/SD7SNtM+2k58HCrkVmq20r5WXUSErdXT2fS/oPznyVV/WzLfznM4xv97M73ivzYrmK6/W8bZrqAucqkoWZVkMIEh91caJaelMYv+au5DZv4671Vt/zbmpkChZbF+P3HMvz7QADdM2JX9+6Va3MQkvZzE0rUdrLwMmCwtv2DZ13V9WpO/7lPoksbkHQS9PAZXHsR9wQpL+QCHdCTUwVTS93Y2ZX56+xr7MsFX9rIiFCTAYf6QDs4BxB+nMtVLxUeTWl2ysnsUiMBHIoARBvxBz5IvXW5xRBDdC+DX0OiXHOhct9jWNpdGf6GUiyG1grX8KaL9pK6VfSbDcmGkbKJyBtRKcxuxQEFXybG6bTij3tCPyEG+nEJ8RvojxeBtcDy1YL/TB+hO3SIqa7vwvFRePw6bE=",
+        "Software: weatherxbiodiversity-substrate-sensitivity \u2014 Cross-substrate diagnostic toolkit for TEI-based extirpation projection",
+        "weatherxbiodiversity-substrate-sensitivity \u2014 Cross-substrate diagnostic toolkit for TEI-based extirpation projection"
+      ],
+      "raw_trig_path": "nanopubs/imported/trig/RAfdV1yB1JksVJ7dJYwECRHVMhNzbGcjUAa6UreqG_fM4.trig"
+    },
+    {
+      "uri": "https://w3id.org/sciencelive/np/RAErLL_QSe3e0pKBxHkUHH5v49F66fFVuS2OmYMJz02OY",
+      "step_type": "Annotating a paper quotation with personal interpretation",
+      "template_uri": "https://w3id.org/np/RA24onqmqTMsraJ7ypYFOuckmNWpo4Zv5gsLqhXt7xYPU",
+      "authors_orcid": [
+        "https://orcid.org/0000-0002-1784-2920"
+      ],
+      "plain_text_excerpts": [
+        "MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAoDcOiD+jen8awiJ6DB2ewDw66PeG64hODmgNFwy7GrwQui4HKnHdvxd++1UhTgiOfycxyxBb7sXPSikLw/1TsSyPsEl0P3/+600szxpTGgLNzW+bZ2DVP3d8ERMV1aWpH0ci3B/5vmK+vXQZ4uCoq57NE0MiFg5c13Gy0gd6n7wZYEhYM4AjWSLL0QS/HY+TFZMYL9bCFeATennGrlB2UEjRlw21UB2Ah16ZZ6hxQlfctFJZE7TGnBJPB3ttTjfcOfamhjZVwQ0yV9mv7x6PGiSmkzpJTVLjn8hagoKT05YUwVQArFb+w7f6sXqvvljMigjd/Rbqgbye/lLUAZLfJSnFM58TubfpEJvXV4zNMDEoT3VQ7dokgoLgMrmjZCKATtQ7gomocoTJ1NhN2esRNtGzWaS2obL/mueUQlMlavssZnqL8WICkdAuDlwDVNbsbwEWKQ50kiPdAdduSigifxA4CM7TgvnxqZVoAResEGP6UhTTem3T4CsbEas1Caj9wa7M1jPjACu5LF5BwcVns3ZQHWLipjRjD+9/ur3G8QtuxbNhmXlDYQ6tXxB1lK+Oz7O519b3bA15ilzFl0SdvMBGTe46xaQ9DsJT18THKnPbUhNMy0dH0VtzpB+EEaXZ25Fp9VHMEUqo1lLS9e89eO3efiqkESKQ7wmB+/DlIRcCAwEAAQ==",
+        "XBY2RjZ7dbngfeVSZt4sX7OWdpVnQLjlXdyX2GsigHrM6sYXvZP8F7bLNE0mmHaUzLqF0TvJzh1doXgxITf8w8rXO8S/F59i71RMsmob7vL+WzKmvn9gfmgwg8XfwYqdkakD1aYKR6BtChxmU6KUFkb01CzYPCiSeO1Yat4hJYkO9lrhYheUZO7LtwO3mdYHW1J2W25n38iB7oQdIHXaVQbG0VTlK9XtjJZ1Ihq/BFocp9UIu33o1bDqRl+wgS6eTEaKkaeNjrc8pn9rdltaNJz5/gLYrDrmdwoZkHKQ6+Nhei+NwNrZpuu9kSpG9B1PhW2RMjA+YHrb1WouQMDrqWosii/6KbCsoUJvXPoAhnlB547Fs6NS78X0o2vzrBE9LsOePVSgAhAcQkGY0CPJIQal6zH+YaenWwy7FltcSw1RHBclSgm14MDi6AWH5/RJIo8sSQHR/H2ft9HS/V0RIfkt++OkyyTLtIATJ7M45Gc0flrVdI3WYkMRInvxCPLu1Td9o0Oe0Q1LuA2S1q2XBu1tGvJc50+8xNHkqgeHZBScAA71z3cZvmUoAd+HCKZlBa7VsKjnLVVx+anvXIIq5onpCkpVIRO2RMUVY/935tt0mUmki2nXu6b5L8xd0E09FQWKsHO7DrS8Thn6q659lyGcwSX4nRDasq8kWTNEmfs=",
+        "This sentence defines the mechanism our replication projects forward in time: temperatures exceeding species\u2019 historical thermal tolerances drive local extinction, colonization, and richness change. The original study validated this retrospectively for 66 Bombus species in North America and Europe (~50 km, monthly). We test its transferability to the Iberian Peninsula under SSP3-7.0 using DestinE Climate DT output (~5 km, daily).",
+        "Paper annotation: Increasing frequency of hotter temperatures predicts species\u2019 local extinction risk, chances of colonizing a new area, and changing species richness."
+      ],
+      "raw_trig_path": "nanopubs/imported/trig/RAErLL_QSe3e0pKBxHkUHH5v49F66fFVuS2OmYMJz02OY.trig"
+    },
+    {
+      "uri": "https://w3id.org/sciencelive/np/RAwGAtWnn1ghSvSzTUtTfrKN4PZP7W6OBmdYsfVRjWAx8",
+      "step_type": "Expressing a statement about research as an AIDA sentence",
+      "template_uri": "https://w3id.org/np/RALmXhDw3rHcMveTgbv8VtWxijUHwnSqhCmtJFIPKWVaA",
+      "authors_orcid": [
+        "https://orcid.org/0000-0002-1784-2920"
+      ],
+      "plain_text_excerpts": [
+        "MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAoDcOiD+jen8awiJ6DB2ewDw66PeG64hODmgNFwy7GrwQui4HKnHdvxd++1UhTgiOfycxyxBb7sXPSikLw/1TsSyPsEl0P3/+600szxpTGgLNzW+bZ2DVP3d8ERMV1aWpH0ci3B/5vmK+vXQZ4uCoq57NE0MiFg5c13Gy0gd6n7wZYEhYM4AjWSLL0QS/HY+TFZMYL9bCFeATennGrlB2UEjRlw21UB2Ah16ZZ6hxQlfctFJZE7TGnBJPB3ttTjfcOfamhjZVwQ0yV9mv7x6PGiSmkzpJTVLjn8hagoKT05YUwVQArFb+w7f6sXqvvljMigjd/Rbqgbye/lLUAZLfJSnFM58TubfpEJvXV4zNMDEoT3VQ7dokgoLgMrmjZCKATtQ7gomocoTJ1NhN2esRNtGzWaS2obL/mueUQlMlavssZnqL8WICkdAuDlwDVNbsbwEWKQ50kiPdAdduSigifxA4CM7TgvnxqZVoAResEGP6UhTTem3T4CsbEas1Caj9wa7M1jPjACu5LF5BwcVns3ZQHWLipjRjD+9/ur3G8QtuxbNhmXlDYQ6tXxB1lK+Oz7O519b3bA15ilzFl0SdvMBGTe46xaQ9DsJT18THKnPbUhNMy0dH0VtzpB+EEaXZ25Fp9VHMEUqo1lLS9e89eO3efiqkESKQ7wmB+/DlIRcCAwEAAQ==",
+        "XhznTB/UMh2sJ1ieo5ZYlbwzc8Wn7fBAElnjnbafFkCEsw7L3sV+p6WfxM3hKo2CeSUcwstD0HGT48xIFBZ1jFkqqV1BtuASvsssPddDgXOCCU8r0BRDi1s6FiPaOqsNcIQ9yBX5HDdnRlbY/WMSciJ0Gxu+Y7Fz/WBytbd0Zo4u4CujoBmmf9xQQMCJEGzSRYTrujSwyb08wW9fbKIf2YZk3ECo/Io/EckkeecmUzo5tA1/BDI22rUO4WuydO+PME2JdEQasS3RTUss2StmK4ONzMDcolLYynl3rTlx0TZrcioJoSRWLTk5ofhIJ7ik+7kg74vM90uIjfNwcUiEFyS5On8OCb92+i7fV2ZaiPl8n0W5QbQIZ4qLgFEcYtfBH6VbqCtxt3ggij7xE+VH5AjRMmVwyOHgDeO6PMQbdbQvvwH16Fj21RXjbNynlmInUxmpnJBR8HR/ncPp6jmG3chvKLdsv8hpK/bsyfk3+iExJ9AjXAfKF8bXC88otpgTM3Jy+WLf7IMplQauyObGkJ1yCN8ccNp0R2HZp157fHgz1jNFka439hEqmL2zUbjJn97LZBhsk480ezq25/NPJAR+JnMha/g5sYg8RY/dAA/hbx5JU5LK26xSGlh8Wbo1MiRgg1wLrAGKXbeUAUkFGaxdeyW/y82y+KoMbcezqDY=",
+        "AIDA sentence: Projected per-species rankings of Iberian Bombus extirpation risk under future climate are sensitive to the spatial grid resolution of the analysis, particularly for species with sparse historical distribution.",
+        "2026-05-11T20:12:56.759000+00:00"
+      ],
+      "raw_trig_path": "nanopubs/imported/trig/RAwGAtWnn1ghSvSzTUtTfrKN4PZP7W6OBmdYsfVRjWAx8.trig"
+    },
+    {
+      "uri": "https://w3id.org/sciencelive/np/RA-GY814xxcpEsUWozEJKHGG39bDV8gkbor7OhX8QpVPE",
+      "step_type": "Describing research software at summary level - simple",
+      "template_uri": "https://w3id.org/np/RABBzVTxosLGT4YBCfdfNd6LyuOOTe2EVOTtWJMyOoZHk",
+      "authors_orcid": [
+        "https://orcid.org/0000-0002-1784-2920"
+      ],
+      "plain_text_excerpts": [
+        "MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAoDcOiD+jen8awiJ6DB2ewDw66PeG64hODmgNFwy7GrwQui4HKnHdvxd++1UhTgiOfycxyxBb7sXPSikLw/1TsSyPsEl0P3/+600szxpTGgLNzW+bZ2DVP3d8ERMV1aWpH0ci3B/5vmK+vXQZ4uCoq57NE0MiFg5c13Gy0gd6n7wZYEhYM4AjWSLL0QS/HY+TFZMYL9bCFeATennGrlB2UEjRlw21UB2Ah16ZZ6hxQlfctFJZE7TGnBJPB3ttTjfcOfamhjZVwQ0yV9mv7x6PGiSmkzpJTVLjn8hagoKT05YUwVQArFb+w7f6sXqvvljMigjd/Rbqgbye/lLUAZLfJSnFM58TubfpEJvXV4zNMDEoT3VQ7dokgoLgMrmjZCKATtQ7gomocoTJ1NhN2esRNtGzWaS2obL/mueUQlMlavssZnqL8WICkdAuDlwDVNbsbwEWKQ50kiPdAdduSigifxA4CM7TgvnxqZVoAResEGP6UhTTem3T4CsbEas1Caj9wa7M1jPjACu5LF5BwcVns3ZQHWLipjRjD+9/ur3G8QtuxbNhmXlDYQ6tXxB1lK+Oz7O519b3bA15ilzFl0SdvMBGTe46xaQ9DsJT18THKnPbUhNMy0dH0VtzpB+EEaXZ25Fp9VHMEUqo1lLS9e89eO3efiqkESKQ7wmB+/DlIRcCAwEAAQ==",
+        "fORmHNcBf+i1SnU5HfHcp8MFh9LV/CVcquac1xoOAyAG6ul9Z0+w1fmeamw4dxanATT+7yJz6mO6mebBHIProsVUMByKOclEz5v+l8EXiCJ90gfe6CJaQuaREqBzkKCm5YXtWrS0L6IksfwJA7qwCr+i70u/5xkfd8BUC+ToecK4E3SYLP2+qyb1lNBqiRKByQQ+keVr8SXphOv3wJ1Zk13Op0M4LPrWALHzG+ycqiNxTlERfayf+i4kjXIURgsusI9gWJaEzimFhsxitzF533EWZCMCOQLpMAo8IZw+vewBb7cFgcSWEfVCgeSqijwtaf8dRf8azkRUUcDwkVcEGh7HFBb50rcM6qxFHsKcqM/QLTU6Zp5IFYSNtP7DQapeB6RhKs35aTHBuhwhPG0xpD+Ke1L0du01HNnOA/eB0zc/1ny6nNU8wHHZq5uuU9O4braovhnxmDh4ybv9EexvMsJ0V5y3SkUu3Q9dZHVVp5sVv/ME6VE6OoFK+q7SB4WE+z5fYECa+y0H52DPsxclurwWSiVn0FIejG9mlP8UhBgPfbdSE4WRosvSm6Xwa2OEpzw2f6fOj8C7B31K4ylYOWd1vQbqX5v12i+cmi438qXs80wPLCcdyAbRq6a/PwvgTNu42gOwob0FEuv4WscYrHJBFOBNEsclTAuIF/9ojq4=",
+        "Software: weatherxbiodiversity-projection-nside128 \u2014 Iberian Bombus extirpation projection at HEALPix nside=128 (full GLMM refit on the DestinE Climate DT native substrate)",
+        "weatherxbiodiversity-projection-nside128 \u2014 Iberian Bombus extirpation projection at HEALPix nside=128 (full GLMM refit on the DestinE Climate DT native substrate)"
+      ],
+      "raw_trig_path": "nanopubs/imported/trig/RA-GY814xxcpEsUWozEJKHGG39bDV8gkbor7OhX8QpVPE.trig"
+    },
+    {
+      "uri": "https://w3id.org/sciencelive/np/RAgb6pxwyANh-jpPdiY3H5k-fGWGgCmN72UrV_zAJcSMI",
+      "step_type": "Expressing a statement about research as an AIDA sentence",
+      "template_uri": "https://w3id.org/np/RALmXhDw3rHcMveTgbv8VtWxijUHwnSqhCmtJFIPKWVaA",
+      "authors_orcid": [
+        "https://orcid.org/0000-0002-1784-2920"
+      ],
+      "plain_text_excerpts": [
+        "MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAoDcOiD+jen8awiJ6DB2ewDw66PeG64hODmgNFwy7GrwQui4HKnHdvxd++1UhTgiOfycxyxBb7sXPSikLw/1TsSyPsEl0P3/+600szxpTGgLNzW+bZ2DVP3d8ERMV1aWpH0ci3B/5vmK+vXQZ4uCoq57NE0MiFg5c13Gy0gd6n7wZYEhYM4AjWSLL0QS/HY+TFZMYL9bCFeATennGrlB2UEjRlw21UB2Ah16ZZ6hxQlfctFJZE7TGnBJPB3ttTjfcOfamhjZVwQ0yV9mv7x6PGiSmkzpJTVLjn8hagoKT05YUwVQArFb+w7f6sXqvvljMigjd/Rbqgbye/lLUAZLfJSnFM58TubfpEJvXV4zNMDEoT3VQ7dokgoLgMrmjZCKATtQ7gomocoTJ1NhN2esRNtGzWaS2obL/mueUQlMlavssZnqL8WICkdAuDlwDVNbsbwEWKQ50kiPdAdduSigifxA4CM7TgvnxqZVoAResEGP6UhTTem3T4CsbEas1Caj9wa7M1jPjACu5LF5BwcVns3ZQHWLipjRjD+9/ur3G8QtuxbNhmXlDYQ6tXxB1lK+Oz7O519b3bA15ilzFl0SdvMBGTe46xaQ9DsJT18THKnPbUhNMy0dH0VtzpB+EEaXZ25Fp9VHMEUqo1lLS9e89eO3efiqkESKQ7wmB+/DlIRcCAwEAAQ==",
+        "OnLKc/RTsUwhhpCaO1Mnr+wQWyXr41NCOaLPby1Rn3GGJDp7o9iSBNpv5w9/a7aEifZgGInhra6C7JF76LPUnJmWKBn5aaviPzdjmI69eO56gJij0CnGDC9koNC8dWlkKfZxb3b5CvXZ39owpA96Nq11ETGbuoZBuaBBJBZ0Kbco4rYQEA4UoT/E2Xw6P/DDM9NhoR3hWCEip7t0Zpe/+tUdk6buK+8/gAyk+Sl0vEEbytNRgvDiuYCRbNVp8ROvMy1t3CRqdSQKrJRT7ZmErKEPdBJuUDpk7/08gvgAf9vtqgO9Ab3lMwdSe/ZUHnwTaJS/ZjnItzKaanqNkgmZjBSk3OJU/frSeKgAu14/q5qk3N0vCy9soXxPC8k8XyXEfHqqoeMaRaSoFPSAyGzmGr9pgsG5gum2rBaL7RF5ib7iKsYwBg/5XdqReC+t7BVXD6kqmTq7oY1iQA7LtNCp1EbvJf7RyEf6xwkKeFlhTMFbOlGH7ZR8AaST8V3+l32GBFg69prwcNn7z96ce0JyhQR9RCTT3M2xkM1HZVlsjDz7MgkU4DOCZdJj3QufE4S8mFvCcO62wiwgjxVwgsbUqBMC1JVqzorDKfW7YdAy+83dRS27LW753VxLmGv9xE3WEpAI0uKo4aZySiOhK1FoPHcrkOA/Fxhp6ZFM5mmo/94=",
+        "AIDA sentence: Increased thermal exposure between historical baseline and recent climate predicts higher probability of local extirpation in Iberian Bombus populations.",
+        "2026-05-11T17:58:18.755000+00:00"
+      ],
+      "raw_trig_path": "nanopubs/imported/trig/RAgb6pxwyANh-jpPdiY3H5k-fGWGgCmN72UrV_zAJcSMI.trig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/sciencelive/np/RA1q6c0fG2bMbiozF8Az2UpIfzAzqp8hoVEl6QIzfUpH8",
+      "target": "https://w3id.org/sciencelive/np/RA5TJVZ0_5Knzxd4OtOoZgO6ZspWHwVCSLWNNd7V9H6QQ",
+      "relation": "refersTo"
+    },
+    {
+      "source": "https://w3id.org/sciencelive/np/RA5TJVZ0_5Knzxd4OtOoZgO6ZspWHwVCSLWNNd7V9H6QQ",
+      "target": "https://w3id.org/sciencelive/np/RA1q6c0fG2bMbiozF8Az2UpIfzAzqp8hoVEl6QIzfUpH8",
+      "relation": "refersTo"
+    },
+    {
+      "source": "https://w3id.org/sciencelive/np/RA5TJVZ0_5Knzxd4OtOoZgO6ZspWHwVCSLWNNd7V9H6QQ",
+      "target": "https://w3id.org/sciencelive/np/RAa4QR41Hot9zxujcrCyTo82Ij7oaw_6z8zk8NxDqoJFM",
+      "relation": "refersTo"
+    },
+    {
+      "source": "https://w3id.org/sciencelive/np/RA5TJVZ0_5Knzxd4OtOoZgO6ZspWHwVCSLWNNd7V9H6QQ",
+      "target": "https://w3id.org/sciencelive/np/RAPZMgcYbScSAXnrnSySQwZzgSA_rn-xodlMxNlwwQYY8",
+      "relation": "refersTo"
+    },
+    {
+      "source": "https://w3id.org/sciencelive/np/RA5TJVZ0_5Knzxd4OtOoZgO6ZspWHwVCSLWNNd7V9H6QQ",
+      "target": "https://w3id.org/sciencelive/np/RAD19jydIHgfVpRQiA8mqvVUefOd7FFwA4tLIfkXmOJmc",
+      "relation": "refersTo"
+    },
+    {
+      "source": "https://w3id.org/sciencelive/np/RAa4QR41Hot9zxujcrCyTo82Ij7oaw_6z8zk8NxDqoJFM",
+      "target": "https://w3id.org/sciencelive/np/RAhw9m0BEj0-9hXrTtJ2NHG5rMr-ZBf_mdBQTQRk6u3n4",
+      "relation": "refersTo"
+    },
+    {
+      "source": "https://w3id.org/sciencelive/np/RAa4QR41Hot9zxujcrCyTo82Ij7oaw_6z8zk8NxDqoJFM",
+      "target": "https://w3id.org/sciencelive/np/RA5TJVZ0_5Knzxd4OtOoZgO6ZspWHwVCSLWNNd7V9H6QQ",
+      "relation": "refersTo"
+    },
+    {
+      "source": "https://w3id.org/sciencelive/np/RAPZMgcYbScSAXnrnSySQwZzgSA_rn-xodlMxNlwwQYY8",
+      "target": "https://w3id.org/sciencelive/np/RALbHA-r6wIFOFPFlfIpwYqJEpzCFqeJ082iChgdfvhNM",
+      "relation": "refersTo"
+    },
+    {
+      "source": "https://w3id.org/sciencelive/np/RAPZMgcYbScSAXnrnSySQwZzgSA_rn-xodlMxNlwwQYY8",
+      "target": "https://w3id.org/sciencelive/np/RA5TJVZ0_5Knzxd4OtOoZgO6ZspWHwVCSLWNNd7V9H6QQ",
+      "relation": "refersTo"
+    },
+    {
+      "source": "https://w3id.org/sciencelive/np/RAPZMgcYbScSAXnrnSySQwZzgSA_rn-xodlMxNlwwQYY8",
+      "target": "https://w3id.org/sciencelive/np/RAKH9XeZn3CUr9WaFKMC3O2pT_HJJ96c3jTa6v6dWEE3c",
+      "relation": "refersTo"
+    },
+    {
+      "source": "https://w3id.org/sciencelive/np/RAD19jydIHgfVpRQiA8mqvVUefOd7FFwA4tLIfkXmOJmc",
+      "target": "https://w3id.org/sciencelive/np/RA5TJVZ0_5Knzxd4OtOoZgO6ZspWHwVCSLWNNd7V9H6QQ",
+      "relation": "refersTo"
+    },
+    {
+      "source": "https://w3id.org/sciencelive/np/RAD19jydIHgfVpRQiA8mqvVUefOd7FFwA4tLIfkXmOJmc",
+      "target": "https://w3id.org/sciencelive/np/RAumfa30WMPlQksc1f6XdslPtXS2z4-_3DCZC3ln57PKc",
+      "relation": "refersTo"
+    },
+    {
+      "source": "https://w3id.org/sciencelive/np/RAhw9m0BEj0-9hXrTtJ2NHG5rMr-ZBf_mdBQTQRk6u3n4",
+      "target": "https://w3id.org/sciencelive/np/RAfdV1yB1JksVJ7dJYwECRHVMhNzbGcjUAa6UreqG_fM4",
+      "relation": "refersTo"
+    },
+    {
+      "source": "https://w3id.org/sciencelive/np/RAhw9m0BEj0-9hXrTtJ2NHG5rMr-ZBf_mdBQTQRk6u3n4",
+      "target": "https://w3id.org/sciencelive/np/RAa4QR41Hot9zxujcrCyTo82Ij7oaw_6z8zk8NxDqoJFM",
+      "relation": "refersTo"
+    },
+    {
+      "source": "https://w3id.org/sciencelive/np/RALbHA-r6wIFOFPFlfIpwYqJEpzCFqeJ082iChgdfvhNM",
+      "target": "https://w3id.org/sciencelive/np/RAfdV1yB1JksVJ7dJYwECRHVMhNzbGcjUAa6UreqG_fM4",
+      "relation": "refersTo"
+    },
+    {
+      "source": "https://w3id.org/sciencelive/np/RALbHA-r6wIFOFPFlfIpwYqJEpzCFqeJ082iChgdfvhNM",
+      "target": "https://w3id.org/sciencelive/np/RAPZMgcYbScSAXnrnSySQwZzgSA_rn-xodlMxNlwwQYY8",
+      "relation": "refersTo"
+    },
+    {
+      "source": "https://w3id.org/sciencelive/np/RAKH9XeZn3CUr9WaFKMC3O2pT_HJJ96c3jTa6v6dWEE3c",
+      "target": "https://w3id.org/sciencelive/np/RAPZMgcYbScSAXnrnSySQwZzgSA_rn-xodlMxNlwwQYY8",
+      "relation": "refersTo"
+    },
+    {
+      "source": "https://w3id.org/sciencelive/np/RAKH9XeZn3CUr9WaFKMC3O2pT_HJJ96c3jTa6v6dWEE3c",
+      "target": "https://w3id.org/sciencelive/np/RAErLL_QSe3e0pKBxHkUHH5v49F66fFVuS2OmYMJz02OY",
+      "relation": "refersTo"
+    },
+    {
+      "source": "https://w3id.org/sciencelive/np/RAumfa30WMPlQksc1f6XdslPtXS2z4-_3DCZC3ln57PKc",
+      "target": "https://w3id.org/sciencelive/np/RAfdV1yB1JksVJ7dJYwECRHVMhNzbGcjUAa6UreqG_fM4",
+      "relation": "refersTo"
+    },
+    {
+      "source": "https://w3id.org/sciencelive/np/RAumfa30WMPlQksc1f6XdslPtXS2z4-_3DCZC3ln57PKc",
+      "target": "https://w3id.org/sciencelive/np/RAD19jydIHgfVpRQiA8mqvVUefOd7FFwA4tLIfkXmOJmc",
+      "relation": "refersTo"
+    },
+    {
+      "source": "https://w3id.org/sciencelive/np/RAfdV1yB1JksVJ7dJYwECRHVMhNzbGcjUAa6UreqG_fM4",
+      "target": "https://w3id.org/sciencelive/np/RAhw9m0BEj0-9hXrTtJ2NHG5rMr-ZBf_mdBQTQRk6u3n4",
+      "relation": "refersTo"
+    },
+    {
+      "source": "https://w3id.org/sciencelive/np/RAfdV1yB1JksVJ7dJYwECRHVMhNzbGcjUAa6UreqG_fM4",
+      "target": "https://w3id.org/sciencelive/np/RALbHA-r6wIFOFPFlfIpwYqJEpzCFqeJ082iChgdfvhNM",
+      "relation": "refersTo"
+    },
+    {
+      "source": "https://w3id.org/sciencelive/np/RAfdV1yB1JksVJ7dJYwECRHVMhNzbGcjUAa6UreqG_fM4",
+      "target": "https://w3id.org/sciencelive/np/RAumfa30WMPlQksc1f6XdslPtXS2z4-_3DCZC3ln57PKc",
+      "relation": "refersTo"
+    },
+    {
+      "source": "https://w3id.org/sciencelive/np/RAfdV1yB1JksVJ7dJYwECRHVMhNzbGcjUAa6UreqG_fM4",
+      "target": "https://w3id.org/sciencelive/np/RAwGAtWnn1ghSvSzTUtTfrKN4PZP7W6OBmdYsfVRjWAx8",
+      "relation": "refersTo"
+    },
+    {
+      "source": "https://w3id.org/sciencelive/np/RAErLL_QSe3e0pKBxHkUHH5v49F66fFVuS2OmYMJz02OY",
+      "target": "https://w3id.org/sciencelive/np/RA-GY814xxcpEsUWozEJKHGG39bDV8gkbor7OhX8QpVPE",
+      "relation": "refersTo"
+    },
+    {
+      "source": "https://w3id.org/sciencelive/np/RAErLL_QSe3e0pKBxHkUHH5v49F66fFVuS2OmYMJz02OY",
+      "target": "https://w3id.org/sciencelive/np/RAgb6pxwyANh-jpPdiY3H5k-fGWGgCmN72UrV_zAJcSMI",
+      "relation": "refersTo"
+    },
+    {
+      "source": "https://w3id.org/sciencelive/np/RAErLL_QSe3e0pKBxHkUHH5v49F66fFVuS2OmYMJz02OY",
+      "target": "https://w3id.org/sciencelive/np/RAwGAtWnn1ghSvSzTUtTfrKN4PZP7W6OBmdYsfVRjWAx8",
+      "relation": "refersTo"
+    },
+    {
+      "source": "https://w3id.org/sciencelive/np/RAErLL_QSe3e0pKBxHkUHH5v49F66fFVuS2OmYMJz02OY",
+      "target": "https://w3id.org/sciencelive/np/RAKH9XeZn3CUr9WaFKMC3O2pT_HJJ96c3jTa6v6dWEE3c",
+      "relation": "refersTo"
+    }
+  ],
+  "external_citations": [
+    "https://doi.org/10.1126/science.aax8591",
+    "https://doi.org/10.15468/dl.3frmsq",
+    "https://doi.org/10.5281/zenodo.20113777",
+    "https://doi.org/10.5281/zenodo.20113778",
+    "https://doi.org/10.5281/zenodo.20113780",
+    "https://doi.org/10.5281/zenodo.20113781",
+    "https://doi.org/10.5281/zenodo.20113786",
+    "https://doi.org/10.5281/zenodo.20113787",
+    "https://doi.org/10.6084/m9.figshare.10058340"
+  ]
+}

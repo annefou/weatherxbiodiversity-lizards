@@ -1,0 +1,95 @@
+@prefix this: <https://w3id.org/sciencelive/np/RAPZMgcYbScSAXnrnSySQwZzgSA_rn-xodlMxNlwwQYY8> .
+@prefix sub: <https://w3id.org/sciencelive/np/RAPZMgcYbScSAXnrnSySQwZzgSA_rn-xodlMxNlwwQYY8/> .
+@prefix np: <http://www.nanopub.org/nschema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix npx: <http://purl.org/nanopub/x/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+sub:Head {
+  this: a np:Nanopublication;
+    np:hasAssertion sub:assertion;
+    np:hasProvenance sub:provenance;
+    np:hasPublicationInfo sub:pubinfo .
+}
+
+sub:assertion {
+  sub:soroye2020-iberian-bombus-substrate-robust-validated a <https://w3id.org/sciencelive/o/terms/FORRT-Replication-Outcome>;
+    <http://schema.org/endDate> "2026-05-09"^^xsd:date;
+    <http://www.w3.org/2000/01/rdf-schema#label> "TEI-based extirpation mechanism replicates on Iberian Bombus (CEA + HEALPix nside=64; SSP3-7.0 projection)";
+    <https://w3id.org/sciencelive/o/terms/hasConclusionDescription> """Soroye et al.'s (2020) headline claim — that thermal-niche exceedance (TEI) increases extirpation probability for bumble bees — REPLICATES on Iberian Bombus.
+
+The GLMM coefficient on standardised TEI_delta is positive, large, and credible at both spatial substrates tested in this replication: +0.479 at the original CEA grid (~100 km cells) and +0.454 at HEALPix nside=64 (~92 km cells, 95% HDI [+0.130, +0.751]). Both estimates are within ±30 percent of each other, same sign, same order of magnitude as Soroye 2020's continental-scale fit. A higher-resolution sibling study at HEALPix nside=128 (weatherxbiodiversity-projection-nside128) finds +0.347, HDI [+0.139, +0.533] — confirming substrate-robustness across three independent pixelisations.
+
+The Tier-2 SSP3-7.0 projection (DestinE Climate DT, 2030–2039 horizon) shows a systematic shift in mean future TEI from ~0.43 historically to ~0.45–0.50, indicating that Iberian Bombus species are drifting toward their upper thermal niche edge. None of the studied species hit TEI > 1 (Soroye's actual extirpation threshold) at any currently-occupied cell over the next 15 years — the extirpation event Soroye projects is a longer-timescale phenomenon, with 2030–2039 being the early-warning period rather than the extirpation period itself.
+
+When the per-species ranking is filtered to species with at least 10 occupied cells per substrate AND uses the GLMM main-effects-only η at projection time (per the substrate-sensitivity diagnostic in the sibling repo weatherxbiodiversity-substrate-sensitivity, ρ_Spearman = +0.97 between substrates at this filter), the highest-risk Iberian species are B. humilis, B. muscorum, and B. ruderarius — short-tongued grassland specialists already documented in decline elsewhere in Europe. The lowest-risk species are B. terrestris, B. pascuorum, and B. pratorum — the dominant Western Palearctic generalists. The substrate-stable Iberian projection independently identifies the same European high-risk species the long-term monitoring data flag.""";
+    <https://w3id.org/sciencelive/o/terms/hasConfidenceLevel> <https://w3id.org/sciencelive/o/terms/HighConfidence>;
+    <https://w3id.org/sciencelive/o/terms/hasEvidenceDescription> """TIER 1 — historical fit (1901–2014 CRU TS 3.24.01 from Soroye Figshare; GBIF Iberian Bombus occurrences via own download DOI).
+
+GLMM headline coefficient sc_TEI_delta (standardised TEI change between baseline 1901–1974 and recent 2000–2014):
+  - CEA (~100 km cells):       +0.479    (this run, replicates published v0.2.1)
+  - HEALPix nside=64 (~92 km): +0.454    (95% HDI [+0.130, +0.751])
+  - HEALPix nside=128 (~46 km): +0.347   (95% HDI [+0.139, +0.533]; sibling repo)
+  All three within ±30 percent. Sign, magnitude, and HDI agree with Soroye 2020.
+
+Cross-fit sanity check: variational-Bayes via statsmodels BinomialBayesMixedGLM agrees with full-posterior NUTS via bambi/PyMC on β_sc_TEI_delta to within VB-underestimation noise (VB posterior SD ~1.4× smaller than NUTS posterior SD on the same data; report MCMC HDIs as authoritative). See results/headline_statistic_healpix.json.
+
+TIER 2 — SSP3-7.0 projection (DestinE Climate DT, IFS-NEMO standard, native HEALPix nside=128, 2020–2029 + 2030–2039 horizons).
+
+Mean future TEI per species, 2030–2039 horizon (substrate-invariant physical metric, Spearman ρ between substrates = +0.66 at n≥1, +0.90 at n≥10):
+  - Most-shifted species: B. humilis (mean fut TEI ~0.50), B. muscorum (~0.49), B. ruderarius (~0.48)
+  - Least-shifted: B. terrestris (~0.45), B. pascuorum (~0.45), B. pratorum (~0.45)
+
+Per-species community-mean η under SSP3-7.0 (filtered to species with n_cells≥10 at both substrates, main-effects-only η to avoid extrapolation amplification — ρ_Spearman between substrates = +0.97 mid-term, +0.96 near-term):
+  - Highest projected η (most at-risk): B. humilis (η = +1.58), B. muscorum (+1.50), B. ruderarius (+1.54)
+  - Lowest projected η (most robust): B. terrestris (-2.26), B. pascuorum (-0.69), B. pratorum (-0.56)
+
+Fraction of currently-occupied cells where future TEI exceeds 1.0 (Soroye's actual extirpation threshold) at 2030–2039: 0.00 for every studied species — the extirpation threshold is not yet crossed under SSP3-7.0 over the next 15 years.
+
+Files: results/headline_statistic.json (CEA), results/headline_statistic_healpix.json (HEALPix nside=64), results/projection_headline.json (Tier-2 per-species rank), results/posterior_bambi.nc + posterior_bambi_healpix.nc (full posteriors); figures figures/main_result_healpix.png + figures/projection_summary.png.""";
+    <https://w3id.org/sciencelive/o/terms/hasLimitationsDescription> """1. Substrate-coupling at projection time. Per-species ranking under SSP3-7.0 is grid-coupled at the projection step (NOT at fit time) for species observed in fewer than ~10 historical Iberian cells. This affects 18 of the 31 species in the study, including narrowly-distributed Pyrenean specialists (B. pyrenaeus, B. mucidus, B. mendax, B. wurflenii, B. monticola). The full mechanism (interaction-term amplification of substrate-specific predictor standardisation at extrapolation), validated and refuted hypotheses, and recommended reporting protocol are documented in the methodological sibling repo weatherxbiodiversity-substrate-sensitivity. The figures and rankings reported in this Outcome are filtered per that diagnostic (n_cells ≥ 10, main-effects-only η).
+
+2. Reporting on η, not p_extirp. The Tier-2 projection reports the GLMM linear predictor η (log-odds of extirpation) rather than its logistic transform p = expit(η). Future TEI/PEI z-scores under SSP3-7.0 lie 2–4σ outside the Tier-1 training distribution; expit(η) saturates uninformatively at ~1.0 in many cells where the actual signal is the GLMM's authentic relative ordering. Absolute extirpation probabilities derived from this projection are NOT interpretable as-is; relative ranking by η and substrate-invariant physical metrics (mean future TEI, fraction TEI_future>0.5) are the substrate-stable summaries.
+
+3. Negative-η species reflect random intercepts, not climate-driven benefit. The GLMM's species random effect dominates the projected η for B. terrestris (RE ~ -2.6) and B. pascuorum (RE ~ -1.0), encoding lower-than-average historical extirpation susceptibility from the 1901–2014 GBIF training data. All climate-driven term contributions are POSITIVE for both species. The correct reading is \"historically robust species, with SSP3-7.0 adding moderate climate forcing on top\" — NOT \"projected to benefit from SSP3-7.0\".
+
+4. Sampling effort held at recent-period mean for the projection — assumes monitoring intensity in 2020–2039 mirrors the 2000–2014 baseline. Biases the projection if survey effort actually changes.
+
+5. DestinE Climate DT archive coverage. SSP3-7.0 IFS-NEMO archive populated through 2039 only at time of analysis; mid- and end-of-century horizons (2046–2055, 2076–2085) deferred to a follow-up Outcome when the archive extends past 2050.
+
+6. Daily Tmax/Tmin from 4-times-daily 2t snapshots. Notebook 06_destine_clean approximates daily extremes from the 00/06/12/18 UTC samples rather than from true daily max/min (which DestinE Climate DT does not archive — see notebooks/05_destine_download.py § Why no native max/min). Defensible at decadal mean; biased high on Tmax extremes by an unknown but small amount.
+
+7. tp 1-time-per-day approximation in the DestinE retrieve — flagged in 06_destine_clean as TP_HOURLY_TO_DAILY_FACTOR; defensible at decadal mean, invalid for any sub-monthly statistic.
+
+8. VB underestimation of posterior variance. statsmodels variational-Bayes posterior SD is ~1.4× smaller than the bambi/PyMC NUTS posterior SD on the same data; this Outcome's HDIs are NUTS-based.
+
+9. Geographic scope. Iberian peninsula only. Extension to other latitudes (especially boreal/alpine systems where Bombus diversity peaks) is not addressed by this replication.""";
+    <https://w3id.org/sciencelive/o/terms/hasOutcomeRepository> <https://doi.org/10.5281/zenodo.20113778>;
+    <https://w3id.org/sciencelive/o/terms/hasValidationStatus> <https://w3id.org/sciencelive/o/terms/Validated>;
+    <https://w3id.org/sciencelive/o/terms/isOutcomeOf> <https://w3id.org/sciencelive/np/RAybO8c8qx0p5bz9lMhMxzNsXhp0aXyd8GHnGC3i53vQY/soroye2020-iberian-bombus-cea-and-healpix-nside64> .
+}
+
+sub:provenance {
+  sub:assertion prov:wasAttributedTo <https://orcid.org/0000-0002-1784-2920> .
+}
+
+sub:pubinfo {
+  <https://orcid.org/0000-0002-1784-2920> <http://xmlns.com/foaf/0.1/name> "Anne Fouilloux" .
+  
+  this: dc:created "2026-05-11T18:35:15.682Z"^^xsd:dateTime;
+    dc:creator <https://orcid.org/0000-0002-1784-2920>;
+    dc:license <https://creativecommons.org/licenses/by/4.0/>;
+    npx:introduces sub:soroye2020-iberian-bombus-substrate-robust-validated;
+    npx:wasCreatedAt <https://platform.sciencelive4all.org>;
+    <http://www.w3.org/2000/01/rdf-schema#label> "TEI-based extirpation mechanism replicates on Iberian Bombus (CEA + HEALPix nside=64; SSP3-7.0 projection)";
+    <https://w3id.org/np/o/ntemplate/wasCreatedFromTemplate> <https://w3id.org/np/RA2zljn0Nw9SadppOyxZoh-_Rxosslrq-vYG-p9SttnJE> .
+  
+  sub:sig npx:hasAlgorithm "RSA";
+    npx:hasPublicKey "MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAoDcOiD+jen8awiJ6DB2ewDw66PeG64hODmgNFwy7GrwQui4HKnHdvxd++1UhTgiOfycxyxBb7sXPSikLw/1TsSyPsEl0P3/+600szxpTGgLNzW+bZ2DVP3d8ERMV1aWpH0ci3B/5vmK+vXQZ4uCoq57NE0MiFg5c13Gy0gd6n7wZYEhYM4AjWSLL0QS/HY+TFZMYL9bCFeATennGrlB2UEjRlw21UB2Ah16ZZ6hxQlfctFJZE7TGnBJPB3ttTjfcOfamhjZVwQ0yV9mv7x6PGiSmkzpJTVLjn8hagoKT05YUwVQArFb+w7f6sXqvvljMigjd/Rbqgbye/lLUAZLfJSnFM58TubfpEJvXV4zNMDEoT3VQ7dokgoLgMrmjZCKATtQ7gomocoTJ1NhN2esRNtGzWaS2obL/mueUQlMlavssZnqL8WICkdAuDlwDVNbsbwEWKQ50kiPdAdduSigifxA4CM7TgvnxqZVoAResEGP6UhTTem3T4CsbEas1Caj9wa7M1jPjACu5LF5BwcVns3ZQHWLipjRjD+9/ur3G8QtuxbNhmXlDYQ6tXxB1lK+Oz7O519b3bA15ilzFl0SdvMBGTe46xaQ9DsJT18THKnPbUhNMy0dH0VtzpB+EEaXZ25Fp9VHMEUqo1lLS9e89eO3efiqkESKQ7wmB+/DlIRcCAwEAAQ==";
+    npx:hasSignature "K863sAh8Jrd7EyZkVPxfkJP2mvXNE/AK5zrxVnizUzMUUTQtpBOzzecwXoj8fDqjCYF3maHv/UEkx7n/I5RiN37rZ4dyD7f7Q60P4oFXNmU6NCIhE9yz3j5xoU89bsJF7v/iN5LXfwE1kwDCHdtOEB+zrnu1kFzemXOPp5diwzVgDbig63rTwUWjwrGzIXQMeYpX5v19nVS2UgYnqbD/xJ42nch38mS5UG41q8k8CbJlAyPzmOTty5A4r8w8Fwk5AGLhurtY75asWbNN2weqYRoV0In2aQe3bf2n+DNOzxrw/M1YSvHpsZ09wBLkOrBvl4z2tLCilb7V4uSv/xIuxUxsLIFkhfsCumPEZ/rh468tuZrMan7O8n/VicGn1RiY3ue5l0RyPzg32srGgtBPwhkNd5MawE4WmqAmWzX/7xLlmWuV6jca7WBWOd+ifvaBqLmajauTZb0D1YYwqmLRlPMF89r/5m4nPnebcFaKOTFQVjjCmw0Ocwan+cLzUd+NcyfUB/iXIWcdDJ6NNo9Eya+nCeMqns9ISpd90otNW66BukE1MTw/JLzPUOzWh/UO5US3G6dRCtU3Jadbx+kmHXH3MskJUFZXo1G+Q55DK3Vn4eHsqcNeuBDIINO3ocGgKKwtMNJtq8qMFTM1jFAzrIyL1OVlWq8Rtr4NQUcLwtw=";
+    npx:hasSignatureTarget this:;
+    npx:signedBy <https://orcid.org/0000-0002-1784-2920> .
+}
+

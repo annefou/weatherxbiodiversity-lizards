@@ -1,0 +1,47 @@
+@prefix this: <https://w3id.org/sciencelive/np/RAgb6pxwyANh-jpPdiY3H5k-fGWGgCmN72UrV_zAJcSMI> .
+@prefix sub: <https://w3id.org/sciencelive/np/RAgb6pxwyANh-jpPdiY3H5k-fGWGgCmN72UrV_zAJcSMI/> .
+@prefix np: <http://www.nanopub.org/nschema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix npx: <http://purl.org/nanopub/x/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+sub:Head {
+  this: a np:Nanopublication;
+    np:hasAssertion sub:assertion;
+    np:hasProvenance sub:provenance;
+    np:hasPublicationInfo sub:pubinfo .
+}
+
+sub:assertion {
+  <http://purl.org/aida/Increased%20thermal%20exposure%20between%20historical%20baseline%20and%20recent%20climate%20predicts%20higher%20probability%20of%20local%20extirpation%20in%20Iberian%20Bombus%20populations.>
+    a <http://purl.org/petapico/o/hycl#AIDA-Sentence>;
+    <http://purl.org/spar/cito/obtainsSupportFrom> <https://doi.org/10.1126/science.aax8591>;
+    <http://schema.org/about> <http://www.wikidata.org/entity/Q125928>, <http://www.wikidata.org/entity/Q47041>;
+    <http://www.w3.org/2004/02/skos/core#related> <https://w3id.org/sciencelive/np/RAErLL_QSe3e0pKBxHkUHH5v49F66fFVuS2OmYMJz02OY> .
+}
+
+sub:provenance {
+  sub:assertion prov:wasAttributedTo <https://orcid.org/0000-0002-1784-2920> .
+}
+
+sub:pubinfo {
+  <https://orcid.org/0000-0002-1784-2920> <http://xmlns.com/foaf/0.1/name> "Anne Fouilloux" .
+  
+  this: dc:created "2026-05-11T17:58:18.755Z"^^xsd:dateTime;
+    dc:creator <https://orcid.org/0000-0002-1784-2920>;
+    dc:license <https://creativecommons.org/licenses/by/4.0/>;
+    npx:hasNanopubType <http://purl.org/petapico/o/hycl>;
+    npx:introduces <http://purl.org/aida/Increased%20thermal%20exposure%20between%20historical%20baseline%20and%20recent%20climate%20predicts%20higher%20probability%20of%20local%20extirpation%20in%20Iberian%20Bombus%20populations.>;
+    npx:wasCreatedAt <https://platform.sciencelive4all.org>;
+    <http://www.w3.org/2000/01/rdf-schema#label> "AIDA sentence: Increased thermal exposure between historical baseline and recent climate predicts higher probability of local extirpation in Iberian Bombus populations.";
+    <https://w3id.org/np/o/ntemplate/wasCreatedFromTemplate> <https://w3id.org/np/RALmXhDw3rHcMveTgbv8VtWxijUHwnSqhCmtJFIPKWVaA> .
+  
+  sub:sig npx:hasAlgorithm "RSA";
+    npx:hasPublicKey "MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAoDcOiD+jen8awiJ6DB2ewDw66PeG64hODmgNFwy7GrwQui4HKnHdvxd++1UhTgiOfycxyxBb7sXPSikLw/1TsSyPsEl0P3/+600szxpTGgLNzW+bZ2DVP3d8ERMV1aWpH0ci3B/5vmK+vXQZ4uCoq57NE0MiFg5c13Gy0gd6n7wZYEhYM4AjWSLL0QS/HY+TFZMYL9bCFeATennGrlB2UEjRlw21UB2Ah16ZZ6hxQlfctFJZE7TGnBJPB3ttTjfcOfamhjZVwQ0yV9mv7x6PGiSmkzpJTVLjn8hagoKT05YUwVQArFb+w7f6sXqvvljMigjd/Rbqgbye/lLUAZLfJSnFM58TubfpEJvXV4zNMDEoT3VQ7dokgoLgMrmjZCKATtQ7gomocoTJ1NhN2esRNtGzWaS2obL/mueUQlMlavssZnqL8WICkdAuDlwDVNbsbwEWKQ50kiPdAdduSigifxA4CM7TgvnxqZVoAResEGP6UhTTem3T4CsbEas1Caj9wa7M1jPjACu5LF5BwcVns3ZQHWLipjRjD+9/ur3G8QtuxbNhmXlDYQ6tXxB1lK+Oz7O519b3bA15ilzFl0SdvMBGTe46xaQ9DsJT18THKnPbUhNMy0dH0VtzpB+EEaXZ25Fp9VHMEUqo1lLS9e89eO3efiqkESKQ7wmB+/DlIRcCAwEAAQ==";
+    npx:hasSignature "OnLKc/RTsUwhhpCaO1Mnr+wQWyXr41NCOaLPby1Rn3GGJDp7o9iSBNpv5w9/a7aEifZgGInhra6C7JF76LPUnJmWKBn5aaviPzdjmI69eO56gJij0CnGDC9koNC8dWlkKfZxb3b5CvXZ39owpA96Nq11ETGbuoZBuaBBJBZ0Kbco4rYQEA4UoT/E2Xw6P/DDM9NhoR3hWCEip7t0Zpe/+tUdk6buK+8/gAyk+Sl0vEEbytNRgvDiuYCRbNVp8ROvMy1t3CRqdSQKrJRT7ZmErKEPdBJuUDpk7/08gvgAf9vtqgO9Ab3lMwdSe/ZUHnwTaJS/ZjnItzKaanqNkgmZjBSk3OJU/frSeKgAu14/q5qk3N0vCy9soXxPC8k8XyXEfHqqoeMaRaSoFPSAyGzmGr9pgsG5gum2rBaL7RF5ib7iKsYwBg/5XdqReC+t7BVXD6kqmTq7oY1iQA7LtNCp1EbvJf7RyEf6xwkKeFlhTMFbOlGH7ZR8AaST8V3+l32GBFg69prwcNn7z96ce0JyhQR9RCTT3M2xkM1HZVlsjDz7MgkU4DOCZdJj3QufE4S8mFvCcO62wiwgjxVwgsbUqBMC1JVqzorDKfW7YdAy+83dRS27LW753VxLmGv9xE3WEpAI0uKo4aZySiOhK1FoPHcrkOA/Fxhp6ZFM5mmo/94=";
+    npx:hasSignatureTarget this:;
+    npx:signedBy <https://orcid.org/0000-0002-1784-2920> .
+}
+

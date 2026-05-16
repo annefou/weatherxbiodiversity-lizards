@@ -1,0 +1,113 @@
+@prefix this: <https://w3id.org/sciencelive/np/RAD19jydIHgfVpRQiA8mqvVUefOd7FFwA4tLIfkXmOJmc> .
+@prefix sub: <https://w3id.org/sciencelive/np/RAD19jydIHgfVpRQiA8mqvVUefOd7FFwA4tLIfkXmOJmc/> .
+@prefix np: <http://www.nanopub.org/nschema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix npx: <http://purl.org/nanopub/x/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+sub:Head {
+  this: a np:Nanopublication;
+    np:hasAssertion sub:assertion;
+    np:hasProvenance sub:provenance;
+    np:hasPublicationInfo sub:pubinfo .
+}
+
+sub:assertion {
+  sub:soroye2020-tei-projection-substrate-coupling-partially-supported a <https://w3id.org/sciencelive/o/terms/FORRT-Replication-Outcome>;
+    <http://schema.org/endDate> "2026-05-09"^^xsd:date;
+    <http://www.w3.org/2000/01/rdf-schema#label> "TEI-based extirpation projection is grid-coupled at the projection step (Iberian Bombus, HEALPix nside=64 vs nside=128, SSP3-7.0): mechanism replicates at fit time, per-species ranking does not — fixable";
+    <https://w3id.org/sciencelive/o/terms/hasConclusionDescription> """This methodological diagnostic compares two single-substrate replications of Soroye et al. (2020) for Iberian Bombus under DestinE Climate DT SSP3-7.0 — at HEALPix nside=64 (~92 km, weatherxbiodiversity-projection) and nside=128 (~46 km, weatherxbiodiversity-projection-nside128). Both upstream Outcomes confirm Soroye's TEI mechanism is substrate-robust at fit time (sc_TEI_delta within ±30% across three substrates including the original CEA grid).
+
+Headline finding: per-species ranking under SSP3-7.0 IS grid-coupled at the projection step. The same physical climate signal at the same Iberian location produces per-species η swings of 1–9 logits between nside=64 and nside=128 for species observed in fewer than ~10 historical cells.
+
+The substrate-coupling is not caused by per-species random-effect refit (substrate-stable, ΔRE ≤ 0.6 logits across all species), nor by per-species niche-limit refit (modest, ΔT_range = 0–3°C; species with identical T_range still show 8.8-logit projection swings). It is caused by two mechanisms acting together:
+
+(i) Per-species sample size at projection time. Below ~10 occupied + active cells per substrate, per-cell extrapolation noise dominates the species-mean η regardless of which projection variant is used.
+
+(ii) The GLMM interaction term sc_TEI_delta:sc_PEI_delta — the largest single contributor to projection η at SSP3-7.0 — compounds substrate-specific predictor standardisation quadratically when future predictors extrapolate 2–4σ outside the training distribution. The same physical climate signal z-scores to opposite tails of the standardised distribution under each substrate's local (μ, σ); the interaction term scales as the product, amplifying the divergence.
+
+These two mechanisms are diagnosable, mechanistic, and fixable. Three principled fixes are validated empirically:
+
+(a) Per-species cell-count filter. Restricting reporting to species with at least 10 occupied + active cells per substrate brings cross-substrate Spearman ρ from +0.27 (full GLMM, all species) to +0.59 at the same variant, +0.97 at variant (b) below.
+
+(b) Drop the GLMM interaction terms at projection time only. Keep them in the fit (they are part of Soroye's specification) but do NOT use them to extrapolate. At n≥10 + main-effects-only η, cross-substrate Spearman ρ = +0.97 (mid-term horizon) — near-perfect agreement.
+
+(c) Cross-check against substrate-invariant physical metrics. Mean future TEI per species and fraction of cells where future TEI exceeds 0.5 are physically grounded and substrate-invariant in physical units; ρ ≥ +0.66 at all sample sizes (better than any GLMM-based variant for low-N species).
+
+Refuted hypothesis: re-standardising future predictors against a shared CEA reference (without refitting β) does NOT decouple the substrate. The GLMM β coefficients are fit against substrate-local σ; just rescaling the predictors at projection time is mathematically equivalent to a constant scale shift and does not change the ranking. Properly testing this fix requires refitting the GLMM with shared standardisation (out of scope here).
+
+The mechanism IS substrate-robust at fit time. Its per-species PROJECTION at the species-cell level is qualified — reliable above the n_cells filter, not below it. Both upstream Outcomes report rankings filtered per the recommended protocol from this chain.""";
+    <https://w3id.org/sciencelive/o/terms/hasConfidenceLevel> <https://w3id.org/sciencelive/o/terms/HighConfidence>;
+    <https://w3id.org/sciencelive/o/terms/hasEvidenceDescription> """Five projection variants tested at both horizons (2020–2029 + 2030–2039) and four per-species n_cells filters (≥1, ≥5, ≥10, ≥20) on 31 Iberian Bombus species shared between the two upstream substrate replications.
+
+Variants:
+  (a) Full GLMM η, within-substrate predictor standardisation.
+  (b) Main-effects-only η, within-substrate standardisation (drop the four interaction terms at projection only; keep them in the fit).
+  (c) Full GLMM η, shared CEA reference standardisation (substrate-fit β + shared (μ, σ); refuted as a standalone fix).
+  (d) Mean future TEI per species (substrate-invariant physical metric, no GLMM).
+  (d2) Fraction of cells with future TEI > 0.5 per species (substrate-invariant threshold metric).
+
+Cross-substrate Spearman ρ between nside=64 and nside=128 rankings, mid-term horizon 2030–2039:
+
+                                  n≥1  n≥5  n≥10  n≥20
+                                  (31) (27) (13)  (10)
+  (a) Full GLMM η                 +0.27 +0.51 +0.59 +0.77
+  (b) Main-effects only η         +0.40 +0.52 +0.97 +0.98
+  (c) Shared CEA reference η      +0.27 +0.49 +0.52 +0.55
+  (d) Mean future TEI             +0.66 +0.69 +0.90 +0.82
+  (d2) Frac TEI_future>0.5        +0.66 +0.71 +0.88 +0.83
+
+Headline: variant (b) at n≥10 lifts ρ from +0.59 (variant a same filter) to +0.97 — substrate-stable. Same qualitative pattern at the near-term horizon.
+
+Mechanistic decomposition. Per-species η at the SSP3-7.0 mid-term horizon was decomposed into its 10 GLMM-term contributions plus the species random intercept, at both substrates. For the four most-divergent species (norvegicus, mendax, jonellus, sylvestris):
+
+  - sc_TEI_delta:sc_PEI_delta term contributions differ by 1.0–6.3 logits between substrates (largest single driver in every case).
+  - sc_TEI_delta term contributions differ by 0.5–2.5 logits (next largest).
+  - All other terms (Intercept, sc_sampling, main TEI/PEI, all other interactions, species RE) differ by ≤ 0.6 logits each (substrate-stable).
+
+Refuted hypotheses verified empirically:
+  - Random-intercept refit. ΔRE across all 12 species in the diagnostic set ≤ 0.6 logits — substrate-stable.
+  - Niche-limit refit. ΔT_range across the 12 species = 0.0–2.9°C; norvegicus has ΔT_range = +0.01°C yet shows 8.8-logit Δη — refuted as the dominant cause.
+  - Shared-reference standardisation alone. Variant (c) Spearman ρ stays ≈ variant (a) at every cell-count filter.
+
+Files: results/SUBSTRATE_SENSITIVITY_FINDINGS.md, results/variant_comparison_2030_2039.{csv,json}, results/variant_comparison_2020_2029.{csv,json}, results/substrate_comparison_decomposition_2030_2039.txt, figures/variant_concordance_{2020_2029,2030_2039}.png, figures/variant_pairs_{2020_2029,2030_2039}.png.
+
+Repository: https://github.com/annefou/weatherxbiodiversity-substrate-sensitivity""";
+    <https://w3id.org/sciencelive/o/terms/hasLimitationsDescription> """1. Two substrates only. The diagnostic compares nside=64 and nside=128 (both HEALPix-NESTED on the WGS84 ellipsoid). Whether the same recommended protocol holds at coarser substrates (nside=32, nside=16) or against non-HEALPix grids (CEA, EASE-Grid 2.0, S2) is not directly tested. The within-HEALPix factor-of-2 resolution change is the strongest case where one might expect substrate stability; finding instability here is a strong negative result, but the empirical n_cells ≥ 10 threshold may be substrate-pair-dependent.
+
+2. Variant (c) tested as approximation of refit-with-shared-standardisation. The most rigorous test of \"shared reference standardisation alone fixes substrate coupling\" is to refit the GLMM with shared (μ, σ) and re-project. This Outcome instead uses substrate-local β with shared-σ predictors at projection time, which is mathematically equivalent to a constant scaling — refuting it as a standalone fix BUT not the same as testing a full refit. A full refit could be a follow-up.
+
+3. Iberian Bombus only. The diagnostic uses the species set, climate inputs (CRU TS 3.24.01), and projection (DestinE Climate DT SSP3-7.0) from the upstream replications. Whether the substrate-coupling mechanism generalises to other taxa, regions, or future climate forcings is plausible from the mechanism (it depends only on having an interaction-term GLMM with future predictors extrapolating outside the training distribution) but is not directly tested.
+
+4. Recommended protocol bound to this analysis. The \"n_cells ≥ 10 + main-effects-only η\" recommendation is calibrated against the empirical Spearman ρ at the two horizons tested. Other choices may be defensible (e.g. n ≥ 5 + variant b also gives ρ = +0.52; n ≥ 20 + variant a gives ρ = +0.77). The protocol is a recommendation, not a hard threshold.
+
+5. Validation status PartiallySupported, not Contradicted. Soroye's TEI mechanism IS supported at fit time (the upstream chains' Outcomes are Validated). The qualification is downstream — about how to USE the fitted GLMM at projection time. CiTO step 06 should encode this as cito:qualifies (extends with a methodological caveat) rather than cito:disputes (refutes).""";
+    <https://w3id.org/sciencelive/o/terms/hasOutcomeRepository> <https://doi.org/10.5281/zenodo.20113787>;
+    <https://w3id.org/sciencelive/o/terms/hasValidationStatus> <https://w3id.org/sciencelive/o/terms/PartiallySupported>;
+    <https://w3id.org/sciencelive/o/terms/isOutcomeOf> <https://w3id.org/sciencelive/np/RAPZ97EGTne_ZhBh_WE1_QX1Jgf96DWlNg-jsgasx5g50/soroye2020-tei-projection-substrate-sensitivity-cross-substrate-diagnostic> .
+}
+
+sub:provenance {
+  sub:assertion prov:wasAttributedTo <https://orcid.org/0000-0002-1784-2920> .
+}
+
+sub:pubinfo {
+  <https://orcid.org/0000-0002-1784-2920> <http://xmlns.com/foaf/0.1/name> "Anne Fouilloux" .
+  
+  this: dc:created "2026-05-11T20:26:22.594Z"^^xsd:dateTime;
+    dc:creator <https://orcid.org/0000-0002-1784-2920>;
+    dc:license <https://creativecommons.org/licenses/by/4.0/>;
+    npx:introduces sub:soroye2020-tei-projection-substrate-coupling-partially-supported;
+    npx:wasCreatedAt <https://platform.sciencelive4all.org>;
+    <http://www.w3.org/2000/01/rdf-schema#label> "TEI-based extirpation projection is grid-coupled at the projection step (Iberian Bombus, HEALPix nside=64 vs nside=128, SSP3-7.0): mechanism replicates at fit time, per-species ranking does not — fixable";
+    <https://w3id.org/np/o/ntemplate/wasCreatedFromTemplate> <https://w3id.org/np/RA2zljn0Nw9SadppOyxZoh-_Rxosslrq-vYG-p9SttnJE> .
+  
+  sub:sig npx:hasAlgorithm "RSA";
+    npx:hasPublicKey "MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAoDcOiD+jen8awiJ6DB2ewDw66PeG64hODmgNFwy7GrwQui4HKnHdvxd++1UhTgiOfycxyxBb7sXPSikLw/1TsSyPsEl0P3/+600szxpTGgLNzW+bZ2DVP3d8ERMV1aWpH0ci3B/5vmK+vXQZ4uCoq57NE0MiFg5c13Gy0gd6n7wZYEhYM4AjWSLL0QS/HY+TFZMYL9bCFeATennGrlB2UEjRlw21UB2Ah16ZZ6hxQlfctFJZE7TGnBJPB3ttTjfcOfamhjZVwQ0yV9mv7x6PGiSmkzpJTVLjn8hagoKT05YUwVQArFb+w7f6sXqvvljMigjd/Rbqgbye/lLUAZLfJSnFM58TubfpEJvXV4zNMDEoT3VQ7dokgoLgMrmjZCKATtQ7gomocoTJ1NhN2esRNtGzWaS2obL/mueUQlMlavssZnqL8WICkdAuDlwDVNbsbwEWKQ50kiPdAdduSigifxA4CM7TgvnxqZVoAResEGP6UhTTem3T4CsbEas1Caj9wa7M1jPjACu5LF5BwcVns3ZQHWLipjRjD+9/ur3G8QtuxbNhmXlDYQ6tXxB1lK+Oz7O519b3bA15ilzFl0SdvMBGTe46xaQ9DsJT18THKnPbUhNMy0dH0VtzpB+EEaXZ25Fp9VHMEUqo1lLS9e89eO3efiqkESKQ7wmB+/DlIRcCAwEAAQ==";
+    npx:hasSignature "CHfLFK8Mk1cGto3ek1k7/PKvO6t8UFlTCX9q2F68Aydclx42ImwfJjNCX5VJ1x24BaiRQ0ABUCeAgopIyF7HJKpXKUGFdXr8/yiodDxNh2wMdPpqW219JgVy9e6AEeHK5J1RNg5VbfESPMC75+F20draQXY+c+eV9WMpHCIxZcsl/1nyYe7TK6U3jtTPvnriiRzKagFIdv3TlO42ZqcpU1gWBAWxk+W3NZcOLqsRiLscMAdiDS9tW1/rNGkpEqHMtSOkXNs7PAo2PGm0ICK7OebUCDIJ9xaWT+ycUOwA4sNrmpPUn9rXcthNFkbhBPd90m3evJugbBHHU/uqOSflIxtYPuTKdEJwOtA0ngPddMauMzjJReVUXi9ibQ3S5ow8deUqBnnCIwx64IcxutIidGh4fQ2iaNPuFrgDqo2ld6CVP2v7lfVfbgUY0zrAwCmmgAyKO2pZfSybb5LQEPq7PgA9WVeSsKN1CICOFx2i4wz3i1bVV5YlmhQNr59BQSwnNxtckHzj18Gk9k9QBdB3X3WgXyOVZ0pD02Y2UY/pyAVquDn59fp3PsqnHYbEvvKjGarvgyTpIotRMIZcVzdkzMqfOKA6fqioPBhTifljOcH7E49RXOJhii7Qf1MGdZKT3dLChmOeyjJbZEs6ipiR56hdPYzowxTqMwCSSfpb4Ao=";
+    npx:hasSignatureTarget this:;
+    npx:signedBy <https://orcid.org/0000-0002-1784-2920> .
+}
+

@@ -1,0 +1,48 @@
+@prefix this: <https://w3id.org/sciencelive/np/RAwGAtWnn1ghSvSzTUtTfrKN4PZP7W6OBmdYsfVRjWAx8> .
+@prefix sub: <https://w3id.org/sciencelive/np/RAwGAtWnn1ghSvSzTUtTfrKN4PZP7W6OBmdYsfVRjWAx8/> .
+@prefix np: <http://www.nanopub.org/nschema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix npx: <http://purl.org/nanopub/x/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+sub:Head {
+  this: a np:Nanopublication;
+    np:hasAssertion sub:assertion;
+    np:hasProvenance sub:provenance;
+    np:hasPublicationInfo sub:pubinfo .
+}
+
+sub:assertion {
+  <http://purl.org/aida/Projected%20per-species%20rankings%20of%20Iberian%20Bombus%20extirpation%20risk%20under%20future%20climate%20are%20sensitive%20to%20the%20spatial%20grid%20resolution%20of%20the%20analysis,%20particularly%20for%20species%20with%20sparse%20historical%20distribution.>
+    a <http://purl.org/petapico/o/hycl#AIDA-Sentence>;
+    <http://purl.org/spar/cito/obtainsSupportFrom> <https://doi.org/10.1126/science.aax8591>,
+      <https://doi.org/10.5281/zenodo.20113777>, <https://doi.org/10.5281/zenodo.20113780>;
+    <http://schema.org/about> <http://www.wikidata.org/entity/Q125928>, <http://www.wikidata.org/entity/Q47041>;
+    <http://www.w3.org/2004/02/skos/core#related> <https://w3id.org/sciencelive/np/RAErLL_QSe3e0pKBxHkUHH5v49F66fFVuS2OmYMJz02OY> .
+}
+
+sub:provenance {
+  sub:assertion prov:wasAttributedTo <https://orcid.org/0000-0002-1784-2920> .
+}
+
+sub:pubinfo {
+  <https://orcid.org/0000-0002-1784-2920> <http://xmlns.com/foaf/0.1/name> "Anne Fouilloux" .
+  
+  this: dc:created "2026-05-11T20:12:56.759Z"^^xsd:dateTime;
+    dc:creator <https://orcid.org/0000-0002-1784-2920>;
+    dc:license <https://creativecommons.org/licenses/by/4.0/>;
+    npx:hasNanopubType <http://purl.org/petapico/o/hycl>;
+    npx:introduces <http://purl.org/aida/Projected%20per-species%20rankings%20of%20Iberian%20Bombus%20extirpation%20risk%20under%20future%20climate%20are%20sensitive%20to%20the%20spatial%20grid%20resolution%20of%20the%20analysis,%20particularly%20for%20species%20with%20sparse%20historical%20distribution.>;
+    npx:wasCreatedAt <https://platform.sciencelive4all.org>;
+    <http://www.w3.org/2000/01/rdf-schema#label> "AIDA sentence: Projected per-species rankings of Iberian Bombus extirpation risk under future climate are sensitive to the spatial grid resolution of the analysis, particularly for species with sparse historical distribution.";
+    <https://w3id.org/np/o/ntemplate/wasCreatedFromTemplate> <https://w3id.org/np/RALmXhDw3rHcMveTgbv8VtWxijUHwnSqhCmtJFIPKWVaA> .
+  
+  sub:sig npx:hasAlgorithm "RSA";
+    npx:hasPublicKey "MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAoDcOiD+jen8awiJ6DB2ewDw66PeG64hODmgNFwy7GrwQui4HKnHdvxd++1UhTgiOfycxyxBb7sXPSikLw/1TsSyPsEl0P3/+600szxpTGgLNzW+bZ2DVP3d8ERMV1aWpH0ci3B/5vmK+vXQZ4uCoq57NE0MiFg5c13Gy0gd6n7wZYEhYM4AjWSLL0QS/HY+TFZMYL9bCFeATennGrlB2UEjRlw21UB2Ah16ZZ6hxQlfctFJZE7TGnBJPB3ttTjfcOfamhjZVwQ0yV9mv7x6PGiSmkzpJTVLjn8hagoKT05YUwVQArFb+w7f6sXqvvljMigjd/Rbqgbye/lLUAZLfJSnFM58TubfpEJvXV4zNMDEoT3VQ7dokgoLgMrmjZCKATtQ7gomocoTJ1NhN2esRNtGzWaS2obL/mueUQlMlavssZnqL8WICkdAuDlwDVNbsbwEWKQ50kiPdAdduSigifxA4CM7TgvnxqZVoAResEGP6UhTTem3T4CsbEas1Caj9wa7M1jPjACu5LF5BwcVns3ZQHWLipjRjD+9/ur3G8QtuxbNhmXlDYQ6tXxB1lK+Oz7O519b3bA15ilzFl0SdvMBGTe46xaQ9DsJT18THKnPbUhNMy0dH0VtzpB+EEaXZ25Fp9VHMEUqo1lLS9e89eO3efiqkESKQ7wmB+/DlIRcCAwEAAQ==";
+    npx:hasSignature "XhznTB/UMh2sJ1ieo5ZYlbwzc8Wn7fBAElnjnbafFkCEsw7L3sV+p6WfxM3hKo2CeSUcwstD0HGT48xIFBZ1jFkqqV1BtuASvsssPddDgXOCCU8r0BRDi1s6FiPaOqsNcIQ9yBX5HDdnRlbY/WMSciJ0Gxu+Y7Fz/WBytbd0Zo4u4CujoBmmf9xQQMCJEGzSRYTrujSwyb08wW9fbKIf2YZk3ECo/Io/EckkeecmUzo5tA1/BDI22rUO4WuydO+PME2JdEQasS3RTUss2StmK4ONzMDcolLYynl3rTlx0TZrcioJoSRWLTk5ofhIJ7ik+7kg74vM90uIjfNwcUiEFyS5On8OCb92+i7fV2ZaiPl8n0W5QbQIZ4qLgFEcYtfBH6VbqCtxt3ggij7xE+VH5AjRMmVwyOHgDeO6PMQbdbQvvwH16Fj21RXjbNynlmInUxmpnJBR8HR/ncPp6jmG3chvKLdsv8hpK/bsyfk3+iExJ9AjXAfKF8bXC88otpgTM3Jy+WLf7IMplQauyObGkJ1yCN8ccNp0R2HZp157fHgz1jNFka439hEqmL2zUbjJn97LZBhsk480ezq25/NPJAR+JnMha/g5sYg8RY/dAA/hbx5JU5LK26xSGlh8Wbo1MiRgg1wLrAGKXbeUAUkFGaxdeyW/y82y+KoMbcezqDY=";
+    npx:hasSignatureTarget this:;
+    npx:signedBy <https://orcid.org/0000-0002-1784-2920> .
+}
+

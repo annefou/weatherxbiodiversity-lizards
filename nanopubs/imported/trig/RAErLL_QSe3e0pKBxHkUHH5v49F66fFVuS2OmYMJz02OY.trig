@@ -1,0 +1,46 @@
+@prefix this: <https://w3id.org/sciencelive/np/RAErLL_QSe3e0pKBxHkUHH5v49F66fFVuS2OmYMJz02OY> .
+@prefix sub: <https://w3id.org/sciencelive/np/RAErLL_QSe3e0pKBxHkUHH5v49F66fFVuS2OmYMJz02OY/> .
+@prefix np: <http://www.nanopub.org/nschema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix npx: <http://purl.org/nanopub/x/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+sub:Head {
+  this: a np:Nanopublication;
+    np:hasAssertion sub:assertion;
+    np:hasProvenance sub:provenance;
+    np:hasPublicationInfo sub:pubinfo .
+}
+
+sub:assertion {
+  <https://doi.org/10.1126/science.aax8591> <http://purl.org/spar/cito/hasQuotedText>
+      "Increasing frequency of hotter temperatures predicts species’ local extinction risk, chances of colonizing a new area, and changing species richness.";
+    <http://www.w3.org/2000/01/rdf-schema#comment> "This sentence defines the mechanism our replication projects forward in time: temperatures exceeding species’ historical thermal tolerances drive local extinction, colonization, and richness change. The original study validated this retrospectively for 66 Bombus species in North America and Europe (~50 km, monthly). We test its transferability to the Iberian Peninsula under SSP3-7.0 using DestinE Climate DT output (~5 km, daily)." .
+  
+  <https://w3id.org/np/o/ntemplate/CREATOR> <http://purl.org/spar/cito/quotes> <https://doi.org/10.1126/science.aax8591> .
+}
+
+sub:provenance {
+  sub:assertion prov:wasAttributedTo <https://orcid.org/0000-0002-1784-2920> .
+}
+
+sub:pubinfo {
+  <https://orcid.org/0000-0002-1784-2920> <http://xmlns.com/foaf/0.1/name> "Anne Fouilloux" .
+  
+  this: dc:created "2026-05-11T17:42:43.119Z"^^xsd:dateTime;
+    dc:creator <https://orcid.org/0000-0002-1784-2920>;
+    dc:license <https://creativecommons.org/licenses/by/4.0/>;
+    npx:hasNanopubType <http://purl.org/spar/cito/cites>;
+    npx:wasCreatedAt <https://platform.sciencelive4all.org>;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Paper annotation: Increasing frequency of hotter temperatures predicts species’ local extinction risk, chances of colonizing a new area, and changing species richness.";
+    <https://w3id.org/np/o/ntemplate/wasCreatedFromTemplate> <https://w3id.org/np/RA24onqmqTMsraJ7ypYFOuckmNWpo4Zv5gsLqhXt7xYPU> .
+  
+  sub:sig npx:hasAlgorithm "RSA";
+    npx:hasPublicKey "MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAoDcOiD+jen8awiJ6DB2ewDw66PeG64hODmgNFwy7GrwQui4HKnHdvxd++1UhTgiOfycxyxBb7sXPSikLw/1TsSyPsEl0P3/+600szxpTGgLNzW+bZ2DVP3d8ERMV1aWpH0ci3B/5vmK+vXQZ4uCoq57NE0MiFg5c13Gy0gd6n7wZYEhYM4AjWSLL0QS/HY+TFZMYL9bCFeATennGrlB2UEjRlw21UB2Ah16ZZ6hxQlfctFJZE7TGnBJPB3ttTjfcOfamhjZVwQ0yV9mv7x6PGiSmkzpJTVLjn8hagoKT05YUwVQArFb+w7f6sXqvvljMigjd/Rbqgbye/lLUAZLfJSnFM58TubfpEJvXV4zNMDEoT3VQ7dokgoLgMrmjZCKATtQ7gomocoTJ1NhN2esRNtGzWaS2obL/mueUQlMlavssZnqL8WICkdAuDlwDVNbsbwEWKQ50kiPdAdduSigifxA4CM7TgvnxqZVoAResEGP6UhTTem3T4CsbEas1Caj9wa7M1jPjACu5LF5BwcVns3ZQHWLipjRjD+9/ur3G8QtuxbNhmXlDYQ6tXxB1lK+Oz7O519b3bA15ilzFl0SdvMBGTe46xaQ9DsJT18THKnPbUhNMy0dH0VtzpB+EEaXZ25Fp9VHMEUqo1lLS9e89eO3efiqkESKQ7wmB+/DlIRcCAwEAAQ==";
+    npx:hasSignature "XBY2RjZ7dbngfeVSZt4sX7OWdpVnQLjlXdyX2GsigHrM6sYXvZP8F7bLNE0mmHaUzLqF0TvJzh1doXgxITf8w8rXO8S/F59i71RMsmob7vL+WzKmvn9gfmgwg8XfwYqdkakD1aYKR6BtChxmU6KUFkb01CzYPCiSeO1Yat4hJYkO9lrhYheUZO7LtwO3mdYHW1J2W25n38iB7oQdIHXaVQbG0VTlK9XtjJZ1Ihq/BFocp9UIu33o1bDqRl+wgS6eTEaKkaeNjrc8pn9rdltaNJz5/gLYrDrmdwoZkHKQ6+Nhei+NwNrZpuu9kSpG9B1PhW2RMjA+YHrb1WouQMDrqWosii/6KbCsoUJvXPoAhnlB547Fs6NS78X0o2vzrBE9LsOePVSgAhAcQkGY0CPJIQal6zH+YaenWwy7FltcSw1RHBclSgm14MDi6AWH5/RJIo8sSQHR/H2ft9HS/V0RIfkt++OkyyTLtIATJ7M45Gc0flrVdI3WYkMRInvxCPLu1Td9o0Oe0Q1LuA2S1q2XBu1tGvJc50+8xNHkqgeHZBScAA71z3cZvmUoAd+HCKZlBa7VsKjnLVVx+anvXIIq5onpCkpVIRO2RMUVY/935tt0mUmki2nXu6b5L8xd0E09FQWKsHO7DrS8Thn6q659lyGcwSX4nRDasq8kWTNEmfs=";
+    npx:hasSignatureTarget this:;
+    npx:signedBy <https://orcid.org/0000-0002-1784-2920> .
+}
+
