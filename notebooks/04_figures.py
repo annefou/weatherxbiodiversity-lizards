@@ -117,14 +117,14 @@ vmax = float(np.nanmax([grid_2020s, grid_2030s]))
 if vmax == 0:
     vmax = 0.05  # ensure a visible colour ramp even when all zero
 
-fig, axes = plt.subplots(1, 2, figsize=(11, 4.2), sharey=True)
+fig, axes = plt.subplots(1, 2, figsize=(11, 4.8), sharey=True)
 for ax, grid, decade in zip(axes, [grid_2020s, grid_2030s], ["2020s", "2030s"]):
     im = ax.imshow(grid, cmap="Reds", vmin=0, vmax=vmax, aspect="auto")
     ax.set_xticks(range(len(WINDOWS)))
     ax.set_xticklabels(WINDOW_LABELS)
     ax.set_yticks(range(len(T_BS)))
     ax.set_yticklabels(T_B_LABELS)
-    ax.set_title(f"{decade}", fontsize=12)
+    ax.set_title(f"{decade}", fontsize=12, pad=10)
     # Annotate each cell with the rate.
     for i in range(len(T_BS)):
         for j in range(len(WINDOWS)):
@@ -140,10 +140,14 @@ for ax, grid, decade in zip(axes, [grid_2020s, grid_2030s], ["2020s", "2030s"]):
 
 axes[0].set_ylabel("Preferred body temperature")
 fig.colorbar(im, ax=axes, shrink=0.85, label="Local-extinction rate")
+# Reserve top 15 % of the figure for the two-line suptitle so it does
+# not collide with the panel titles ("2020s" / "2030s"). bbox_inches=
+# "tight" then crops the saved figure to the visible content.
+fig.subplots_adjust(top=0.82)
 fig.suptitle(
     "Iberian Lacertidae h_r mechanism — sensitivity to lizard-biology priors\n"
     "Sinervo 2010 SOM Eq. S2 applied under DestinE Climate DT SSP3-7.0",
-    fontsize=12,
+    fontsize=12, y=0.98,
 )
 
 fig.savefig(FIG_DIR / "main_result.png", dpi=DPI, bbox_inches="tight")
