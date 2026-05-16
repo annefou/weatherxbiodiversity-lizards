@@ -109,6 +109,7 @@ RESULTS_TABLES.mkdir(parents=True, exist_ok=True)
 
 DESTINE_NC = INTERMEDIATE / "destine_iberia_daily_t2m_nside128.nc"
 GBIF_PARQUET = INTERMEDIATE / "gbif_lacertidae_presence_nside128.parquet"
+GBIF_PARQUET_64 = INTERMEDIATE / "gbif_lacertidae_presence_nside64.parquet"
 SUBDAILY_PROBE_LOG = ROOT / "data" / "destine" / "sub_daily" / "probe.log"
 
 EXTINCTION_MASK_NC = INTERMEDIATE / "extinction_mask_nside128.nc"
@@ -391,6 +392,180 @@ for k, v in sinervo_reference.items():
 print("Note: 2020s and 2030s horizons are not directly comparable to "
       "Sinervo's 2009/2050/2080 timepoints; reported here for context.")
 
+
+# %% [markdown]
+# ## Substrate-sensitivity diagnostic (nside=128 vs nside=64)
+#
+# Mirrors the Bombus chain-3 pattern (`weatherxbiodiversity-substrate-
+# sensitivity`): re-runs the per-species rate computation at HEALPix
+# nside=64 (downsampled from the DestinE-native nside=128 via the
+# NESTED bit-shift parent = cell >> 2, no re-projection). Compares
+# per-species rankings between the two substrates and reports Spearman ρ
+# for the full set and for the n_cells ≥ 10 / n_cells < 10 subsets.
+#
+# Run under the only sensitivity-matrix config that produces non-zero
+# rates: **S3a** (Iberolacerta T_b = 31 °C, May-June window). Under the
+# baseline + the other four configs the family rate is 0 % at both
+# substrates, so the comparison is degenerate. Reporting the diagnostic
+# at S3a is methodologically honest — it surfaces grid-coupling under
+# the only configuration where the mechanism actually flags cells.
+
+# %%
+SUBSTRATE_TB = 31.0          # S3a: Iberolacerta-style cool-adapted T_b
+SUBSTRATE_MONTHS = (5, 6)    # S3a: actual Iberian Lacertidae May-Jun breeding
+
+
+def _per_species_rates(
+    tmax_da: xr.DataArray,
+    presence_df: pd.DataFrame,
+    cell_col: str,
+    t_b: float,
+    months: tuple[int, ...],
+) -> pd.DataFrame:
+    """Compute per-species 2020s + 2030s local-extinction rates under a
+    (T_b, window) config at the substrate implied by tmax_da's cell
+    dimension. Returns one row per species with rate, n_cells, low_N
+    flag (n_cells < 10), threshold = H_R_THRESHOLD_LACERTIDAE."""
+    hr_d = xr.where(
+        tmax_da > t_b,
+        SLOPE * (tmax_da - t_b) + INTERCEPT,
+        0.0,
+    )
+    mts = pd.DatetimeIndex(hr_d["time"].values).month
+    win = np.isin(mts, list(months))
+    hr_w = hr_d.isel(time=win)
+    yr = hr_w["time"].dt.year
+    hr_mean = hr_w.groupby(yr.rename("year")).mean(dim="time")
+    extinct = (hr_mean > H_R_THRESHOLD_LACERTIDAE)
+    yrs = extinct["year"].values
+    extinct_20 = extinct.isel(year=(yrs >= 2020) & (yrs < 2030)).mean(dim="year")
+    extinct_30 = extinct.isel(year=(yrs >= 2030) & (yrs < 2040)).mean(dim="year")
+    rows = []
+    for sp, sub in presence_df.groupby("species"):
+        cells = sub[cell_col].astype(int).unique().tolist()
+        mask = np.isin(extinct_20["cell"].values, cells)
+        if mask.sum() == 0:
+            continue
+        r20 = float(extinct_20.isel(cell=mask).mean())
+        r30 = float(extinct_30.isel(cell=mask).mean())
+        rows.append({
+            "species": sp,
+            "n_cells": int(mask.sum()),
+            "local_ext_2020s": r20,
+            "local_ext_2030s": r30,
+        })
+    df = pd.DataFrame(rows).sort_values("species").reset_index(drop=True)
+    df["low_N_warning"] = df["n_cells"] < LOW_N_CELL_THRESHOLD
+    return df
+
+
+# nside=128 is the native substrate; tmax_daily already has it.
+print("\n--- Substrate-sensitivity diagnostic (S3a config) ---")
+print(f"  T_b = {SUBSTRATE_TB} °C, window = {SUBSTRATE_MONTHS}")
+
+rates_128 = _per_species_rates(
+    tmax_daily, presence, "cell_id_nside128",
+    SUBSTRATE_TB, SUBSTRATE_MONTHS,
+)
+print(f"  nside=128: {len(rates_128)} species with ≥1 presence cell, "
+      f"family rate 2020s = {rates_128['local_ext_2020s'].mean():.4f}")
+
+# Downsample nside=128 Tmax to nside=64: average over the 4 NESTED
+# children per nside=64 parent. parent = pix >> 2 in NESTED ordering.
+parent_n64 = xr.DataArray(
+    tmax_daily["cell"].values.astype(np.int64) >> 2,
+    dims=["cell"], name="parent_n64",
+)
+tmax_daily_n64 = (
+    tmax_daily.groupby(parent_n64).mean(dim="cell")
+              .rename({"parent_n64": "cell"})
+)
+print(f"  nside=64 Tmax field: {tmax_daily_n64.sizes['cell']} parent cells "
+      f"(from {tmax_daily.sizes['cell']} nside=128 children)")
+
+presence_n64 = pd.read_parquet(GBIF_PARQUET_64)
+rates_64 = _per_species_rates(
+    tmax_daily_n64, presence_n64, "cell_id_nside64",
+    SUBSTRATE_TB, SUBSTRATE_MONTHS,
+)
+print(f"  nside=64:  {len(rates_64)} species with ≥1 presence cell, "
+      f"family rate 2020s = {rates_64['local_ext_2020s'].mean():.4f}")
+
+# Compare per-species rankings between the two substrates.
+joined = rates_128.set_index("species").join(
+    rates_64.set_index("species"),
+    how="inner",
+    lsuffix="_n128",
+    rsuffix="_n64",
+)
+print(f"  species joinable across substrates: {len(joined)}")
+
+from scipy.stats import spearmanr
+
+def _spear(group):
+    """Spearman rho on local_ext_2020s_n128 vs local_ext_2020s_n64."""
+    n128 = group["local_ext_2020s_n128"].values
+    n64 = group["local_ext_2020s_n64"].values
+    if len(group) < 3:
+        return float("nan"), len(group)
+    if n128.std() == 0 and n64.std() == 0:
+        return float("nan"), len(group)
+    rho, _ = spearmanr(n128, n64)
+    return float(rho), len(group)
+
+
+# Low-N at nside=128 — the population the rare-species caveat applies to.
+non_low_n_128 = joined[joined["n_cells_n128"] >= LOW_N_CELL_THRESHOLD]
+low_n_128 = joined[joined["n_cells_n128"] < LOW_N_CELL_THRESHOLD]
+
+rho_all, n_all = _spear(joined)
+rho_nonlow, n_nonlow = _spear(non_low_n_128)
+rho_low, n_low = _spear(low_n_128)
+
+substrate_sensitivity_summary = {
+    "config_used": {
+        "T_b_degC": SUBSTRATE_TB,
+        "critical_months": list(SUBSTRATE_MONTHS),
+        "note": (
+            "S3a (Iberolacerta T_b + May-Jun). Substrate diagnostic at "
+            "baseline config is degenerate because all per-species rates "
+            "are zero at both substrates."
+        ),
+    },
+    "n_species_joined": int(len(joined)),
+    "family_rate_nside128_2020s": float(rates_128["local_ext_2020s"].mean()),
+    "family_rate_nside64_2020s": float(rates_64["local_ext_2020s"].mean()),
+    "family_rate_nside128_2030s": float(rates_128["local_ext_2030s"].mean()),
+    "family_rate_nside64_2030s": float(rates_64["local_ext_2030s"].mean()),
+    "spearman_rho_all_species": rho_all,
+    "spearman_rho_n_cells_ge_10": rho_nonlow,
+    "spearman_rho_n_cells_lt_10": rho_low,
+    "n_species_n_cells_ge_10": int(n_nonlow),
+    "n_species_n_cells_lt_10": int(n_low),
+    "interpretation": (
+        "Per Bombus chain-3 finding (CHAIN_SUMMARY): mechanism is "
+        "substrate-robust if rho is high across all species; ranking is "
+        "grid-coupled for the n_cells < 10 subset if its rho is "
+        "materially lower than the n_cells >= 10 subset's rho."
+    ),
+}
+print(f"\nSubstrate-sensitivity Spearman rho (2020s rates):")
+print(f"  all species (n={n_all}):           rho = {rho_all:.3f}")
+print(f"  n_cells >= 10 (n={n_nonlow}):      rho = {rho_nonlow:.3f}")
+print(f"  n_cells < 10  (n={n_low}):         rho = {rho_low:.3f}")
+
+# Persist the per-species substrate comparison table.
+SUBSTRATE_CSV = RESULTS_TABLES / "substrate_sensitivity_per_species.csv"
+joined_out = joined.reset_index()[[
+    "species",
+    "n_cells_n128", "local_ext_2020s_n128", "local_ext_2030s_n128",
+    "n_cells_n64", "local_ext_2020s_n64", "local_ext_2030s_n64",
+    "low_N_warning_n128",
+]]
+joined_out.to_csv(SUBSTRATE_CSV, index=False)
+print(f"  wrote {SUBSTRATE_CSV}")
+
+
 # %% [markdown]
 # ## Sensitivity matrix — prior-conditional mechanism applicability
 #
@@ -501,6 +676,7 @@ headline = {
     },
     "lacertidae_family_rates_destine": family_rates,
     "sensitivity_matrix": sensitivity_matrix,
+    "substrate_sensitivity": substrate_sensitivity_summary,
     "sinervo_reference_table1": sinervo_reference,
     "rare_species_flag": {
         "low_N_cell_threshold": LOW_N_CELL_THRESHOLD,

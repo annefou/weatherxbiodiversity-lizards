@@ -242,11 +242,92 @@ print(f"Wrote {FIG_DIR / 'per_species_rates.png'} and .pdf")
 
 
 # %% [markdown]
-# ## Figures 3 & 4 — Iberia maps of cumulative h_r per decade
+# ## Figure 3 — Substrate-sensitivity diagnostic (S3a config)
 #
-# Show the decadal mean of April-May cumulative h_r per HEALPix cell.
-# Cells above the 3.1 h threshold are highlighted with a darker
-# colour-stop; below-threshold cells use a softer ramp.
+# Mirrors the Bombus chain-3 `weatherxbiodiversity-substrate-sensitivity`
+# pattern. One point per Lacertidae species; x = local-extinction rate
+# at HEALPix nside=128 (DestinE native), y = same at nside=64
+# (downsampled via NESTED bit-shift parent = pix >> 2). Diagonal is
+# y = x; deviation = substrate-coupled ranking. Spearman ρ annotated
+# for the full set and the well-sampled (n_cells ≥ 10) subset.
+#
+# Run under S3a (Iberolacerta T_b = 31 °C, May-Jun window) — the only
+# sensitivity-matrix config that produces non-zero rates. Under baseline
+# + the other four configs both substrates report 0 % for every
+# species, so the diagnostic is degenerate.
+
+# %%
+SUBSTRATE_CSV = RESULTS_TABLES / "substrate_sensitivity_per_species.csv"
+subs = pd.read_csv(SUBSTRATE_CSV)
+subs_summary = headline["substrate_sensitivity"]
+
+fig, ax = plt.subplots(figsize=(7.2, 6.5))
+
+x_n128 = subs["local_ext_2020s_n128"].values
+y_n64 = subs["local_ext_2020s_n64"].values
+low_n_mask = subs["low_N_warning_n128"].values
+
+# y = x diagonal reference.
+hi = float(max(x_n128.max(), y_n64.max())) * 1.05 if max(x_n128.max(), y_n64.max()) > 0 else 0.05
+ax.plot([0, hi], [0, hi], color="grey", lw=1, ls="--", alpha=0.6, zorder=1, label="y = x")
+
+# Points: low-N vs well-sampled.
+ax.scatter(
+    x_n128[~low_n_mask], y_n64[~low_n_mask],
+    s=60, color="#1f77b4", alpha=0.85, zorder=3,
+    label=f"n_cells ≥ 10 (n={int((~low_n_mask).sum())})",
+)
+ax.scatter(
+    x_n128[low_n_mask], y_n64[low_n_mask],
+    s=40, color="grey", alpha=0.6, zorder=2,
+    label=f"n_cells < 10 (n={int(low_n_mask.sum())}) — low-N, ranking grid-coupled",
+)
+
+ax.set_xlim(-hi*0.05, hi)
+ax.set_ylim(-hi*0.05, hi)
+ax.set_xlabel("Per-species local-extinction rate, 2020s — HEALPix nside=128 (DestinE native)")
+ax.set_ylabel("Per-species local-extinction rate, 2020s — HEALPix nside=64 (downsampled)")
+ax.set_aspect("equal", adjustable="box")
+
+rho_all = subs_summary["spearman_rho_all_species"]
+rho_high = subs_summary["spearman_rho_n_cells_ge_10"]
+rho_low = subs_summary["spearman_rho_n_cells_lt_10"]
+rho_low_txt = "n/a (zero variance)" if pd.isna(rho_low) else f"{rho_low:.3f}"
+
+ax.text(
+    0.04, 0.96,
+    f"Spearman ρ (per-species rate, 2020s, n128 vs n64):\n"
+    f"  all species (n={subs_summary['n_species_joined']}):    {rho_all:.3f}\n"
+    f"  n_cells ≥ 10 (n={subs_summary['n_species_n_cells_ge_10']}):                  {rho_high:.3f}\n"
+    f"  n_cells < 10 (n={subs_summary['n_species_n_cells_lt_10']}):                  {rho_low_txt}",
+    transform=ax.transAxes, ha="left", va="top",
+    fontsize=8.5, family="monospace",
+    bbox=dict(facecolor="white", edgecolor="grey", lw=0.5, alpha=0.92, pad=4),
+)
+
+ax.set_title(
+    "Substrate-sensitivity diagnostic — Iberian Lacertidae\n"
+    "S3a config (T_b = 31 °C, May-Jun); mirrors Bombus chain-3 pattern",
+    fontsize=11,
+)
+ax.legend(loc="lower right", fontsize=9, framealpha=0.92)
+ax.grid(True, alpha=0.35)
+
+fig.tight_layout()
+fig.savefig(FIG_DIR / "substrate_sensitivity.png", dpi=DPI, bbox_inches="tight")
+fig.savefig(FIG_DIR / "substrate_sensitivity.pdf", bbox_inches="tight")
+plt.show()
+print(f"Wrote {FIG_DIR / 'substrate_sensitivity.png'} and .pdf")
+
+
+# %% [markdown]
+# ## Figures 4 & 5 — Iberia maps of daily-mean h_r per decade
+#
+# Show the decadal mean of April-May daily-mean h_r per HEALPix cell.
+# Cells above the 3.1 h threshold are highlighted; below-threshold
+# cells use a softer ramp. The map statistic (mean of daily h_r over
+# the 61-day window, decadal-mean across years) matches the threshold
+# semantics (mean daily restriction hours during the critical period).
 #
 # We render the HEALPix cells as a scatter of cell centres with
 # square markers sized to the cell area at this latitude. This is the
@@ -257,7 +338,7 @@ print(f"Wrote {FIG_DIR / 'per_species_rates.png'} and .pdf")
 # %%
 def plot_h_r_map(label: str, y_start: int, y_end: int, vmax: float):
     sel = (ds["year"] >= y_start) & (ds["year"] <= y_end)
-    h_r_decade = ds["h_r_sum_critical"].isel(year=sel).mean(dim="year")
+    h_r_decade = ds["h_r_mean_critical"].isel(year=sel).mean(dim="year")
     lon = ds["lon"].values
     lat = ds["lat"].values
 
@@ -289,7 +370,7 @@ def plot_h_r_map(label: str, y_start: int, y_end: int, vmax: float):
         )
 
     cb = plt.colorbar(sc, ax=ax, orientation="vertical", shrink=0.85, pad=0.03)
-    cb.set_label(f"April-May cumulative h_r (h) — decadal mean")
+    cb.set_label(f"April-May daily-mean h_r (h) — decadal mean")
     cb.ax.axhline(H_R_THRESHOLD, color="black", lw=1)
     cb.ax.text(
         1.5, H_R_THRESHOLD, f" h_r = {H_R_THRESHOLD} h (Lacertidae threshold)",
@@ -297,7 +378,7 @@ def plot_h_r_map(label: str, y_start: int, y_end: int, vmax: float):
     )
 
     ax.set_title(
-        f"Iberia — cumulative April-May h_r, {label} (DestinE SSP3-7.0)\n"
+        f"Iberia — daily-mean April-May h_r, {label} (DestinE SSP3-7.0)\n"
         f"{int(above.sum())} of {len(lon)} cells > {H_R_THRESHOLD} h",
         fontsize=11,
     )
@@ -313,7 +394,7 @@ def plot_h_r_map(label: str, y_start: int, y_end: int, vmax: float):
 
 
 # Shared vmax across the two decades so the colour ramp is comparable.
-both = ds["h_r_sum_critical"].values
+both = ds["h_r_mean_critical"].values
 vmax_shared = float(np.percentile(both, 99))
 print(f"Shared colour-ramp max (99th percentile): {vmax_shared:.2f} h")
 

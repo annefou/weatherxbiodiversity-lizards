@@ -96,11 +96,13 @@ rule analysis:
     input:
         destine = f"{INTERMEDIATE}/destine_iberia_daily_t2m_nside128.nc",
         presence = f"{INTERMEDIATE}/gbif_lacertidae_presence_nside128.parquet",
+        presence_n64 = f"{INTERMEDIATE}/gbif_lacertidae_presence_nside64.parquet",
         # Sub-daily probe log is read but not strictly required to be
         # present — the notebook tolerates its absence.
     output:
         mask = f"{INTERMEDIATE}/extinction_mask_nside128.nc",
         per_species = f"{RESULTS}/tables/local_extinction_per_species.csv",
+        substrate_sensitivity = f"{RESULTS}/tables/substrate_sensitivity_per_species.csv",
         headline = f"{RESULTS}/headline.json",
     log:
         f"{RESULTS}/logs/03_analysis.log",
@@ -112,10 +114,11 @@ rule analysis:
 
 
 # ---------- 04: Figures ----------
-# Produces four figures: the sensitivity-matrix headline (T_b × window
+# Produces five figures: the sensitivity-matrix headline (T_b × window
 # heatmap, 2020s vs 2030s), a per-species local-extinction lollipop for
-# the baseline config, and two Iberia maps of decadal daily-mean h_r
-# with the 3.1 h threshold contour.
+# the baseline config, the substrate-sensitivity scatter mirroring the
+# Bombus chain-3 pattern (nside=128 vs nside=64), and two Iberia maps
+# of decadal daily-mean h_r with the 3.1 h threshold contour.
 rule figures:
     input:
         mask = f"{INTERMEDIATE}/extinction_mask_nside128.nc",
@@ -126,6 +129,8 @@ rule figures:
         main_pdf = f"{FIGURES}/main_result.pdf",
         per_species_png = f"{FIGURES}/per_species_rates.png",
         per_species_pdf = f"{FIGURES}/per_species_rates.pdf",
+        substrate_png = f"{FIGURES}/substrate_sensitivity.png",
+        substrate_pdf = f"{FIGURES}/substrate_sensitivity.pdf",
         map_2020s = f"{FIGURES}/h_r_map_2020s.png",
         map_2030s = f"{FIGURES}/h_r_map_2030s.png",
     log:

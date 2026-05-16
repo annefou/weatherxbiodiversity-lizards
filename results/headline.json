@@ -86,6 +86,27 @@
       "n_cell_years_above_threshold": 10
     }
   },
+  "substrate_sensitivity": {
+    "config_used": {
+      "T_b_degC": 31.0,
+      "critical_months": [
+        5,
+        6
+      ],
+      "note": "S3a (Iberolacerta T_b + May-Jun). Substrate diagnostic at baseline config is degenerate because all per-species rates are zero at both substrates."
+    },
+    "n_species_joined": 47,
+    "family_rate_nside128_2020s": 0.016777013877679044,
+    "family_rate_nside64_2020s": 0.009042185703898715,
+    "family_rate_nside128_2030s": 0.01430921157393892,
+    "family_rate_nside64_2030s": 0.006496288655323643,
+    "spearman_rho_all_species": 0.8911245765893471,
+    "spearman_rho_n_cells_ge_10": 0.9512165929876797,
+    "spearman_rho_n_cells_lt_10": NaN,
+    "n_species_n_cells_ge_10": 25,
+    "n_species_n_cells_lt_10": 22,
+    "interpretation": "Per Bombus chain-3 finding (CHAIN_SUMMARY): mechanism is substrate-robust if rho is high across all species; ranking is grid-coupled for the n_cells < 10 subset if its rho is materially lower than the n_cells >= 10 subset's rho."
+  },
   "sinervo_reference_table1": {
     "lacertidae_local_extinction_2009": 0.034,
     "lacertidae_local_extinction_2050": 0.241,
