@@ -1,0 +1,129 @@
+{
+  "written_on": "2026-05-16",
+  "config": {
+    "T_b_degC": 35.4,
+    "h_r_threshold_h": 3.1,
+    "critical_months": [
+      4,
+      5
+    ],
+    "subdaily_probe_status": "unavailable",
+    "n_iberian_cells_nside128": 479,
+    "n_lacertidae_presence_cells": 264,
+    "n_species": 47
+  },
+  "lacertidae_family_rates_destine": {
+    "local_extinction_2020s": 0.0,
+    "local_extinction_2030s": 0.0
+  },
+  "sensitivity_matrix": {
+    "baseline_family_aprmay": {
+      "t_b_degC": 35.4,
+      "months": [
+        4,
+        5
+      ],
+      "local_extinction_2020s": 0.0,
+      "local_extinction_2030s": 0.0,
+      "max_h_r_mean_h": 0.4610616862773895,
+      "n_cell_years_above_threshold": 0
+    },
+    "s1a_family_mayjun": {
+      "t_b_degC": 35.4,
+      "months": [
+        5,
+        6
+      ],
+      "local_extinction_2020s": 0.0,
+      "local_extinction_2030s": 0.0,
+      "max_h_r_mean_h": 2.6055784225463867,
+      "n_cell_years_above_threshold": 0
+    },
+    "s1b_family_aprjun": {
+      "t_b_degC": 35.4,
+      "months": [
+        4,
+        5,
+        6
+      ],
+      "local_extinction_2020s": 0.0,
+      "local_extinction_2030s": 0.0,
+      "max_h_r_mean_h": 1.7465964555740356,
+      "n_cell_years_above_threshold": 0
+    },
+    "s2_iberolacerta_aprmay": {
+      "t_b_degC": 31.0,
+      "months": [
+        4,
+        5
+      ],
+      "local_extinction_2020s": 0.0,
+      "local_extinction_2030s": 0.0,
+      "max_h_r_mean_h": 1.878418207168579,
+      "n_cell_years_above_threshold": 0
+    },
+    "s3a_iberolacerta_mayjun": {
+      "t_b_degC": 31.0,
+      "months": [
+        5,
+        6
+      ],
+      "local_extinction_2020s": 0.035606060606060606,
+      "local_extinction_2030s": 0.02878787878787879,
+      "max_h_r_mean_h": 5.600436687469482,
+      "n_cell_years_above_threshold": 170
+    },
+    "s3b_iberolacerta_aprjun": {
+      "t_b_degC": 31.0,
+      "months": [
+        4,
+        5,
+        6
+      ],
+      "local_extinction_2020s": 0.0030303030303030303,
+      "local_extinction_2030s": 0.0007575757575757576,
+      "max_h_r_mean_h": 3.8152449131011963,
+      "n_cell_years_above_threshold": 10
+    }
+  },
+  "sinervo_reference_table1": {
+    "lacertidae_local_extinction_2009": 0.034,
+    "lacertidae_local_extinction_2050": 0.241,
+    "lacertidae_local_extinction_2080": 0.46
+  },
+  "rare_species_flag": {
+    "low_N_cell_threshold": 10,
+    "n_low_N_species": 22,
+    "low_N_species_list": [
+      "Acanthodactylus boskianus",
+      "Algyroides marchi",
+      "Australolacerta australis",
+      "Dormaalisaurus girardoti",
+      "Dormaalisaurus rossmanni",
+      "Gallotia atlantica",
+      "Gallotia caesaris",
+      "Gallotia galloti",
+      "Gallotia stehlini",
+      "Gracilicerta sindexi",
+      "Iberolacerta aranica",
+      "Iberolacerta aurelioi",
+      "Iberolacerta bonnali",
+      "Iberolacerta galani",
+      "Iberolacerta martinezricai",
+      "Lacerta",
+      "Mesalina olivieri",
+      "Podarcis galerai",
+      "Podarcis melisellensis",
+      "Psammodromus blanci",
+      "Scelarcis perspicillata",
+      "Timon tangitanus"
+    ],
+    "note": "Rare-species per-species rates (n_cells < 10) are grid-coupled (Lobo et al. 2007, Hurlbert & Jetz 2007); interpret with caution."
+  },
+  "deviations": {
+    "tb_source": "Lacertidae family-level Table 1 (T_b=35.4 degC). Iberian-specific T_b records deferred to v0.2.0.",
+    "critical_window": "April-May (61 days, Iberian Podarcis/Iberolacerta/Timon breeding chronology). Sinervo SOM Sceloporus calibration uses March-April; SOM says '2 months in temperate zone'.",
+    "climate_forcing": "DestinE Climate DT SSP3-7.0 IFS-NEMO at HEALPix nside=128, 2020-2039 (vs Sinervo WorldClim 1.4 + CCCMA/HADCM3/CSIRO a2a, 1975/2020/2050/2080).",
+    "diurnal_reconstruction": "Not applied. Sinervo SOM Eq. S2 is parameterised in daily Tmax; DestinE 6-hourly samples are aggregated to daily max in 02_data_clean. Sub-daily probe outcome: unavailable - sinusoidal fallback unused."
+  }
+}

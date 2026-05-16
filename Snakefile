@@ -1,29 +1,31 @@
 # Snakefile — orchestrates the lizards replication pipeline end-to-end.
 #
-# Phase-2 pass-1 status: only `download` is fully wired. Rules `clean`,
-# `analysis`, `figures` are placeholders to keep the DAG shape visible —
-# they will be filled in pass-2 once 02/03/04 notebooks land. Each pass-2
-# stub is marked `# TODO pass 2`.
+# Phase-2 pass-2 status: all four notebooks are wired with real input /
+# output declarations. `snakemake --cores 1` runs the whole DAG; the
+# leaf is `figures/main_result.png` (the Phase-3 headline figure).
 #
 # Usage:
-#   snakemake --cores 1                  # run everything (pass 2 onward)
+#   snakemake --cores 1                  # run everything
 #   snakemake --cores 1 -n               # dry run
 #   snakemake --cores 1 download         # only fetch input data
+#   snakemake --cores 1 clean            # 01 + 02
+#   snakemake --cores 1 analysis         # 01 + 02 + 03
+#   snakemake --cores 1 figures          # 01 + 02 + 03 + 04
 
 NOTEBOOKS = "notebooks"
 DATA = "data"
 RESULTS = "results"
 FIGURES = "figures"
 
+INTERMEDIATE = f"{DATA}/intermediate"
+
 
 rule all:
     input:
-        # Final figure and headline statistic land in pass 2; for now the
-        # DAG's leaf is the source registry written by 01_data_download.
-        f"{DATA}/raw/sources.json",
-        # TODO pass 2 — restore these once 03/04 are written:
-        # f"{RESULTS}/headline_statistic.json",
-        # f"{FIGURES}/main_result.png",
+        f"{FIGURES}/main_result.png",
+        f"{FIGURES}/h_r_map_2020s.png",
+        f"{FIGURES}/h_r_map_2030s.png",
+        f"{RESULTS}/headline.json",
 
 
 # ---------- 01: Data download ----------
@@ -52,73 +54,84 @@ rule download:
         "jupyter execute --inplace 01_data_download.ipynb 2>&1 | tee ../{log}"
 
 
-# ---------- 02: Data clean (TODO pass 2) ----------
-# Will: decode DestinE GRIBs (HEALPix-NESTED nside=128) → aggregate to
-# daily Tmax per cell over Iberia; load CRU TS tmx; tidy the GBIF
-# Lacertidae occurrence dump into a clean per-species presence frame.
+# ---------- 02: Data clean ----------
+# Decodes DestinE GRIBs (HEALPix-NESTED nside=128) message-by-message
+# via the eccodes Python API and subsets to ~479 Iberian cells →
+# per-cell × per-day Tmax/Tmin NetCDF. Loads CRU TS tmx/tmn (regular
+# lat/lon, monthly), restricts to Iberia, samples at HEALPix cell
+# centres → monthly NetCDF. Unzips the pre-minted GBIF download,
+# assigns occurrences to HEALPix nside=128 cells → per-species per-cell
+# presence Parquet (+ sensitivity copy at nside=64 via the NESTED
+# parent operation child >> 2).
 rule clean:
     input:
         f"{DATA}/raw/sources.json",
+        f"{DATA}/destine/raw/destine_2020_2029_t2m.grib",
+        f"{DATA}/destine/raw/destine_2030_2039_t2m.grib",
+        f"{DATA}/gbif/lacertidae_iberia.zip",
     output:
-        # TODO pass 2 — declare the real outputs once 02_data_clean.py
-        # is written. Likely candidates (mirror Bombus repo layout):
-        #   data/intermediate/destine_t2m_iberia_nside128.nc
-        #   data/intermediate/lacertidae_iberia_clean.parquet
-        #   data/intermediate/cru_ts_tmx_iberia.nc
-        touch(f"{DATA}/intermediate/.clean_done"),
+        destine = f"{INTERMEDIATE}/destine_iberia_daily_t2m_nside128.nc",
+        cru = f"{INTERMEDIATE}/cru_iberia_monthly_nside128.nc",
+        presence_128 = f"{INTERMEDIATE}/gbif_lacertidae_presence_nside128.parquet",
+        presence_64 = f"{INTERMEDIATE}/gbif_lacertidae_presence_nside64.parquet",
+        report = f"{INTERMEDIATE}/clean_report.json",
     log:
         f"{RESULTS}/logs/02_data_clean.log",
     shell:
-        # TODO pass 2 — port to:
-        # "mkdir -p $(dirname {log}) && cd " + NOTEBOOKS + " && "
-        # "jupytext --to notebook 02_data_clean.py && "
-        # "jupyter execute --inplace 02_data_clean.ipynb 2>&1 | tee ../{log}"
-        "mkdir -p $(dirname {log}) $(dirname {output}) && "
-        "echo 'TODO pass 2: 02_data_clean.py not yet written' "
-        "| tee {log} && touch {output}"
+        "mkdir -p $(dirname {log}) " + INTERMEDIATE + " && "
+        "cd " + NOTEBOOKS + " && "
+        "jupytext --to notebook 02_data_clean.py && "
+        "jupyter execute --inplace 02_data_clean.ipynb 2>&1 | tee ../{log}"
 
 
-# ---------- 03: Analysis (TODO pass 2) ----------
-# Will: compute h_r per cell per day via the SOM Equation S2
-# (h_r = 0.74 × (T_max − T_b) + 6.1) for Iberian Lacertidae; integrate
-# over the family critical reproductive window; compare against
-# Sinervo Table 1 Lacertidae threshold h_r = 3.1 h to flag at-risk
-# cells. Headline statistic = fraction of cells exceeding the
-# threshold under each decade (2020-2029 vs 2030-2039).
+# ---------- 03: Analysis ----------
+# Applies SOM Equation S2 (h_r = 0.74·(T_max - T_b) + 6.1) to per-cell
+# × per-day DestinE Tmax, restricts to the April-May reproductive
+# window, sums to cumulative h_r per cell × per year, and flags cells
+# exceeding the Lacertidae family threshold h_r = 3.1 h. Aggregates
+# to per-species local-extinction rates per decade (2020s vs 2030s).
+# Persists the per-cell × per-year extinction mask + per-species CSV
+# + headline JSON.
 rule analysis:
     input:
-        f"{DATA}/intermediate/.clean_done",
+        destine = f"{INTERMEDIATE}/destine_iberia_daily_t2m_nside128.nc",
+        presence = f"{INTERMEDIATE}/gbif_lacertidae_presence_nside128.parquet",
+        # Sub-daily probe log is read but not strictly required to be
+        # present — the notebook tolerates its absence.
     output:
-        # TODO pass 2 — declare the real outputs once 03_analysis.py
-        # is written. Likely candidate:
-        #   results/headline_statistic.json
-        #   results/hr_per_cell.nc
-        touch(f"{RESULTS}/.analysis_done"),
+        mask = f"{INTERMEDIATE}/extinction_mask_nside128.nc",
+        per_species = f"{RESULTS}/tables/local_extinction_per_species.csv",
+        headline = f"{RESULTS}/headline.json",
     log:
         f"{RESULTS}/logs/03_analysis.log",
     shell:
-        "mkdir -p $(dirname {log}) $(dirname {output}) && "
-        "echo 'TODO pass 2: 03_analysis.py not yet written' "
-        "| tee {log} && touch {output}"
+        "mkdir -p $(dirname {log}) " + RESULTS + "/tables && "
+        "cd " + NOTEBOOKS + " && "
+        "jupytext --to notebook 03_analysis.py && "
+        "jupyter execute --inplace 03_analysis.ipynb 2>&1 | tee ../{log}"
 
 
-# ---------- 04: Figures (TODO pass 2) ----------
-# Will: produce figures/main_result.png — Iberia map of fraction-of-
-# cells-at-risk per Lacertidae species, comparing 2020-2029 vs
-# 2030-2039. Also a side comparison against the Sinervo Table 1
-# Lacertidae 2050 projection (0.241 local extinction) as the headline
-# extrapolation anchor.
+# ---------- 04: Figures ----------
+# Produces four figures: the sensitivity-matrix headline (T_b × window
+# heatmap, 2020s vs 2030s), a per-species local-extinction lollipop for
+# the baseline config, and two Iberia maps of decadal daily-mean h_r
+# with the 3.1 h threshold contour.
 rule figures:
     input:
-        f"{RESULTS}/.analysis_done",
+        mask = f"{INTERMEDIATE}/extinction_mask_nside128.nc",
+        per_species = f"{RESULTS}/tables/local_extinction_per_species.csv",
+        headline = f"{RESULTS}/headline.json",
     output:
-        # TODO pass 2 — declare the real outputs once 04_figures.py
-        # is written. Likely candidate:
-        #   figures/main_result.png
-        touch(f"{FIGURES}/.figures_done"),
+        main_png = f"{FIGURES}/main_result.png",        # sensitivity matrix
+        main_pdf = f"{FIGURES}/main_result.pdf",
+        per_species_png = f"{FIGURES}/per_species_rates.png",
+        per_species_pdf = f"{FIGURES}/per_species_rates.pdf",
+        map_2020s = f"{FIGURES}/h_r_map_2020s.png",
+        map_2030s = f"{FIGURES}/h_r_map_2030s.png",
     log:
         f"{RESULTS}/logs/04_figures.log",
     shell:
-        "mkdir -p $(dirname {log}) $(dirname {output}) && "
-        "echo 'TODO pass 2: 04_figures.py not yet written' "
-        "| tee {log} && touch {output}"
+        "mkdir -p $(dirname {log}) " + FIGURES + " && "
+        "cd " + NOTEBOOKS + " && "
+        "jupytext --to notebook 04_figures.py && "
+        "jupyter execute --inplace 04_figures.ipynb 2>&1 | tee ../{log}"
