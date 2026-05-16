@@ -1,45 +1,89 @@
 # Single source of truth for the runtime — used by local dev, Docker, and CI.
-# Add every dependency a notebook imports here. Local "kitchen-sink" envs
-# (e.g. pangeo) hide missing deps; CI builds strictly from this file and will
-# silently produce empty notebook cells if anything is missing.
+#
+# This env supports the four-notebook lizards replication pipeline
+# (Sinervo et al. 2010 h_r mechanism applied to Iberian Lacertidae under
+# the Destination Earth Climate DT SSP3-7.0 archive).
+#
+# Naming / channel order: conda-forge first (DOMAIN.md / CLAUDE.md).
+# Pin every dep. Where a current-stable patch version could not be
+# confirmed offline, the package is pinned to major-minor only and
+# annotated `# TODO: pin patch version after first successful build`.
 name: "weatherxbiodiversity-lizards"
 channels:
   - conda-forge
 dependencies:
   - python=3.12
+
   # --- core scientific stack ---
-  - numpy
-  - pandas>=2.0
-  - xarray>=2024.6
-  - scipy
-  - matplotlib
-  - pyarrow
-  # --- notebook execution + Jupyter Book ---
-  - jupytext
-  - jupyterlab
-  - nbclient
-  - ipykernel
-  # --- replace/extend with the deps your replication needs ---
-  # Examples (uncomment as needed):
-  # - statsmodels             # GLM/GLMM regression
-  # - scikit-learn            # classical ML
-  # - pyproj                  # CRS + map projections
-  # - cartopy                 # geographic plotting
-  # - netcdf4                 # NetCDF I/O — preferred over .npz for arrays (see DOMAIN.md)
-  # - zarr                    # Zarr — preferred for arrays >2 GB or cloud-archived (see DOMAIN.md)
-  # - cdsapi                  # Copernicus Climate Data Store
-  # - copernicusmarine        # Copernicus Marine Service
-  # - healpix-geo             # HEALPix on geo data — preferred (use nest=True — see DOMAIN.md)
-  # - healpy                  # HEALPix on pure-sphere (astrophysics) only
-  # - rasterio                # raster I/O
-  # - geopandas               # vector I/O
-  # - dask                    # out-of-core / parallel
+  - numpy=1.26
+  - pandas=2.2
+  - xarray=2024.6                 # TODO: pin patch version after first successful build
+  - scipy=1.13
+  - matplotlib=3.8
+  - seaborn=0.13
+  - statsmodels=0.14
+  - pyarrow=15.0
+  - dask=2024.6                   # TODO: pin patch version after first successful build
+
+  # --- Bayesian inference (mirrors the Bombus weatherxbio Tier-1 GLMM) ---
+  # arviz<0.22: pymc 5.x still does `from arviz import concat`, which was
+  # removed in arviz 0.22+. Pin arviz first; bambi/pymc/pytensor follow
+  # conda-forge's compatible selections.
+  - arviz<0.22
+  - bambi=0.13                    # TODO: pin patch version after first successful build
+  - pymc=5.16                     # TODO: pin patch version after first successful build
+
+  # --- climate / EO data I/O ---
+  - netcdf4=1.6
+  - zarr=2.18                     # TODO: pin patch version after first successful build
+  - eccodes=2.34                  # ECMWF GRIB C library
+  - python-eccodes=1.6            # explicit Python binding (1.x cadence, separate from C lib at 2.x)
+  - cfgrib=0.9.10                 # xarray GRIB backend (used for DestinE inspect)
+  - requests=2.32
+
+  # --- HEALPix / DGGS ---
+  # DOMAIN.md: default to healpix-geo (geo-aware, lon/lat, cartopy) over
+  # healpy for any geographic data. Lizards chain mirrors Bombus Phase C
+  # at HEALPix-NESTED nside=128 (native DestinE Climate DT grid).
+  - healpix-geo=0.1               # TODO: pin patch version after first successful build
+  - xdggs=0.1                     # TODO: pin patch version after first successful build
+
+  # --- biodiversity occurrence data ---
+  # pygbif: GBIF Occurrence Download API client. DOMAIN.md "GBIF download
+  # DOIs are mandatory" — pygbif.occurrences.download mints a DOI per query.
+  - pygbif=0.6                    # TODO: pin patch version after first successful build
+
+  # --- geospatial ---
+  - geopandas>=1.0,<2.0           # bumped from 0.14 — xdggs/h3ronpy requires geopandas>=1
+  - cartopy=0.23
+  - pyproj=3.6
+  - shapely=2.0
+  - rasterio=1.3
+
+  # --- RDF (re-running the FORRT chain-import script in scripts/) ---
+  - rdflib=7.0
+
+  # --- notebook execution + Jupyter Book build (CI uses these) ---
+  - jupytext=1.16
+  - jupyterlab=4.2
+  - nbclient=0.10
+  - ipykernel=6.29
+  - jupyter=1.0
+
+  # snakemake's datrie dep — install from conda-forge to avoid the broken
+  # PyPI wheel (duplicate LC_RPATH crashes dyld on macOS arm64).
+  - datrie=0.8
+
   - pip
   - pip:
-    # snakemake on conda-forge fails to solve under setup-micromamba@v3 —
-    # install via pip. See docs/cicd-conventions.md.
-    - snakemake
-    # Add pip-only deps here, e.g.:
-    # - pygbif
-    # - polytope-client       # Destination Earth Climate DT
-    # - earthkit-data
+    # snakemake on conda-forge fails to solve under setup-micromamba@v3
+    # (per docs/cicd-conventions.md) — install via pip.
+    - snakemake==8.14
+    # earthkit-data + polytope-client: pip-only on the DestinE Jupyter
+    # platform image; install via pip on local for env parity with the
+    # Bombus reference repo.
+    - earthkit-data==0.10.0
+    - polytope-client==0.7.4
+    # healpix-plot — EOPF-DGGS canonical HEALPix+cartopy bridge
+    # (DOMAIN.md). PyPI-only as of 2026-05.
+    - healpix-plot==2026.5.1        # bumped from 0.1.2 — upstream switched to date-versioning; 0.1.2 never released

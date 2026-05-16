@@ -32,3 +32,7 @@ references:
         given-names: "Barry"
     year: "2010"
     doi: "10.1126/science.1184695"
+  - type: generic
+    title: "Iberian Bombus FORRT constellation — Synthesis-level CiTO Citation (apex)"
+    url: "https://w3id.org/sciencelive/np/RA1q6c0fG2bMbiozF8Az2UpIfzAzqp8hoVEl6QIzfUpH8"
+    notes: "Apex CiTO Citation of the prior FORRT chain this replication extends (cross-taxon: Bombus → Lacertidae). Run `/import-from-nanopub <URL>` to repopulate nanopubs/imported/ locally."

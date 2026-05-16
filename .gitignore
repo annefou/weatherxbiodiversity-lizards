@@ -22,6 +22,10 @@ data/*
 !data/.gitkeep
 !data/README.md
 
+# Prior-chain import cache — never committed; regenerated on demand from
+# the entry URI in CITATION.cff `references:`. See docs/nanopub-chain-discovery.md.
+nanopubs/imported/
+
 # Paper PDFs (single PDF allowed; subfolder build artefacts ignored)
 paper/_build/
 paper/.tmp/
@@ -41,3 +45,22 @@ docker-image.tar.gz
 # Claude scratch
 .claude/.cache/
 .claude/local/
+
+# Phase 2 — local data caches.
+# Note: `data/*` above already excludes everything under data/. The
+# entries below are explicit per-subdir markers so a future loosening
+# of `data/*` (e.g. tracking a curated sub-tree) does not accidentally
+# commit large climate / occurrence caches.
+data/destine/
+data/gbif/
+data/cru_ts/
+data/intermediate/
+# Polytope sub-daily probe log churns on every run; the probe sample
+# GRIB and SUCCESS/FAILURE summary live alongside it in data/destine/
+# which is already ignored, but listed explicitly for clarity.
+data/destine/sub_daily/probe.log
+
+# Snakemake working directory (transient DAG cache + per-run logs)
+.snakemake/
+# Snakemake rule logs (re-derived from inputs on each run)
+results/logs/
