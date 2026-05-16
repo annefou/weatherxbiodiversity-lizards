@@ -161,7 +161,7 @@ print(f"Wrote {FIG_DIR / 'main_result.png'} and .pdf")
 
 
 # %% [markdown]
-# ## Figure 2 — Per-species local-extinction rate (baseline + S3a configs)
+# ## Figure 2 — Per-species local-extinction rate (S3a config)
 #
 # A two-column dot plot, species on the y axis (sorted by 2020s rate),
 # horizontal lollipops for 2020s and 2030s. Low-N species (n_cells < 10)
@@ -169,17 +169,16 @@ print(f"Wrote {FIG_DIR / 'main_result.png'} and .pdf")
 # Lacertidae 2050 / 2080 reference values are shown as vertical
 # reference lines for context (with a clear "different horizon" caveat).
 #
-# Rendered twice, one figure per config:
+# Rendered under the **S3a** config (Iberolacerta T_b = 31 °C, May-June
+# window) — the only sensitivity-matrix config that produces non-zero
+# rates, showing the per-species distribution under the worst-plausible
+# compound prior (informative for which Iberian species the mechanism
+# flags first).
 #
-# * **baseline** (family T_b = 35.4 °C, April-May window) — proof-point
-#   that the 0 % family rate is uniform across species, not just an
-#   aggregate artefact.
-# * **S3a** (Iberolacerta T_b = 31 °C, May-June window) — the only
-#   sensitivity-matrix config that produces non-zero rates, showing the
-#   per-species distribution under the worst-plausible compound prior
-#   (informative for which Iberian species the mechanism flags first).
-#
-# See Figure 1 (sensitivity-matrix heatmap) for the full family-wide
+# The baseline-config variant of this plot is omitted as redundant: all
+# 47 species sit at 0 %, which is already conveyed by the sensitivity-
+# matrix heatmap (Figure 1) and the `lacertidae_family_rates_destine`
+# entry in `headline.json`. See Figure 1 for the full family-wide
 # cross-product of T_b × window choices.
 
 # %%
@@ -258,16 +257,6 @@ def plot_per_species(df: pd.DataFrame, *, config_label: str,
     print(f"Wrote {FIG_DIR / out_stem}.png and .pdf")
 
 
-# Baseline config — read from results/tables/local_extinction_per_species.csv
-# (loaded above as `per_species`).
-plot_per_species(
-    per_species,
-    config_label="baseline config: family T_b = 35.4 °C, April-May",
-    family_2020s=headline["lacertidae_family_rates_destine"]["local_extinction_2020s"],
-    family_2030s=headline["lacertidae_family_rates_destine"]["local_extinction_2030s"],
-    out_stem="per_species_rates_baseline",
-)
-
 # S3a config — read from results/tables/substrate_sensitivity_per_species.csv
 # (n128 columns are the per-species rates at the DestinE-native substrate
 # under S3a; renamed to match the function's expected schema).
@@ -285,7 +274,7 @@ plot_per_species(
     config_label="S3a config: Iberolacerta T_b = 31 °C, May-June",
     family_2020s=s3a_2020s,
     family_2030s=s3a_2030s,
-    out_stem="per_species_rates_s3a",
+    out_stem="per_species_rates",
 )
 
 
