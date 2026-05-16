@@ -1,0 +1,48 @@
+# Mirror .gitignore for the Docker build context.
+# This file controls what gets uploaded to the Docker daemon during
+# `docker build`. Excluding large / host-specific paths keeps the
+# build context small (fast upload) and prevents host symlinks under
+# data/ from being dereferenced into the image.
+
+# Build / VCS noise
+.git/
+.gitignore
+.github/
+
+# Local Python envs and editor scratch
+.venv/
+.vscode/
+.idea/
+.DS_Store
+
+# Shared-cache symlinks point to absolute host paths
+# (~/Documents/ScienceLive/weatherxbiodiversity-projection/...) and
+# would dangle inside the container. The notebook's fresh-fetch
+# fallback path handles this — the container fetches DestinE / CRU
+# TS / GBIF on first run.
+data/
+
+# Snakemake working dir and per-run logs
+.snakemake/
+results/
+
+# Jupyter notebook outputs (jupytext .py is the source; .ipynb is
+# derived inside the container's snakemake run).
+notebooks/*.ipynb
+notebooks/.ipynb_checkpoints/
+
+# Cached TriG from the prior-chain importer — regenerated on demand
+# by scripts/import-nanopub-chain.py from CITATION.cff `references:`.
+nanopubs/imported/trig/
+nanopubs/imported/constellation.json
+nanopubs/imported/cited_papers.txt
+
+# Paper PDFs are not needed at runtime; the FORRT chain references
+# the paper DOI, not the local PDF.
+paper/*.pdf
+paper/_build/
+paper/.tmp/
+
+# MyST / Jupyter Book build artefacts
+_build/
+*.bak

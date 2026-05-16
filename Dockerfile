@@ -1,7 +1,7 @@
 FROM mambaorg/micromamba:1.5-jammy
 
-LABEL org.opencontainers.image.source="https://github.com/{{REPO_ORG}}/{{REPO_NAME}}"
-LABEL org.opencontainers.image.description="Replication study container for {{REPO_NAME}}"
+LABEL org.opencontainers.image.source="https://github.com/annefou/weatherxbiodiversity-lizards"
+LABEL org.opencontainers.image.description="Replication study container for weatherxbiodiversity-lizards"
 LABEL org.opencontainers.image.licenses="MIT"
 
 COPY --chown=$MAMBA_USER:$MAMBA_USER environment.yml /tmp/environment.yml
@@ -12,7 +12,7 @@ WORKDIR /app
 COPY --chown=$MAMBA_USER:$MAMBA_USER . /app
 
 # Mount any required credentials at runtime, e.g.:
-#   docker run -v ~/.cdsapirc:/home/mambauser/.cdsapirc {{REPO_NAME}}
+#   docker run -v ~/.cdsapirc:/home/mambauser/.cdsapirc weatherxbiodiversity-lizards
 # See data/README.md for per-dataset credential setup.
 
 ENTRYPOINT ["/usr/local/bin/_entrypoint.sh"]
