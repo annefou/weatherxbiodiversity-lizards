@@ -46,6 +46,8 @@ import xarray as xr
 
 import cartopy.crs as ccrs
 import cartopy.feature as cfeature
+import healpix_plot
+from healpix_plot import HealpixGrid
 
 # %%
 plt.style.use("seaborn-v0_8-whitegrid")
@@ -151,94 +153,132 @@ print(f"Wrote {FIG_DIR / 'main_result.png'} and .pdf")
 
 
 # %% [markdown]
-# ## Figure 2 — Per-species local-extinction rate (baseline config)
+# ## Figure 2 — Per-species local-extinction rate (baseline + S3a configs)
 #
 # A two-column dot plot, species on the y axis (sorted by 2020s rate),
 # horizontal lollipops for 2020s and 2030s. Low-N species (n_cells < 10)
 # are shown in a paler colour with a small marker. Sinervo Table 1
 # Lacertidae 2050 / 2080 reference values are shown as vertical
 # reference lines for context (with a clear "different horizon" caveat).
-# Uses the baseline config (family T_b = 35.4 °C, April-May window);
-# see Figure 1 for the full sensitivity matrix.
+#
+# Rendered twice, one figure per config:
+#
+# * **baseline** (family T_b = 35.4 °C, April-May window) — proof-point
+#   that the 0 % family rate is uniform across species, not just an
+#   aggregate artefact.
+# * **S3a** (Iberolacerta T_b = 31 °C, May-June window) — the only
+#   sensitivity-matrix config that produces non-zero rates, showing the
+#   per-species distribution under the worst-plausible compound prior
+#   (informative for which Iberian species the mechanism flags first).
+#
+# See Figure 1 (sensitivity-matrix heatmap) for the full family-wide
+# cross-product of T_b × window choices.
 
 # %%
-df = per_species.copy()
-# Drop species with zero presence cells (defensive — shouldn't happen).
-df = df[df["n_cells"] > 0].copy()
-df = df.sort_values("local_ext_2020s", ascending=True).reset_index(drop=True)
+def plot_per_species(df: pd.DataFrame, *, config_label: str,
+                     family_2020s: float, family_2030s: float,
+                     out_stem: str) -> None:
+    """Render a per-species local-extinction-rate lollipop.
 
-n_spp = len(df)
-fig, ax = plt.subplots(figsize=(9, max(5, 0.22 * n_spp + 2)))
+    `df` must have columns: species, n_cells, local_ext_2020s,
+    local_ext_2030s, low_N_warning.
+    """
+    d = df[df["n_cells"] > 0].copy()
+    d = d.sort_values("local_ext_2020s", ascending=True).reset_index(drop=True)
 
-y = np.arange(n_spp)
-colour_2020s = "#1f77b4"
-colour_2030s = "#d62728"
-faint_alpha = 0.4
+    n = len(d)
+    fig, ax = plt.subplots(figsize=(9, max(5, 0.22 * n + 2)))
 
-for i, (_, row) in enumerate(df.iterrows()):
-    rare = bool(row["low_N_warning"])
-    alpha = faint_alpha if rare else 1.0
-    ax.plot(
-        [row["local_ext_2020s"], row["local_ext_2030s"]],
-        [i, i],
-        color="grey", lw=1, alpha=0.35 if rare else 0.6, zorder=1,
+    colour_2020s = "#1f77b4"
+    colour_2030s = "#d62728"
+    faint_alpha = 0.4
+
+    for i, (_, row) in enumerate(d.iterrows()):
+        rare = bool(row["low_N_warning"])
+        alpha = faint_alpha if rare else 1.0
+        ax.plot(
+            [row["local_ext_2020s"], row["local_ext_2030s"]],
+            [i, i],
+            color="grey", lw=1, alpha=0.35 if rare else 0.6, zorder=1,
+        )
+        ax.scatter(
+            row["local_ext_2020s"], i, s=42 if not rare else 22,
+            color=colour_2020s, alpha=alpha, zorder=3,
+            label="2020s" if i == 0 else None,
+        )
+        ax.scatter(
+            row["local_ext_2030s"], i, s=42 if not rare else 22,
+            color=colour_2030s, alpha=alpha, zorder=3,
+            label="2030s" if i == 0 else None,
+        )
+
+    ax.set_yticks(np.arange(n))
+    ax.set_yticklabels(
+        [f"{s} (n={int(c)})" for s, c in zip(d["species"], d["n_cells"])],
+        fontsize=8,
     )
-    ax.scatter(
-        row["local_ext_2020s"], i, s=42 if not rare else 22,
-        color=colour_2020s, alpha=alpha, zorder=3,
-        label="2020s" if i == 0 else None,
+    ax.set_xlabel(
+        f"Local-extinction rate "
+        f"(fraction of presence cells with daily-mean April-May/May-June "
+        f"h_r > {H_R_THRESHOLD} h)"
     )
-    ax.scatter(
-        row["local_ext_2030s"], i, s=42 if not rare else 22,
-        color=colour_2030s, alpha=alpha, zorder=3,
-        label="2030s" if i == 0 else None,
+    ax.set_xlim(-0.02, 1.02)
+    sinervo_2050 = headline["sinervo_reference_table1"]["lacertidae_local_extinction_2050"]
+    sinervo_2080 = headline["sinervo_reference_table1"]["lacertidae_local_extinction_2080"]
+    ax.axvline(sinervo_2050, ls="--", color="grey", lw=1, alpha=0.6)
+    ax.text(sinervo_2050, n - 0.5, " Sinervo 2050 (Lacertidae)",
+            fontsize=8, va="top", color="grey")
+    ax.axvline(sinervo_2080, ls="--", color="grey", lw=1, alpha=0.6)
+    ax.text(sinervo_2080, n - 0.5, " Sinervo 2080",
+            fontsize=8, va="top", color="grey")
+
+    ax.set_title(
+        f"Iberian Lacertidae — local-extinction rate per species "
+        f"(DestinE SSP3-7.0)\n"
+        f"{config_label}  |  family-wide: "
+        f"{family_2020s:.1%} (2020s) | {family_2030s:.1%} (2030s)",
+        fontsize=10,
     )
+    ax.legend(loc="lower right", fontsize=9)
+    ax.grid(True, axis="x", alpha=0.4)
+    ax.grid(False, axis="y")
 
-ax.set_yticks(y)
-ax.set_yticklabels(
-    [f"{s} (n={int(n)})" for s, n in zip(df["species"], df["n_cells"])],
-    fontsize=8,
-)
-ax.set_xlabel(
-    f"Local-extinction rate "
-    f"(fraction of presence cells with cumulative April-May h_r > {H_R_THRESHOLD} h)"
-)
-ax.set_xlim(-0.02, 1.02)
-ax.axvline(
-    headline["sinervo_reference_table1"]["lacertidae_local_extinction_2050"],
-    ls="--", color="grey", lw=1, alpha=0.6,
-)
-ax.text(
-    headline["sinervo_reference_table1"]["lacertidae_local_extinction_2050"],
-    n_spp - 0.5,
-    " Sinervo 2050 (Lacertidae)",
-    fontsize=8, va="top", color="grey",
-)
-ax.axvline(
-    headline["sinervo_reference_table1"]["lacertidae_local_extinction_2080"],
-    ls="--", color="grey", lw=1, alpha=0.6,
-)
-ax.text(
-    headline["sinervo_reference_table1"]["lacertidae_local_extinction_2080"],
-    n_spp - 0.5,
-    " Sinervo 2080",
-    fontsize=8, va="top", color="grey",
-)
-ax.set_title(
-    "Iberian Lacertidae — local-extinction rate per species (DestinE SSP3-7.0)\n"
-    f"family-wide: {headline['lacertidae_family_rates_destine']['local_extinction_2020s']:.1%} (2020s) | "
-    f"{headline['lacertidae_family_rates_destine']['local_extinction_2030s']:.1%} (2030s)",
-    fontsize=11,
-)
-ax.legend(loc="lower right", fontsize=9)
-ax.grid(True, axis="x", alpha=0.4)
-ax.grid(False, axis="y")
+    fig.tight_layout()
+    fig.savefig(FIG_DIR / f"{out_stem}.png", dpi=DPI, bbox_inches="tight")
+    fig.savefig(FIG_DIR / f"{out_stem}.pdf", bbox_inches="tight")
+    plt.show()
+    print(f"Wrote {FIG_DIR / out_stem}.png and .pdf")
 
-fig.tight_layout()
-fig.savefig(FIG_DIR / "per_species_rates.png", dpi=DPI, bbox_inches="tight")
-fig.savefig(FIG_DIR / "per_species_rates.pdf", bbox_inches="tight")
-plt.show()
-print(f"Wrote {FIG_DIR / 'per_species_rates.png'} and .pdf")
+
+# Baseline config — read from results/tables/local_extinction_per_species.csv
+# (loaded above as `per_species`).
+plot_per_species(
+    per_species,
+    config_label="baseline config: family T_b = 35.4 °C, April-May",
+    family_2020s=headline["lacertidae_family_rates_destine"]["local_extinction_2020s"],
+    family_2030s=headline["lacertidae_family_rates_destine"]["local_extinction_2030s"],
+    out_stem="per_species_rates_baseline",
+)
+
+# S3a config — read from results/tables/substrate_sensitivity_per_species.csv
+# (n128 columns are the per-species rates at the DestinE-native substrate
+# under S3a; renamed to match the function's expected schema).
+substrate_csv = pd.read_csv(RESULTS_TABLES / "substrate_sensitivity_per_species.csv")
+s3a_df = substrate_csv.rename(columns={
+    "n_cells_n128": "n_cells",
+    "local_ext_2020s_n128": "local_ext_2020s",
+    "local_ext_2030s_n128": "local_ext_2030s",
+    "low_N_warning_n128": "low_N_warning",
+})[["species", "n_cells", "local_ext_2020s", "local_ext_2030s", "low_N_warning"]]
+s3a_2020s = headline["sensitivity_matrix"]["s3a_iberolacerta_mayjun"]["local_extinction_2020s"]
+s3a_2030s = headline["sensitivity_matrix"]["s3a_iberolacerta_mayjun"]["local_extinction_2030s"]
+plot_per_species(
+    s3a_df,
+    config_label="S3a config: Iberolacerta T_b = 31 °C, May-June",
+    family_2020s=s3a_2020s,
+    family_2030s=s3a_2030s,
+    out_stem="per_species_rates_s3a",
+)
 
 
 # %% [markdown]
@@ -332,58 +372,76 @@ print(f"Wrote {FIG_DIR / 'substrate_sensitivity.png'} and .pdf")
 # We render the HEALPix cells as a scatter of cell centres with
 # square markers sized to the cell area at this latitude. This is the
 # simplest rendering that matches the Bombus sister repo's
-# `04h_figures_healpix` pattern and avoids the cartopy + healpix-plot
-# tile-edge gotchas (cartopy doesn't natively reproject HEALPix tiles).
+# `04h_figures_healpix` pattern. Per DOMAIN.md: use the `healpix-plot`
+# (EOPF-DGGS) library to render HEALPix on cartopy — it "replaces ad-hoc
+# ang2pix + pcolormesh bridges" and handles HEALPix tile reprojection
+# onto a regular sampling grid, then overlays a cartopy projection.
+# This is the canonical pattern; the earlier matplotlib-scatter
+# implementation left visible gaps between cell centres and broke the
+# figure bbox when the threshold annotation was placed off-scale on
+# the colorbar.
 
 # %%
+# HEALPix tile-rendering parameters (NESTED, nside=128 = level 7).
+HEALPIX_GRID = HealpixGrid(level=7, indexing_scheme="nested")
+
+# Sampling grid for the Iberia view. ~0.02° resolution gives a fine-
+# enough raster to show nside=128 cell boundaries cleanly within the
+# 14° × 9° bbox.
+IBERIA_VIEW = (-10.0, 4.0, 35.0, 44.0)  # (west, east, south, north)
+IBERIA_SAMPLING = {
+    "shape": (700, 450),
+    "resolution": (0.02, 0.02),
+    "center": (-3.0, 39.5),
+}
+
+
 def plot_h_r_map(label: str, y_start: int, y_end: int, vmax: float):
     sel = (ds["year"] >= y_start) & (ds["year"] <= y_end)
     h_r_decade = ds["h_r_mean_critical"].isel(year=sel).mean(dim="year")
-    lon = ds["lon"].values
-    lat = ds["lat"].values
+    cell_ids = ds["cell"].values.astype(np.int64)
+    data = h_r_decade.values
+    above = data > H_R_THRESHOLD
 
-    fig = plt.figure(figsize=(8, 6))
+    fig = plt.figure(figsize=(9, 6))
     ax = plt.axes(projection=ccrs.PlateCarree())
-    ax.set_extent([-10, 4, 35, 44], crs=ccrs.PlateCarree())
+
+    # Render the HEALPix cells via healpix_plot — proper tile resampling
+    # onto the sampling grid, no inter-cell gaps.
+    healpix_plot.plot(
+        cell_ids=cell_ids,
+        data=data,
+        healpix_grid=HEALPIX_GRID,
+        sampling_grid=IBERIA_SAMPLING,
+        view=IBERIA_VIEW,
+        projection="PlateCarree",
+        cmap="YlOrRd",
+        vmin=0.0,
+        vmax=vmax,
+        colorbar={"label": "April-May daily-mean h_r (h) — decadal mean"},
+        ax=ax,
+    )
+
+    # Cartopy coastline + borders overlay on top of the HEALPix raster.
+    ax.set_extent(list(IBERIA_VIEW), crs=ccrs.PlateCarree())
     ax.add_feature(cfeature.COASTLINE.with_scale("50m"), lw=0.7)
     ax.add_feature(cfeature.BORDERS.with_scale("50m"), lw=0.4, alpha=0.6)
-    ax.add_feature(cfeature.OCEAN.with_scale("50m"), color="#eaf4fb", zorder=0)
-    ax.add_feature(cfeature.LAND.with_scale("50m"), color="#f5f1ea", zorder=0)
 
-    sc = ax.scatter(
-        lon, lat,
-        c=h_r_decade.values,
-        s=20,
-        marker="s",
-        cmap="YlOrRd",
-        vmin=0, vmax=vmax,
-        transform=ccrs.PlateCarree(),
-        edgecolors="none",
-    )
-
-    above = h_r_decade.values > H_R_THRESHOLD
-    if above.any():
-        ax.scatter(
-            lon[above], lat[above],
-            s=24, marker="s", facecolors="none", edgecolors="black",
-            lw=0.4, transform=ccrs.PlateCarree(),
-        )
-
-    cb = plt.colorbar(sc, ax=ax, orientation="vertical", shrink=0.85, pad=0.03)
-    cb.set_label(f"April-May daily-mean h_r (h) — decadal mean")
-    cb.ax.axhline(H_R_THRESHOLD, color="black", lw=1)
-    cb.ax.text(
-        1.5, H_R_THRESHOLD, f" h_r = {H_R_THRESHOLD} h (Lacertidae threshold)",
-        fontsize=8, va="center", transform=cb.ax.get_yaxis_transform(),
-    )
-
+    # Threshold annotation goes in the title (NOT on the colorbar — placing
+    # the threshold marker at y=3.1 on a 0..0.2 colorbar previously
+    # exploded the saved-figure bbox to ~8000 px tall).
     ax.set_title(
-        f"Iberia — daily-mean April-May h_r, {label} (DestinE SSP3-7.0)\n"
-        f"{int(above.sum())} of {len(lon)} cells > {H_R_THRESHOLD} h",
-        fontsize=11,
+        f"Iberia — daily-mean April-May h_r, {label} (DestinE SSP3-7.0, HEALPix nside=128 NESTED)\n"
+        f"data range over decade: 0–{data.max():.3f} h  |  "
+        f"Lacertidae threshold: {H_R_THRESHOLD} h  |  "
+        f"cells > threshold: {int(above.sum())} of {len(data)}",
+        fontsize=10,
     )
-    gl = ax.gridlines(draw_labels=True, dms=True, x_inline=False, y_inline=False,
-                      lw=0.3, alpha=0.4)
+
+    gl = ax.gridlines(
+        draw_labels=True, dms=True, x_inline=False, y_inline=False,
+        lw=0.3, alpha=0.4,
+    )
     gl.top_labels = False
     gl.right_labels = False
 
@@ -396,7 +454,7 @@ def plot_h_r_map(label: str, y_start: int, y_end: int, vmax: float):
 # Shared vmax across the two decades so the colour ramp is comparable.
 both = ds["h_r_mean_critical"].values
 vmax_shared = float(np.percentile(both, 99))
-print(f"Shared colour-ramp max (99th percentile): {vmax_shared:.2f} h")
+print(f"Shared colour-ramp max (99th percentile of daily-mean h_r): {vmax_shared:.3f} h")
 
 plot_h_r_map("2020s", 2020, 2029, vmax_shared)
 plot_h_r_map("2030s", 2030, 2039, vmax_shared)

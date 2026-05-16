@@ -127,8 +127,10 @@ rule figures:
     output:
         main_png = f"{FIGURES}/main_result.png",        # sensitivity matrix
         main_pdf = f"{FIGURES}/main_result.pdf",
-        per_species_png = f"{FIGURES}/per_species_rates.png",
-        per_species_pdf = f"{FIGURES}/per_species_rates.pdf",
+        per_species_baseline_png = f"{FIGURES}/per_species_rates_baseline.png",
+        per_species_baseline_pdf = f"{FIGURES}/per_species_rates_baseline.pdf",
+        per_species_s3a_png = f"{FIGURES}/per_species_rates_s3a.png",
+        per_species_s3a_pdf = f"{FIGURES}/per_species_rates_s3a.pdf",
         substrate_png = f"{FIGURES}/substrate_sensitivity.png",
         substrate_pdf = f"{FIGURES}/substrate_sensitivity.pdf",
         map_2020s = f"{FIGURES}/h_r_map_2020s.png",
