@@ -51,7 +51,7 @@ https://spdx.org/licenses/MIT.html
 Input data DOIs (Zenodo data records, dataset DOIs, ESA product DOIs).
 
 - _Dataset URL 1:_ `https://doi.org/10.15468/dl.rh4rfn` (GBIF Lacertidae × Iberia occurrence download, 136,210 records, CC-BY-NC-4.0 per individual GBIF datasets)
-- _Dataset URL 2:_ `https://doi.org/10.6084/m9.figshare.10058340` (Soroye 2020 Figshare deposit — CRU TS 3.24.01 historical Tmax / Tmin, reused as the diurnal-cycle baseline)
+- _Dataset URL 2:_ `https://doi.org/10.6084/m9.figshare.9956471` (Soroye 2020 Figshare deposit — CRU TS 3.24.01 historical Tmax / Tmin, reused as the diurnal-cycle baseline)
 - _Dataset URL 3:_ DestinE Climate Digital Twin SSP3-7.0 IFS-NEMO t2m, accessed via Polytope from `https://polytope.lumi.apps.dte.destination-earth.eu` (no public dataset DOI; access governed by DestinE Data Lake terms)
 
 ### Related Publications (repeatable group, optional)

@@ -43,7 +43,7 @@
 #    calibrating Iberian-Lacertidae thermal-physiology priors. Reused
 #    from the Bombus repo's Soroye-figshare extraction if present;
 #    otherwise refetched from Soroye 2020 figshare deposit
-#    (DOI [10.6084/m9.figshare.10058340](https://doi.org/10.6084/m9.figshare.10058340)).
+#    (DOI [10.6084/m9.figshare.9956471](https://doi.org/10.6084/m9.figshare.9956471)).
 # 4. **GBIF Lacertidae × Iberia occurrence download** — a fresh download
 #    minted against the GBIF API (predicate: family=Lacertidae × country
 #    ∈ {ES, PT, AD, GI} × hasCoordinate=True × hasGeospatialIssue=False
@@ -414,13 +414,13 @@ SOURCES.append({
 # (diurnal-cycle reconstruction in pass 2 if the sub-daily probe fails).
 #
 # Soroye 2020 figshare deposit: DOI
-# [10.6084/m9.figshare.10058340](https://doi.org/10.6084/m9.figshare.10058340).
+# [10.6084/m9.figshare.9956471](https://doi.org/10.6084/m9.figshare.9956471).
 # If the shared cache is absent and a fresh fetch is needed, the
 # notebook downloads the full Bumblebee_repo.zip (~1.1 GB).
 
 # %%
-SOROYE_FIGSHARE_API = "https://api.figshare.com/v2/articles/10058340"
-SOROYE_FIGSHARE_DOI = "10.6084/m9.figshare.10058340"
+SOROYE_FIGSHARE_API = "https://api.figshare.com/v2/articles/9956471"
+SOROYE_FIGSHARE_DOI = "10.6084/m9.figshare.9956471"
 
 CRU_TMX_GLOB = "cru_ts3.24.01.*.tmx.dat.nc"
 CRU_TMN_GLOB = "cru_ts3.24.01.*.tmn.dat.nc"

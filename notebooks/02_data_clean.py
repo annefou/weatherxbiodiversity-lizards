@@ -371,7 +371,7 @@ ds_cru = xr.Dataset(
     },
     attrs={
         "title": "CRU TS 3.24.01 tmx/tmn resampled to Iberian HEALPix nside=128",
-        "source": "CRU TS 3.24.01 (figshare 10058340) at 0.5deg lat-lon",
+        "source": "CRU TS 3.24.01 (figshare 9956471) at 0.5deg lat-lon",
         "regrid_method": "nearest-neighbour at HEALPix cell centre",
         "history": (
             f"Created {date.today().isoformat()} by notebooks/02_data_clean.py"
