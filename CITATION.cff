@@ -10,7 +10,7 @@ authors:
 repository-code: "https://github.com/annefou/weatherxbiodiversity-lizards"
 license: MIT
 version: "0.1.0"
-date-released: "2026-05-15"
+date-released: "2026-05-16"
 # After your first GitHub release the Zenodo integration mints a concept DOI.
 # Replace this once available (run /init-template again or edit by hand):
 doi: "{{ZENODO_DOI}}"
@@ -24,7 +24,19 @@ keywords:
   - FORRT
   - nanopublication
   - Science-Live
+  - Lacertidae
+  - Iberian Peninsula
+  - climate change ecology
+  - thermal physiology
+  - Destination Earth
+  - DestinE Climate DT
+  - HEALPix
+  - FAIR4RS
+  - biodiversity
+  - h_r mechanism
+  - Sinervo 2010
 references:
+  # ---- Source paper being replicated ----
   - type: article
     title: "Erosion of Lizard Diversity by Climate Change and Altered Thermal Niches"
     authors:
@@ -32,7 +44,72 @@ references:
         given-names: "Barry"
     year: "2010"
     doi: "10.1126/science.1184695"
+    notes: "Source paper. This replication's CiTO citation type is cito:extends (locked decision 5 — cross-taxon × new-horizon × FAIR-workflow extension)."
+
+  # ---- Datasets ingested ----
+  - type: data
+    title: "GBIF Occurrence Download — Lacertidae × Iberian Peninsula (Spain, Portugal, Andorra, Gibraltar)"
+    authors:
+      - name: "GBIF.org"
+    year: "2026"
+    doi: "10.15468/dl.rh4rfn"
+    notes: "Pre-minted via the GBIF UI on 2026-05-16; SIMPLE/CSV format, 136,210 records, CC-BY-NC-4.0."
+  - type: data
+    title: "CRU TS 3.24.01 — global high-resolution monthly climate data"
+    authors:
+      - name: "University of East Anglia Climatic Research Unit"
+    year: "2017"
+    doi: "10.6084/m9.figshare.10058340"
+    notes: "Reused from the Soroye et al. 2020 Figshare deposit; the Tmax / Tmin chunks 1901-2014 are the diurnal-cycle baseline."
+
+  # ---- Prior FORRT constellation (the Bombus sister chains this replication extends) ----
   - type: generic
     title: "Iberian Bombus FORRT constellation — Synthesis-level CiTO Citation (apex)"
     url: "https://w3id.org/sciencelive/np/RA1q6c0fG2bMbiozF8Az2UpIfzAzqp8hoVEl6QIzfUpH8"
     notes: "Apex CiTO Citation of the prior FORRT chain this replication extends (cross-taxon: Bombus → Lacertidae). Run `/import-from-nanopub <URL>` to repopulate nanopubs/imported/ locally."
+  - type: generic
+    title: "Iberian Bombus FORRT constellation — apex Research Synthesis"
+    url: "https://w3id.org/sciencelive/np/RA5TJVZ0_5Knzxd4OtOoZgO6ZspWHwVCSLWNNd7V9H6QQ"
+    notes: "Aggregates the three Bombus sibling chains (chain 1 canonical CEA+nside=64, chain 2 nside=128 substrate extension, chain 3 substrate-sensitivity diagnostic). The cross-taxon constellation Synthesis in this repo (nanopubs/drafts/08_synthesis.md) synthesises across this Synthesis + the Lizards Outcome."
+  - type: software
+    title: "weatherxbiodiversity-projection — Iberian Bombus replication of Soroye et al. 2020 (chain 1, canonical CEA + HEALPix nside=64)"
+    authors:
+      - family-names: "Fouilloux"
+        given-names: "Anne"
+        orcid: "https://orcid.org/0000-0002-1784-2920"
+    year: "2026"
+    doi: "10.5281/zenodo.20113777"
+  - type: software
+    title: "weatherxbiodiversity-projection-nside128 — Iberian Bombus replication, HEALPix nside=128 substrate extension (chain 2)"
+    authors:
+      - family-names: "Fouilloux"
+        given-names: "Anne"
+        orcid: "https://orcid.org/0000-0002-1784-2920"
+    year: "2026"
+    doi: "10.5281/zenodo.20113780"
+  - type: software
+    title: "weatherxbiodiversity-substrate-sensitivity — Cross-substrate methodological diagnostic for Iberian Bombus (chain 3)"
+    authors:
+      - family-names: "Fouilloux"
+        given-names: "Anne"
+        orcid: "https://orcid.org/0000-0002-1784-2920"
+    year: "2026"
+    doi: "10.5281/zenodo.20113786"
+
+  # ---- Methodological literature cited in the Outcome's limitations ----
+  - type: article
+    title: "How does the area-of-study and species-occurrence dataset affect the prediction of accuracy of macroecological models?"
+    authors:
+      - family-names: "Lobo"
+        given-names: "Jorge M."
+    year: "2007"
+    notes: "Rare-species ranking grid-coupling caveat — cited in the Outcome's hasLimitationsDescription paragraph on low-N species as established literature, not a novel finding. Verify DOI before publishing."
+  - type: article
+    title: "Species richness, hotspots, and the scale dependence of range maps in ecology and conservation"
+    authors:
+      - family-names: "Hurlbert"
+        given-names: "Allen H."
+      - family-names: "Jetz"
+        given-names: "Walter"
+    year: "2007"
+    notes: "Companion citation to Lobo 2007 for the rare-species caveat. Verify DOI before publishing."
