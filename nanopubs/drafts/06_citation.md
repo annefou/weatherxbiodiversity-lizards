@@ -16,7 +16,7 @@ TODO_PASTE_STEP_05_OUTCOME_URI
 
 ### List citations (repeatable group, required ≥1)
 
-This Outcome cites **two** prior works — the original paper being replicated AND the apex Synthesis-level CiTO of the Bombus constellation (the sister chain whose workflow this replication transfers cross-taxon, per `nanopubs/imported/CHAIN_SUMMARY.md`).
+This Outcome cites **two** prior works — the original paper being replicated AND the apex Synthesis-level CiTO of the Iberian *Bombus* FORRT constellation (the prior-art chain whose workflow the citing Outcome's replication extends cross-taxon).
 
 #### Citation 1 — back to Sinervo et al. 2010 (the original paper)
 
@@ -26,7 +26,7 @@ This Outcome cites **two** prior works — the original paper being replicated A
 extends
 ```
 
-**Rationale (locked-decision-5 framing):** `cito:extends` rather than `confirms` / `qualifies` / `disputes`. The replication's Outcome cannot speak to Sinervo's headline 24 % (2050) / 46 % (2080) Lacertidae projections directly because the Destination Earth Climate DT archive does not reach those horizons. What we *can* speak to is the mechanism's behaviour at 2020-2039 horizons, applied to a different taxon (Iberian Lacertidae rather than the empirical Mexican Sceloporus core or the global 34-family projection), with a sensitivity matrix that surfaces prior-conditional behaviour. This is properly a *cross-taxon × new-horizon × FAIR-workflow extension* of the source paper, not a verdict on its headline number — `extends` captures that scoping honestly.
+**Rationale:** `cito:extends` rather than `confirms` / `qualifies` / `disputes`. The citing Outcome cannot speak to Sinervo's headline 24 % (2050) / 46 % (2080) Lacertidae projections directly because the Destination Earth Climate DT archive does not reach those horizons. What the citing Outcome *can* speak to is the mechanism's behaviour at 2020-2039 horizons, applied to a different taxon (Iberian Lacertidae rather than the empirical Mexican Sceloporus core or the global 34-family projection), with a sensitivity matrix that surfaces prior-conditional behaviour. This is properly a *cross-taxon × new-horizon × FAIR-workflow extension* of the source paper, not a verdict on its headline number — `extends` captures that scoping honestly.
 
 ##### DOI or other URL of the cited work (text input)
 
@@ -42,7 +42,7 @@ https://doi.org/10.1126/science.1184695
 extends
 ```
 
-**Rationale:** the Bombus apex Synthesis-level CiTO (URI below) is the apex of three sibling FORRT chains (`weatherxbiodiversity-projection`, `…-nside128`, `…-substrate-sensitivity`) that tested the *same class of mechanism* (thermal-niche exceedance under climate warming → local extirpation) on Iberian *Bombus* under the same DestinE Climate DT SSP3-7.0 archive. This lizards Outcome explicitly extends that workflow cross-taxon to Iberian Lacertidae under the Sinervo 2010 h_r operationalisation. The `cito:extends` relation signals workflow-and-evidence transfer; the relationship to Sinervo (citation 1 above) signals the source-paper-and-mechanism transfer. Both extensions are independently meaningful; both go in the same CiTO nanopub because both have the lizards Outcome as the citing creative work.
+**Rationale:** the Bombus apex Synthesis-level CiTO (URI below) is the apex of three sibling FORRT chains (`weatherxbiodiversity-projection`, `…-nside128`, `…-substrate-sensitivity`) that tested the *same class of mechanism* (thermal-niche exceedance under climate warming → local extinction) on Iberian *Bombus* under the same DestinE Climate DT SSP3-7.0 archive. The citing Outcome (a Lacertidae replication of Sinervo 2010's h_r mechanism) extends that workflow cross-taxon. The `cito:extends` relation signals workflow-and-evidence transfer; the relationship to Sinervo (citation 1 above) signals the source-paper-and-mechanism transfer. Both extensions are independently meaningful; both are declared in the same CiTO nanopub because both have the citing Outcome as their citing creative work.
 
 ##### DOI or other URL of the cited work (text input)
 
@@ -54,7 +54,7 @@ https://w3id.org/sciencelive/np/RA1q6c0fG2bMbiozF8Az2UpIfzAzqp8hoVEl6QIzfUpH8
 
 If the Outcome cites methods papers, related replications, or upstream tools, add them here.
 
-- **Type:** `citesAsAuthority` → **URL:** `https://doi.org/10.1146/annurev.ecolsys.36.102003.152636` (Lobo et al. 2007 — rare-species ranking grid-coupling caveat, cited explicitly in the Outcome's `hasLimitationsDescription` as established literature, not a novel finding of this work)
+- **Type:** `citesAsAuthority` → **URL:** `https://doi.org/10.1146/annurev.ecolsys.36.102003.152636` (Lobo et al. 2007 — rare-species ranking grid-coupling caveat, cited explicitly in the citing Outcome's `hasLimitationsDescription` as established literature, not as a novel finding)
 - **Type:** `citesAsAuthority` → **URL:** `https://doi.org/10.1111/j.0906-7590.2007.04881.x` (Hurlbert & Jetz 2007 — same caveat, complementary literature citation)
 
 > **Note:** verify the Lobo 2007 / Hurlbert & Jetz 2007 DOIs against the actual papers before publishing — these are best-recollection DOIs and have not been verified against a live resolver in this draft. If the platform's CiTO dropdown does not include `citesAsAuthority`, fall back to `cites` and note the intent in any free-text field the form provides.
