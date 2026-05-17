@@ -45,7 +45,7 @@ Subtitle: *"Our interpretation or explanation of why this quotation is relevant.
 Why this quote matters and what the replication tests. Connect the paper's claim to the work this repo does. Don't repeat the quote.
 
 ```
-This sentence names the causal chain — refuge time during the reproductive period as the proximate cause of climate-driven local extinction in heliothermic lizards — that the replication tests on Iberian Lacertidae. The mechanism class is not novel: Soroye et al. (2020) applied the same thermal-niche-exceedance logic to bumblebees. The novelty of this work is the cross-taxon transfer and the FAIR-by-design publication of every replication step as a signed FORRT nanopub.
+This sentence identifies a causal mechanism for climate-driven extinction in heliothermic lizards: refuge time (h_r) is itself a demographic cost — constraining foraging, reducing the metabolic budget for growth, maintenance, and reproduction, and undermining population growth. It matters because it converts a "too hot to live" framing into a parameterisable causal chain testable in any heliothermic ectotherm; the same logic was later applied to bumblebees (Soroye et al., 2020).
 ```
 
 ## Publication note
