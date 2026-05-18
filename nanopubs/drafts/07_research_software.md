@@ -15,7 +15,7 @@ Zenodo concept DOI URL when available, or a GitHub URL. Full URL form.
 > Pending Phase 4 Zenodo mint. Until then, use the GitHub URL as a placeholder; replace with the Zenodo concept DOI URL (`https://doi.org/10.5281/zenodo.XXXXXXXX`) BEFORE publishing this nanopub.
 
 ```
-TODO_ZENODO_DOI_URL — Phase 4 release will mint this. Until minted, paste the GitHub URL: https://github.com/annefou/weatherxbiodiversity-lizards
+https://doi.org/10.5281/zenodo.20266646
 ```
 
 ### Software Title (text input, required)
@@ -68,7 +68,7 @@ After publishing, paste the resulting URI into `nanopubs/PUBLISHED.md` step 07.
 
 ## Drafting notes (not part of the nanopub)
 
-- **Phase 4 gating** — this nanopub cannot be published as final until the Zenodo concept DOI is minted (Phase 4 GitHub release triggers Zenodo). The `TODO_ZENODO_DOI_URL` placeholder is the only field that needs a Phase-4 swap; everything else (title, repo URL, license, datasets, related pubs) is publish-ready now.
+- **Phase 4 status** — the Zenodo concept DOI was minted at the v0.1.0 GitHub release and is now substituted into the URI-of-published-software field. All fields are populated except the Research-Project URI (back-link to the step-03 FORRT Claim) and the Publication URL 1 (back-link to the step-05 Outcome) — both pending those upstream nanopubs being published first.
 - **Layered-architecture compliance** (`CLAUDE.md`) — the Related Publications back-link to the FORRT Outcome URI is a one-way reference: Research Software cites the FORRT chain, NOT the other way around. The FORRT chain's nanopubs (Claim, Study, Outcome, CiTO) MUST NOT reference this Research Software URI in their citations.
 - **Bombus precedent** — publishing this nanopub even though the repo is "demo-only" by the strict scope check follows the Bombus chain pattern (`weatherxbiodiversity-projection` published its Research Software nanopub `RAKH9X…`). The constellation-level consistency is the operational reason; the FAIR4RS rationale is that each citable software release should have a citable nanopub describing it.
 - **Honest framing** — the software title explicitly says "replication", not "novel framework". The software's contribution is the operationalisation of an existing mechanism, not the mechanism itself.

@@ -34,6 +34,7 @@ TODO — paste step-04 Replication Study URI after publishing
 
 ```
 https://github.com/annefou/weatherxbiodiversity-lizards
+https://doi.org/10.5281/zenodo.20266646
 ```
 
 ### Completion date (date picker, required)
@@ -52,10 +53,9 @@ This dropdown maps to the CiTO intention in step 06: Validated → `confirms`, P
 
 ### Confidence level (dropdown, required)
 
-_Vocabulary not yet captured — leave per instructions._
 
 ```
-
+moderate — adequate evidence, partial agreement  
 ```
 
 ### Describe the overall conclusion about the original claim (textarea, required)
