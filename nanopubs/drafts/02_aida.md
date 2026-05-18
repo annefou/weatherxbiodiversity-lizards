@@ -22,10 +22,11 @@ Predefined topic vocabulary — list the labels you intend to pick from the drop
 
 ```
 thermal physiology
-lizards (Lacertidae)
-climate change ecology
+Lacertidae
+climate change
+ecology
 species distribution
-local extinction
+extinction
 ```
 
 ### Relates to this nanopublication (text input, required)
@@ -49,6 +50,8 @@ DOIs/URLs of datasets that ground the AIDA claim.
 DOIs/URLs of publications that support the AIDA claim — e.g. peer-reviewed methods papers, or the original paper if not already cited via the Quote.
 
 - _DOI 1:_ `https://doi.org/10.1126/science.1184695` (Sinervo et al. 2010 — the paper from which the AIDA is extracted; cited explicitly here as the support for the threshold-calibration component)
+
+- _DOI 2:_ `https://w3id.org/sciencelive/np/RA1q6c0fG2bMbiozF8Az2UpIfzAzqp8hoVEl6QIzfUpH8` (CiTO pointing to full replication chain from Soroye et al. 2020)
 
 > **Known platform bug (2026-04-26):** if both *Supported by datasets* AND *Supported by other publications* are populated and publishing fails, fall back to publishing this AIDA via Nanodash. The URI namespace becomes `https://w3id.org/np/...` (still valid and citable).
 

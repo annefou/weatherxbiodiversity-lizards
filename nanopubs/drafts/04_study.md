@@ -89,9 +89,7 @@ Provide labels (not QIDs) — the Wikidata search picks up labels.
 
 Provide labels.
 
-- _Discipline label:_ ecology
-- _Discipline label:_ herpetology
-- _Discipline label:_ climate science
+- _Discipline label:_ biodiversity
 
 ## Publication note
 

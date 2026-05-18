@@ -29,7 +29,7 @@ URI of the AIDA published in step 02. Pull from `nanopubs/PUBLISHED.md`.
 > _If the AIDA was published via Nanodash (`w3id.org/np/...` namespace), the platform's search may not find it — paste the URI manually._
 
 ```
-TODO_PASTE_STEP_02_AIDA_URI
+https://w3id.org/sciencelive/np/RA7jFaB3akXJH9XhcYkIKL-6svSehDYO-s0VhiNkeFKXQ
 ```
 
 ### Type of FORRT claim (dropdown, required)
