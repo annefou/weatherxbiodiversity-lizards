@@ -27,7 +27,7 @@ Iberian Lacertidae h_r mechanism replication — DestinE 2020-2039
 URI of the Replication Study published in step 04. Pull from `nanopubs/PUBLISHED.md` once published.
 
 ```
-TODO — paste step-04 Replication Study URI after publishing
+https://w3id.org/sciencelive/np/RAJA-WWJDR8MUXMziWkpE5clhafx0nLZ46xhJ7-4zOHzU
 ```
 
 ### Repository URL (text input, required)
@@ -109,6 +109,6 @@ After publishing, paste the resulting URI into `nanopubs/PUBLISHED.md` step 05.
 ## Drafting notes (for Anne's review — not part of the nanopub)
 
 - **Vocabulary substitution:** Anne's verbatim recommendation in the kickoff briefing used "Iberian extirpation". The paper-analyst's locked vocabulary rule (from `00_paper_summary.md` "Extinction vs extirpation vocabulary" — *"The paper does not use 'extirpation'. Downstream drafts (Claim, Study, Outcome) MUST use the paper's 'local extinction' / 'species extinction' pair"*) requires "local extinction" instead. The Outcome above substitutes "local extinction" throughout; the substantive framing is identical.
-- **Pending fields:** the step-04 Replication Study URI in the Search/Select field is `TODO` until that nanopub is published. The Confidence level dropdown vocabulary was not captured in the template — left blank.
+- **Post-publication state:** all required field URIs are populated (step-04 Replication Study URI back-filled after publication). Confidence level was set to 'moderate — adequate evidence, partial agreement' (vocabulary not formally captured in the template, but the dropdown accepted the free-text choice).
 - **Validation status `PartiallySupported`** reflects that the mechanism transfers but predictions are prior-conditional. The CiTO relation in step 06 stays at `cito:extends` (locked decision 5), not `cito:qualifies` — see the Validation-status rationale paragraph above.
 - **Cross-replication synthesis** (Bombus constellation comparison) is **out of scope for this Outcome** — that lives in the Synthesis nanopub (step 08) at the apex of the chain. The Outcome here speaks only to the Iberian Lacertidae replication's own findings.

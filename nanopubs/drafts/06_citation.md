@@ -11,7 +11,7 @@
 URI of the Outcome published in step 05. Pull from `nanopubs/PUBLISHED.md`.
 
 ```
-TODO_PASTE_STEP_05_OUTCOME_URI
+https://w3id.org/sciencelive/np/RAPw01nGqrY3V9ech7nd3gUOyoW52N6SspeKTa41neLBo
 ```
 
 ### List citations (repeatable group, required ≥1)

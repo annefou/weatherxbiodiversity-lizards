@@ -35,7 +35,7 @@ Iberian Lacertidae h_r mechanism replication under Destination Earth Climate DT 
 URI of the Claim published in step 03. Pull from `nanopubs/PUBLISHED.md`.
 
 ```
-TODO_PASTE_STEP_03_CLAIM_URI
+https://w3id.org/sciencelive/np/RADk5ei_KGi0mtHsA2khl-oDpsHqb92ZrbgJ3_d1Hkmbw
 ```
 
 ### Describe what part of the claim is reproduced/replicated (textarea, required)

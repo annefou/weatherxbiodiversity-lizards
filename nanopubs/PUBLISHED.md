@@ -11,14 +11,14 @@ This file is the canonical registry of published nanopub URIs for this replicati
 | 03 | FORRT Claim | https://w3id.org/sciencelive/np/RADk5ei_KGi0mtHsA2khl-oDpsHqb92ZrbgJ3_d1Hkmbw | |
 | 04 | FORRT Replication Study | https://w3id.org/sciencelive/np/RAJA-WWJDR8MUXMziWkpE5clhafx0nLZ46xhJ7-4zOHzU | |
 | 05 | FORRT Replication Outcome | https://w3id.org/sciencelive/np/RAPw01nGqrY3V9ech7nd3gUOyoW52N6SspeKTa41neLBo | |
-| 06 | CiTO Citation | _not yet published_ | |
+| 06 | CiTO Citation | https://w3id.org/sciencelive/np/RAIdXhqT3oPF-7XlRYeN2oAAYJwXN9auLGR57iw8ipWl0 | |
 
 ## Optional layers
 
 | Step | Template | URI | Published |
 |---|---|---|---|
-| 07 | Research Software (if applicable) | _not applicable / not yet published_ | |
-| 08 | Research Synthesis (if applicable) | _not applicable / not yet published_ | |
+| 07 | Research Software (if applicable) | https://w3id.org/sciencelive/np/RAzhqiFNu8xIORz_w-sq3Ip8aXH8yvokLt1qaOtXNcu-k | |
+| 08 | Research Synthesis (if applicable) | https://w3id.org/sciencelive/np/RAcDYOu65z09jUbDwd_c2OxGI9KUPZmLszxUlLVOyzt3M | |
 
 ## Format
 

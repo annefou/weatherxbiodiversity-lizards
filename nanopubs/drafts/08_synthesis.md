@@ -96,10 +96,10 @@ Five limitations bounding the synthesis statement, ordered by interpretive impor
 
 Each entry is a URL — typically the FORRT Outcome URIs being synthesised. Pull from `nanopubs/PUBLISHED.md` (and/or registries from sibling repos).
 
-- _Source URL 1 (Lizards Outcome from this chain):_ `TODO_PASTE_STEP_05_OUTCOME_URI`
+- _Source URL 1 (Lizards Outcome from this chain):_ `https://w3id.org/sciencelive/np/RAPw01nGqrY3V9ech7nd3gUOyoW52N6SspeKTa41neLBo`
 - _Source URL 2 (Bombus apex Synthesis-level Research Synthesis):_ `https://w3id.org/sciencelive/np/RA5TJVZ0_5Knzxd4OtOoZgO6ZspWHwVCSLWNNd7V9H6QQ` — aggregates the three Iberian Bombus chains. Synthesizing across this URL (rather than across the three individual Bombus Outcomes) preserves the chain-internal hierarchy: the Bombus constellation already synthesised itself at the family level, and this cross-taxon Synthesis synthesises across that family-level Synthesis plus the lizards Outcome.
 - _Source URL 3 (Bombus apex Synthesis-level CiTO Citation):_ `https://w3id.org/sciencelive/np/RA1q6c0fG2bMbiozF8Az2UpIfzAzqp8hoVEl6QIzfUpH8` — the CiTO that asserts the Bombus apex Synthesis `cito:qualifies` Soroye 2020. Included as a supporting source because the constellation conclusion's framing depends on it (the "mechanism is substrate-robust at fit time but grid-coupled at projection time" finding lives in that CiTO's `personal comment` field; the constellation Synthesis quotes this verbatim in the conclusion above).
-- _Source URL 4 (this chain's Lizards Research Software nanopub):_ `TODO_PASTE_STEP_07_RESEARCH_SOFTWARE_URI` — included for FAIR4RS-compliant constellation provenance (the software artefact that produced the Lizards Outcome).
+- _Source URL 4 (this chain's Lizards Research Software nanopub):_ `https://w3id.org/sciencelive/np/RAzhqiFNu8xIORz_w-sq3Ip8aXH8yvokLt1qaOtXNcu-k` — included for FAIR4RS-compliant constellation provenance (the software artefact that produced the Lizards Outcome).
 - _Source URL 5 (Bombus chain-1 Research Software):_ `https://w3id.org/sciencelive/np/RAKH9XeZn3CUr9WaFKMC3O2pT_HJJ96c3jTa6v6dWEE3c` — same FAIR4RS provenance for the canonical Bombus chain.
 - _Source URL 6 (Bombus chain-2 Research Software):_ `https://w3id.org/sciencelive/np/RA-GY814xxcpEsUWozEJKHGG39bDV8gkbor7OhX8QpVPE`
 - _Source URL 7 (Bombus chain-3 Research Software):_ `https://w3id.org/sciencelive/np/RAfdV1yB1JksVJ7dJYwECRHVMhNzbGcjUAa6UreqG_fM4`
@@ -109,15 +109,13 @@ Each entry is a URL — typically the FORRT Outcome URIs being synthesised. Pull
 Provide labels (not QIDs).
 
 - _Label 1:_ thermal physiology
-- _Label 2:_ climate change ecology
+- _Label 2:_ climate change
 - _Label 3:_ Iberian Peninsula
 - _Label 4:_ Lacertidae
 - _Label 5:_ Bombus
 - _Label 6:_ Destination Earth
 - _Label 7:_ HEALPix
-- _Label 8:_ FAIR data
-- _Label 9:_ Open Science
-- _Label 10:_ replication study
+- _Label 8:_ ecology
 
 ## Publication note
 
@@ -130,4 +128,4 @@ After publishing, paste the resulting URI into `nanopubs/PUBLISHED.md` step 08.
 - **Honest framing — mechanism is not novel; cross-taxon transfer is what we test.** The conclusion attributes both mechanisms to their source papers (Soroye 2020 TEI; Sinervo 2010 h_r). The recommendations attribute the rare-species caveat to established literature (Lobo 2007; Hurlbert & Jetz 2007). The constellation-level recommendation #4 (publish cross-taxon constellations) is methodologically advocated as a pattern, not a novel methodological contribution.
 - **Vocabulary** — "local extinction" / "local extirpation" used interchangeably across the two source papers (Sinervo uses "local extinction"; Soroye uses "local extirpation"). The Synthesis conclusion preserves both terms where they appear in source-paper contexts but the constellation-level synthesis statement defaults to "local extirpation/extinction" with the slash explicit so neither source vocabulary is misrepresented.
 - **CITATION.cff cross-link** — the Bombus Research Software URIs (`RAKH9X…`, `RA-GY814…`, `RAfdV1y…`) come from CHAIN_SUMMARY.md. Verify against each sister repo's `nanopubs/PUBLISHED.md` before publishing this Synthesis.
-- **TODO placeholders** — three `TODO_PASTE_*` fields (Outcome URI, Research Software URI). Publish the lizards Outcome (step 05) and Research Software (step 07) first; then come back to this draft and paste the URIs in before publishing.
+- **Post-publication state** — all Supporting Source URIs are populated, including the lizards Outcome (step 05) and the lizards Research Software (step 07) URIs back-filled from `nanopubs/PUBLISHED.md` after those upstream nanopubs were published. The constellation Synthesis was published at https://w3id.org/sciencelive/np/RAcDYOu65z09jUbDwd_c2OxGI9KUPZmLszxUlLVOyzt3M .

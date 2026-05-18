@@ -36,7 +36,7 @@ URI of the nanopub the AIDA derives from. For this paper-rooted chain: the Quote
 Pull the URI from `nanopubs/PUBLISHED.md` once step 01 is published.
 
 ```
-TODO_PASTE_STEP_01_QUOTE_URI
+https://w3id.org/sciencelive/np/RACn8FAhvm0l6u4E1-LCGznZknh9XA28kfgY2GQUSpFnc
 ```
 
 ### Supported by datasets (repeatable group, optional)

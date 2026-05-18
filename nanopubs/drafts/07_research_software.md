@@ -37,7 +37,7 @@ https://github.com/annefou/weatherxbiodiversity-lizards
 URI of the FORRT Claim or PCC question this software is associated with — pull from `nanopubs/PUBLISHED.md`. This is the back-link to the FORRT chain.
 
 ```
-TODO_PASTE_STEP_03_CLAIM_URI
+https://w3id.org/sciencelive/np/RACn8FAhvm0l6u4E1-LCGznZknh9XA28kfgY2GQUSpFnc
 ```
 
 ### License (text input, optional)
@@ -58,7 +58,7 @@ Input data DOIs (Zenodo data records, dataset DOIs, ESA product DOIs).
 
 One-way back-links to the FORRT Outcome URI(s) the software implements, plus any cited methods papers.
 
-- _Publication URL 1 (FORRT Outcome from step 05):_ `TODO_PASTE_STEP_05_OUTCOME_URI`
+- _Publication URL 1 (FORRT Outcome from step 05):_ `https://w3id.org/sciencelive/np/RAPw01nGqrY3V9ech7nd3gUOyoW52N6SspeKTa41neLBo`
 - _Publication URL 2 (source paper):_ `https://doi.org/10.1126/science.1184695` (Sinervo et al. 2010 — the paper whose h_r mechanism this software operationalises)
 - _Publication URL 3 (Bombus sister-chain Research Software nanopub):_ `https://w3id.org/sciencelive/np/RAKH9XeZn3CUr9WaFKMC3O2pT_HJJ96c3jTa6v6dWEE3c` (the canonical `weatherxbiodiversity-projection` Research Software nanopub — this lizards software is its cross-taxon analogue and explicitly shares its env / pinning / HEALPix-nside=128-NESTED / Snakefile-DAG conventions)
 
